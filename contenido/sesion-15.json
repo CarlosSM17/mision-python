@@ -1,0 +1,432 @@
+{
+  "numero": 15,
+  "unidad": 7,
+  "titulo": "Proyecto final: diseño y programación",
+  "icono": "🚀",
+  "modo": 4,
+  "python": [
+    "integra todo el curso"
+  ],
+  "historiaIcono": "🚀",
+  "historia": "Llegó el momento: vas a diseñar y programar tu propio proyecto en Python, de principio a fin. En la Sesión 0 jugaste uno; ahora tú serás quien lo cree.",
+  "objetivos": [
+    "Diseñar un programa propio: elegir la idea, planear sus partes y escribirlo en Python.",
+    "Integrar <code>input()</code>, decisiones con <code>elif</code>, bucles, listas y funciones.",
+    "Probar el programa con distintos datos y corregir errores.",
+    "Preparar la presentación del proyecto."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🚀",
+      "titulo": "¡Tu gran proyecto!",
+      "texto": "Llegó el momento de crear tu propio programa con todo lo que aprendiste. Elige una opción (o propón otra a tu docente) y ¡a programar!"
+    },
+    {
+      "tipo": "pasos",
+      "titulo": "Las fases de un proyecto",
+      "pasos": [
+        {
+          "icono": "💡",
+          "texto": "<b>Idea</b>: ¿qué hará tu programa? Escríbelo en una frase."
+        },
+        {
+          "icono": "📝",
+          "texto": "<b>Plan</b>: escribe los pasos como comentarios <code>#</code>."
+        },
+        {
+          "icono": "🧩",
+          "texto": "<b>Divide</b>: decide qué funciones necesitas."
+        },
+        {
+          "icono": "💻",
+          "texto": "<b>Programa</b> poco a poco: una parte, pruebas, la siguiente."
+        },
+        {
+          "icono": "🐞",
+          "texto": "<b>Prueba</b> con datos normales y con datos raros."
+        },
+        {
+          "icono": "✨",
+          "texto": "<b>Mejora</b>: mensajes claros, nombres claros y comentarios."
+        }
+      ]
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Requisitos mínimos",
+      "encabezados": [
+        "Concepto",
+        "¿Para qué en tu proyecto?"
+      ],
+      "filas": [
+        [
+          "<code>input()</code>",
+          "Pedir datos al jugador"
+        ],
+        [
+          "Decisión con <code>elif</code>",
+          "Elegir qué pasa según la respuesta"
+        ],
+        [
+          "Bucle <code>for</code> o <code>while</code>",
+          "Repetir rondas o preguntas"
+        ],
+        [
+          "Una lista",
+          "Guardar opciones, palabras o preguntas"
+        ],
+        [
+          "Dos funciones propias con <code>def</code>",
+          "Una función para cada tarea"
+        ]
+      ],
+      "texto": "La plataforma revisa estos requisitos cuando presionas «Revisar requisitos»."
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Empieza con un esqueleto",
+      "texto": "Los comentarios son tu mapa. Reemplázalos por código, uno a la vez.",
+      "codigo": "# 1. Mostrar el título del juego\nprint(\"=== Mi juego ===\")\n# 2. Pedir el nombre\nnombre = input(\"¿Cómo te llamas? \")\n# 3. Jugar varias rondas (bucle)\n# 4. Mostrar el resultado final\nprint(\"¡Gracias por jugar,\", nombre + \"!\")"
+    },
+    {
+      "tipo": "pasos",
+      "titulo": "Si algo falla…",
+      "pasos": [
+        {
+          "icono": "📖",
+          "texto": "Lee el mensaje de error: dice la línea y el tipo de error."
+        },
+        {
+          "icono": "👣",
+          "texto": "Usa <b>👣 Paso a paso</b> para ver cómo cambian las variables."
+        },
+        {
+          "icono": "🖨️",
+          "texto": "Agrega un <code>print()</code> para ver qué valor tiene una variable."
+        },
+        {
+          "icono": "🗣️",
+          "texto": "Explícale tu código a alguien (o a Py 🐍): ¡a veces así aparece el error!"
+        }
+      ],
+      "py": "Los mejores programadores no son los que nunca se equivocan, sino los que saben encontrar el error."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Así se evaluará tu proyecto",
+      "encabezados": [
+        "Criterio",
+        "Logrado (3)"
+      ],
+      "filas": [
+        [
+          "Funcionamiento",
+          "Funciona en los casos normales"
+        ],
+        [
+          "Uso de conceptos",
+          "Cumple los 5"
+        ],
+        [
+          "Legibilidad",
+          "Nombres claros y comentarios útiles"
+        ],
+        [
+          "Explicación",
+          "Explica cómo funciona su programa"
+        ]
+      ],
+      "texto": "Para llegar a «Destacado» revisa la rúbrica completa con tu docente."
+    }
+  ],
+  "actividades": [
+    {
+      "id": "m15-a1",
+      "tipo": "clasificar",
+      "titulo": "¿Qué requisito es?",
+      "instrucciones": "Clasifica cada línea según el requisito del proyecto que demuestra.",
+      "categorias": [
+        {
+          "id": "in",
+          "nombre": "input()",
+          "color": "#4C97FF",
+          "icono": "⌨️"
+        },
+        {
+          "id": "dec",
+          "nombre": "Decisión",
+          "color": "#E6A100",
+          "icono": "🔀"
+        },
+        {
+          "id": "buc",
+          "nombre": "Bucle",
+          "color": "#FF8C1A",
+          "icono": "🔁"
+        },
+        {
+          "id": "lis",
+          "nombre": "Lista",
+          "color": "#FF661A",
+          "icono": "🎒"
+        },
+        {
+          "id": "fun",
+          "nombre": "Función",
+          "color": "#FF6680",
+          "icono": "🏗️"
+        }
+      ],
+      "elementos": [
+        {
+          "texto": "nombre = input(\"Nombre: \")",
+          "cat": "in"
+        },
+        {
+          "texto": "elif puntos >= 3:",
+          "cat": "dec"
+        },
+        {
+          "texto": "while vidas > 0:",
+          "cat": "buc"
+        },
+        {
+          "texto": "opciones = [\"piedra\", \"papel\"]",
+          "cat": "lis"
+        },
+        {
+          "texto": "def mostrar_menu():",
+          "cat": "fun"
+        },
+        {
+          "texto": "for ronda in range(3):",
+          "cat": "buc"
+        },
+        {
+          "texto": "if respuesta == \"sí\":",
+          "cat": "dec"
+        },
+        {
+          "texto": "return puntos",
+          "cat": "fun"
+        }
+      ]
+    },
+    {
+      "id": "m15-a2",
+      "tipo": "vf",
+      "titulo": "Buenas prácticas",
+      "instrucciones": "¿Verdadero o falso? ¡Contra reloj! Necesitas 70 % de aciertos.",
+      "tiempo": 12,
+      "afirmaciones": [
+        {
+          "texto": "Conviene probar el programa cada vez que agregas una parte.",
+          "correcta": true
+        },
+        {
+          "texto": "Nombres como <code>x1</code> y <code>aaa</code> hacen el código más claro.",
+          "correcta": false,
+          "explicacion": "Usa nombres que digan qué guardan: <code>puntos</code>, <code>vidas</code>."
+        },
+        {
+          "texto": "Los comentarios ayudan a otras personas a entender tu código.",
+          "correcta": true
+        },
+        {
+          "texto": "Si hay un error, hay que borrar todo y empezar de nuevo.",
+          "correcta": false,
+          "explicacion": "Lee el mensaje, encuentra la línea y corrige solo eso."
+        },
+        {
+          "texto": "Es buena idea que cada función haga una sola tarea.",
+          "correcta": true
+        },
+        {
+          "texto": "Probar con datos raros ayuda a encontrar errores.",
+          "correcta": true
+        }
+      ]
+    }
+  ],
+  "proyecto": {
+    "id": "m15-proyecto",
+    "tipo": "proyecto",
+    "titulo": "Proyecto final",
+    "historia": "Tu proyecto se presentará frente al grupo en la Sesión 16.",
+    "enunciado": "Elige una de las cuatro opciones (o propón otra a tu docente). Cada opción trae un esqueleto con comentarios para que no empieces en blanco. Puedes cambiarlo todo.",
+    "requiere": [
+      "input",
+      "elif",
+      "for|while",
+      "lista",
+      "def*2"
+    ],
+    "rubrica": {
+      "niveles": [
+        "Inicial (1)",
+        "En desarrollo (2)",
+        "Logrado (3)",
+        "Destacado (4)"
+      ],
+      "criterios": [
+        {
+          "nombre": "Funcionamiento",
+          "descriptores": [
+            "No se ejecuta",
+            "Se ejecuta, con errores frecuentes",
+            "Funciona en los casos normales",
+            "Funciona y maneja entradas inesperadas"
+          ]
+        },
+        {
+          "nombre": "Uso de conceptos",
+          "descriptores": [
+            "Cumple 1 o 2 requisitos",
+            "Cumple 3 o 4",
+            "Cumple los 5",
+            "Cumple los 5 y combina conceptos de forma original"
+          ]
+        },
+        {
+          "nombre": "Legibilidad",
+          "descriptores": [
+            "Nombres sin significado, sin comentarios",
+            "Algunos nombres claros",
+            "Nombres claros y comentarios útiles",
+            "Organizado en funciones bien nombradas"
+          ]
+        },
+        {
+          "nombre": "Explicación",
+          "descriptores": [
+            "No logra explicar su código",
+            "Explica partes con ayuda",
+            "Explica cómo funciona su programa",
+            "Explica sus decisiones y cómo lo mejoraría"
+          ]
+        }
+      ]
+    },
+    "opciones": [
+      {
+        "id": "ppt",
+        "icono": "✊",
+        "titulo": "Piedra, papel o tijera",
+        "resumen": "Contra la computadora, con marcador, al mejor de 5.",
+        "descripcion": "Juego contra la computadora <b>al mejor de 5</b>: gana quien llegue primero a 3 victorias. Lleva el marcador, valida que la jugada exista y anuncia al ganador. Ideas extra: agregar «lagarto» y «Spock», mostrar estadísticas al final.",
+        "inicio": "import random\n\nopciones = [\"piedra\", \"papel\", \"tijera\"]\n\n# Función que pide la jugada y la valida\ndef pedir_jugada():\n    jugada = input(\"Piedra, papel o tijera: \").lower()\n    # Mientras la jugada no esté en la lista, vuelve a pedirla\n    return jugada\n\n# Función que devuelve \"tu\", \"compu\" o \"empate\"\ndef ganador_ronda(tu, compu):\n    pass\n\n# Programa principal: repite mientras nadie tenga 3 victorias\npuntos_tu = 0\npuntos_compu = 0\n",
+        "solucion": "import random\n\nopciones = [\"piedra\", \"papel\", \"tijera\"]\n\ndef pedir_jugada():\n    jugada = input(\"Piedra, papel o tijera: \").lower()\n    while jugada not in opciones:\n        jugada = input(\"No válida. Piedra, papel o tijera: \").lower()\n    return jugada\n\ndef ganador_ronda(tu, compu):\n    if tu == compu:\n        return \"empate\"\n    elif (tu == \"piedra\" and compu == \"tijera\") or (tu == \"papel\" and compu == \"piedra\") or (tu == \"tijera\" and compu == \"papel\"):\n        return \"tu\"\n    else:\n        return \"compu\"\n\npuntos_tu = 0\npuntos_compu = 0\nwhile puntos_tu < 3 and puntos_compu < 3:\n    tu = pedir_jugada()\n    compu = random.choice(opciones)\n    print(\"La computadora eligió\", compu)\n    resultado = ganador_ronda(tu, compu)\n    if resultado == \"tu\":\n        puntos_tu += 1\n        print(\"¡Ganas la ronda!\")\n    elif resultado == \"compu\":\n        puntos_compu += 1\n        print(\"La computadora gana la ronda\")\n    else:\n        print(\"Empate\")\n    print(\"Marcador:\", puntos_tu, \"-\", puntos_compu)\nif puntos_tu == 3:\n    print(\"¡Ganaste el juego!\")\nelse:\n    print(\"Ganó la computadora\")",
+        "entradasPrueba": [
+          "piedra",
+          "lagarto",
+          "papel",
+          "tijera",
+          "piedra"
+        ],
+        "azarPrueba": [
+          "tijera",
+          "piedra",
+          "papel",
+          "tijera"
+        ]
+      },
+      {
+        "id": "aventura",
+        "icono": "🗺️",
+        "titulo": "Aventura de texto",
+        "resumen": "Una historia con decisiones y varios finales.",
+        "descripcion": "Una historia en la que quien juega decide qué hacer y llega a distintos finales. Usa una lista para el inventario (objetos que encuentra) y funciones para cada escena. Ideas extra: puntos de vida, objetos que abren caminos nuevos.",
+        "inicio": "inventario = []\n\n# Cada escena puede ser una función\ndef escena_bosque():\n    print(\"Estás en un bosque oscuro. Hay un camino a la izquierda y otro a la derecha.\")\n    eleccion = input(\"¿izquierda o derecha? \").lower()\n    # Usa if / elif / else para decidir qué pasa\n\ndef escena_cueva():\n    pass\n\n# Programa principal\nprint(\"=== La aventura comienza ===\")\nescena_bosque()\n",
+        "solucion": "inventario = []\n\ndef pedir(opciones):\n    eleccion = input(\"Elige (\" + \" / \".join(opciones) + \"): \").lower()\n    while eleccion not in opciones:\n        eleccion = input(\"Esa opción no existe. Elige otra vez: \").lower()\n    return eleccion\n\ndef escena_cueva():\n    print(\"Entras a una cueva. Brilla algo en el fondo.\")\n    eleccion = pedir([\"tomar\", \"salir\"])\n    if eleccion == \"tomar\":\n        inventario.append(\"llave dorada\")\n        print(\"¡Encontraste una llave dorada!\")\n    else:\n        print(\"Sales de la cueva con cuidado.\")\n\ndef escena_puerta():\n    print(\"Llegas a una puerta enorme.\")\n    if \"llave dorada\" in inventario:\n        print(\"Usas la llave dorada. ¡Encontraste el tesoro! FINAL FELIZ\")\n    else:\n        print(\"La puerta está cerrada. Regresas a casa. FINAL ABIERTO\")\n\nprint(\"=== La aventura comienza ===\")\nprint(\"Estás en un bosque. Hay un camino a la izquierda y otro a la derecha.\")\ncamino = pedir([\"izquierda\", \"derecha\", \"quedarme\"])\nif camino == \"izquierda\":\n    escena_cueva()\n    escena_puerta()\nelif camino == \"derecha\":\n    escena_puerta()\nelse:\n    print(\"Te quedas a dormir bajo un árbol. FINAL TRANQUILO\")\nprint(\"Inventario final:\", inventario)",
+        "entradasPrueba": [
+          "izquierda",
+          "tomar"
+        ]
+      },
+      {
+        "id": "quiz",
+        "icono": "❓",
+        "titulo": "Quiz temático",
+        "resumen": "Banco de preguntas en listas.",
+        "descripcion": "Un quiz sobre el tema que elijas, con las preguntas y respuestas guardadas en <b>listas</b> y recorridas con un bucle. Ideas extra: preguntas en orden aleatorio, varias oportunidades por pregunta, récord de puntaje.",
+        "inicio": "preguntas = [\"¿Pregunta 1? \", \"¿Pregunta 2? \", \"¿Pregunta 3? \"]\nrespuestas = [\"r1\", \"r2\", \"r3\"]\n\n# Función que hace una pregunta y devuelve 1 si acierta o 0 si no\ndef preguntar(pregunta, correcta):\n    pass\n\n# Función que devuelve un mensaje según el puntaje\ndef mensaje_final(puntaje, total):\n    pass\n\n# Programa principal: recorre las preguntas con un for\npuntaje = 0\n",
+        "solucion": "preguntas = [\"¿Cuál es el planeta más grande? \", \"¿Cuántos continentes hay? \", \"¿Qué animal es el más grande del mundo? \", \"¿Cuál es el océano más grande? \"]\nrespuestas = [\"jupiter\", \"5\", \"ballena azul\", \"pacifico\"]\n\ndef preguntar(pregunta, correcta):\n    r = input(pregunta).lower()\n    if r == correcta:\n        print(\"¡Correcto!\")\n        return 1\n    print(\"Incorrecto. La respuesta era\", correcta)\n    return 0\n\ndef mensaje_final(puntaje, total):\n    if puntaje == total:\n        return \"¡Perfecto!\"\n    elif puntaje >= total / 2:\n        return \"¡Bien hecho!\"\n    else:\n        return \"¡A estudiar un poco más!\"\n\npuntaje = 0\nfor i in range(len(preguntas)):\n    puntaje += preguntar(preguntas[i], respuestas[i])\nprint(\"Puntaje:\", puntaje, \"de\", len(preguntas))\nprint(mensaje_final(puntaje, len(preguntas)))",
+        "entradasPrueba": [
+          "jupiter",
+          "7",
+          "ballena azul",
+          "pacifico"
+        ]
+      },
+      {
+        "id": "mascota",
+        "icono": "🐶",
+        "titulo": "Mascota virtual",
+        "resumen": "Una mascota que come, juega y duerme.",
+        "descripcion": "Una mascota con niveles de hambre, energía y felicidad. Un menú permite darle de comer, jugar o dormir, y cada acción cambia sus niveles. Ideas extra: la mascota se enferma si el hambre llega a 10, una lista de juguetes favoritos.",
+        "inicio": "nombre = input(\"¿Cómo se llama tu mascota? \")\nhambre = 5\nenergia = 5\nfelicidad = 5\njuguetes = [\"pelota\", \"cuerda\", \"hueso\"]\n\n# Función que muestra cómo está la mascota\ndef mostrar_estado():\n    pass\n\n# Funciones para cada acción: comer, jugar, dormir\n\n# Programa principal: un menú que se repite hasta que elijan salir\n",
+        "solucion": "import random\n\nnombre = input(\"¿Cómo se llama tu mascota? \")\nhambre = 5\nenergia = 5\nfelicidad = 5\njuguetes = [\"pelota\", \"cuerda\", \"hueso\"]\n\ndef mostrar_estado():\n    print(nombre, \"→ hambre:\", hambre, \"energía:\", energia, \"felicidad:\", felicidad)\n\ndef limitar(valor):\n    if valor < 0:\n        return 0\n    elif valor > 10:\n        return 10\n    return valor\n\nseguir = True\nwhile seguir:\n    mostrar_estado()\n    opcion = input(\"¿Qué hacemos? (comer / jugar / dormir / salir) \").lower()\n    if opcion == \"comer\":\n        hambre = limitar(hambre - 3)\n        print(nombre, \"comió muy rico.\")\n    elif opcion == \"jugar\":\n        juguete = random.choice(juguetes)\n        felicidad = limitar(felicidad + 2)\n        energia = limitar(energia - 2)\n        hambre = limitar(hambre + 1)\n        print(nombre, \"jugó con la\", juguete)\n    elif opcion == \"dormir\":\n        energia = 10\n        print(nombre, \"durmió una siesta.\")\n    elif opcion == \"salir\":\n        seguir = False\n    else:\n        print(\"No entendí esa opción.\")\nprint(\"¡Adiós,\", nombre + \"!\")",
+        "entradasPrueba": [
+          "Firulais",
+          "comer",
+          "jugar",
+          "volar",
+          "dormir",
+          "salir"
+        ],
+        "azarPrueba": [
+          "pelota"
+        ]
+      }
+    ]
+  },
+  "kahoot": {
+    "titulo": "Kahoot de repaso general",
+    "aleatorio": 10
+  },
+  "resumen": [
+    {
+      "icono": "💡",
+      "texto": "Un proyecto se planea: idea, pasos y funciones."
+    },
+    {
+      "icono": "🧪",
+      "texto": "Programa poco a poco y prueba cada parte."
+    },
+    {
+      "icono": "✅",
+      "texto": "Requisitos: input, elif, un bucle, una lista y dos funciones."
+    }
+  ],
+  "glosario": [
+    {
+      "en": "pseudocode",
+      "es": "pseudocódigo",
+      "def": "Los pasos de un programa escritos en español, antes de programarlos."
+    },
+    {
+      "en": "debug",
+      "es": "depurar",
+      "def": "Encontrar y corregir errores."
+    },
+    {
+      "en": "test",
+      "es": "probar",
+      "def": "Ejecutar el programa con distintos datos para ver si funciona."
+    },
+    {
+      "en": "menu",
+      "es": "menú",
+      "def": "Lista de opciones para que el usuario elija."
+    }
+  ],
+  "plan": {
+    "activacion": "Muestra 2 o 3 proyectos de ejemplo (los esqueletos de las opciones) y pide que cada quien elija el suyo.",
+    "ejemplo": "Planea en vivo un proyecto con comentarios: título, pedir nombre, rondas, resultado.",
+    "practica": "Actividades rápidas: ¿qué requisito es? y buenas prácticas.",
+    "reto": "Programación del proyecto (puede abarcar más de una sesión). Revisa avances con «Revisar requisitos».",
+    "cierre": "Cada quien escribe qué le falta para terminar. Kahoot de repaso general.",
+    "notas": "La rúbrica del proyecto aparece al activar el modo docente. El proyecto final vale el 30 % de la calificación."
+  }
+}

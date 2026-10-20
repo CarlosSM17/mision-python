@@ -1,0 +1,10 @@
+[
+  { "numero": 0, "nombre": "Base de lanzamiento", "icono": "🚀", "color": "#0FBD8C" },
+  { "numero": 1, "nombre": "Planeta Print", "icono": "🪐", "color": "#9966FF", "insignia": "Comandante del print" },
+  { "numero": 2, "nombre": "Estación de Datos", "icono": "🛰️", "color": "#4C97FF", "insignia": "Domador de datos" },
+  { "numero": 3, "nombre": "Galaxia de las Decisiones", "icono": "🔀", "color": "#E6A100", "insignia": "Tomador de decisiones" },
+  { "numero": 4, "nombre": "Nebulosa de los Bucles", "icono": "🌀", "color": "#FF8C1A", "insignia": "Maestro de bucles" },
+  { "numero": 5, "nombre": "Cinturón de Listas", "icono": "☄️", "color": "#FF661A", "insignia": "Coleccionista de listas" },
+  { "numero": 6, "nombre": "Fábrica de Funciones", "icono": "🏭", "color": "#FF6680", "insignia": "Arquitecto de funciones" },
+  { "numero": 7, "nombre": "Misión final", "icono": "🏆", "color": "#2DA84F" }
+]

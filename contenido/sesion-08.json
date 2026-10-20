@@ -1,0 +1,604 @@
+{
+  "numero": 8,
+  "unidad": 4,
+  "titulo": "Repetir un número fijo de veces",
+  "icono": "🔁",
+  "modo": 3,
+  "python": [
+    "for",
+    "range()"
+  ],
+  "historiaIcono": "✖️",
+  "historia": "Para el examen de mañana necesitas repasar las tablas de multiplicar. Escribir 10 líneas por cada tabla es aburrido… ¡mejor que la computadora repita por ti!",
+  "objetivos": [
+    "Repetir instrucciones un número fijo de veces con <code>for</code> y <code>range()</code>.",
+    "Usar la variable del bucle dentro de las instrucciones.",
+    "Controlar dónde empieza, dónde termina y de cuánto en cuánto avanza <code>range()</code>.",
+    "Dibujar figuras repitiendo texto con <code>*</code>."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🔁",
+      "titulo": "¡No te repitas!",
+      "texto": "¿Escribirías 100 veces <code>print(\"Hola\")</code>? Con un <b>bucle</b> <code>for</code> le dices a Python que repita algo las veces que quieras."
+    },
+    {
+      "tipo": "comparar",
+      "titulo": "Sin bucle y con bucle",
+      "texto": "El <code>for</code> hace lo mismo con mucho menos código.",
+      "mal": {
+        "codigo": "print(\"¡Gol!\")\nprint(\"¡Gol!\")\nprint(\"¡Gol!\")\nprint(\"¡Gol!\")\nprint(\"¡Gol!\")",
+        "nota": "Cinco líneas iguales… ¿y si fueran 100?"
+      },
+      "bien": {
+        "codigo": "for i in range(5):\n    print(\"¡Gol!\")",
+        "nota": "Dos líneas. ¡Cambia el 5 por 100 cuando quieras!"
+      }
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "pista-for",
+      "titulo": "La pista de carreras",
+      "texto": "<code>range(5)</code> crea los números 0, 1, 2, 3 y 4. En cada vuelta, la variable <code>i</code> toma el siguiente número.",
+      "datos": {
+        "valores": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "variable": "i"
+      },
+      "py": "¡<code>range(5)</code> llega hasta 4, no hasta 5! Empieza en 0 y da 5 vueltas."
+    },
+    {
+      "tipo": "animacion",
+      "animacion": "bucle",
+      "titulo": "Mira el bucle girar",
+      "texto": "Observa cómo cambia la variable en cada vuelta."
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "range",
+      "titulo": "Laboratorio de range",
+      "texto": "Cambia el inicio, el final y el paso. ¿Qué números salen?"
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Las formas de range",
+      "encabezados": [
+        "Código",
+        "Números"
+      ],
+      "filas": [
+        [
+          "<code>range(5)</code>",
+          "0 1 2 3 4"
+        ],
+        [
+          "<code>range(1, 6)</code>",
+          "1 2 3 4 5"
+        ],
+        [
+          "<code>range(0, 11, 2)</code>",
+          "0 2 4 6 8 10"
+        ],
+        [
+          "<code>range(10, 0, -1)</code>",
+          "10 9 8 … 1"
+        ]
+      ],
+      "texto": "<code>range(inicio, fin, paso)</code>: el fin nunca se incluye."
+    },
+    {
+      "tipo": "idea",
+      "icono": "🧮",
+      "titulo": "Usa la variable del bucle",
+      "texto": "La variable cambia en cada vuelta: úsala para hacer cuentas.",
+      "codigo": "for n in range(1, 4):\n    print(n, \"x 2 =\", n * 2)",
+      "salida": "1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6"
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Pruébalo",
+      "texto": "¿Cuántas filas de estrellas dibuja? Cambia el número y vuelve a probar.",
+      "codigo": "for fila in range(1, 5):\n    print(\"*\" * fila)"
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "¿Cuántas veces se muestra «Hola»?",
+      "opciones": [
+        "1",
+        "3",
+        "4",
+        "2"
+      ],
+      "correcta": 1,
+      "explicacion": "<code>range(3)</code> da 0, 1 y 2: tres vueltas. «Adiós» no tiene sangría: va una sola vez al final.",
+      "codigo": "for i in range(3):\n    print(\"Hola\")\nprint(\"Adiós\")"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "La tabla del 2",
+    "descripcion": "Un for que escribe una tabla de multiplicar.",
+    "codigo": "for i in range(1, 6):\n    print(i, \"x 2 =\", i * 2)",
+    "prediccion": {
+      "pregunta": "¿Cuál es la <b>última</b> línea que se muestra?",
+      "opciones": [
+        "5 x 2 = 10",
+        "6 x 2 = 12",
+        "4 x 2 = 8",
+        "1 x 2 = 2"
+      ],
+      "correcta": 0,
+      "explicacion": "range(1, 6) da 1, 2, 3, 4 y 5: el 6 no se incluye."
+    },
+    "investigar": [
+      "Con 👣 Paso a paso, observa cómo cambia <code>i</code> en la tabla de variables.",
+      "¿Qué cambias para que llegue hasta 10?",
+      "¿Qué pasa si escribes <code>range(6)</code>?"
+    ],
+    "modificar": "Convierte el programa en la tabla del 7, del 1 al 10."
+  },
+  "actividades": [
+    {
+      "id": "m08-a1",
+      "tipo": "relacionar",
+      "titulo": "range y sus números",
+      "instrucciones": "Une cada elemento con su pareja.",
+      "pares": [
+        [
+          "range(4)",
+          "0 1 2 3"
+        ],
+        [
+          "range(1, 5)",
+          "1 2 3 4"
+        ],
+        [
+          "range(0, 9, 3)",
+          "0 3 6"
+        ],
+        [
+          "range(5, 0, -1)",
+          "5 4 3 2 1"
+        ],
+        [
+          "range(2, 7, 2)",
+          "2 4 6"
+        ]
+      ]
+    },
+    {
+      "id": "m08-a2",
+      "tipo": "salida",
+      "titulo": "Cuenta con el for",
+      "instrucciones": "Escribe exactamente lo que aparecerá en la pantalla.",
+      "codigo": "for i in range(1, 4):\n    print(\"Vuelta\", i)\nprint(\"Meta\")",
+      "respuesta": "Vuelta 1\nVuelta 2\nVuelta 3\nMeta"
+    },
+    {
+      "id": "m08-a3",
+      "tipo": "traza",
+      "titulo": "Sigue al bucle",
+      "instrucciones": "Sé la computadora: la línea 3 se ejecuta una vez en cada vuelta. Escribe los valores después de cada vuelta.",
+      "codigo": "total = 0\nfor n in range(1, 4):\n    total = total + n\nprint(total)",
+      "variables": [
+        "n",
+        "total"
+      ],
+      "filas": [
+        {
+          "linea": 1,
+          "valores": {
+            "n": "",
+            "total": "0"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "n": "1",
+            "total": "1"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "n": "2",
+            "total": "3"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "n": "3",
+            "total": "6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m08-a4",
+      "tipo": "ordenar",
+      "titulo": "Tabla del 5",
+      "instrucciones": "Arma el programa tocando las piezas en el orden correcto.",
+      "lineas": [
+        "print(\"Tabla del 5\")",
+        "for i in range(1, 11):",
+        "    print(5, \"x\", i, \"=\", 5 * i)",
+        "print(\"¡Listo!\")"
+      ],
+      "sangria": true
+    },
+    {
+      "id": "m08-a5",
+      "tipo": "error",
+      "titulo": "Caza el error: la sangría",
+      "instrucciones": "Este programa tiene <b>un error</b>. Toca la línea donde está.",
+      "codigo": "for i in range(3):\nprint(\"¡Hip, hip, hurra!\")",
+      "tipoError": "IndentationError",
+      "explicacion": "Las líneas que se repiten van <b>dentro</b> del <code>for</code>, con 4 espacios de sangría.",
+      "correccion": "    print(\"¡Hip, hip, hurra!\")",
+      "linea": 2
+    },
+    {
+      "id": "m08-a6",
+      "tipo": "teclear",
+      "titulo": "Dedos veloces: for",
+      "instrucciones": "Escribe cada línea exactamente igual. ¡Entrena tus dedos de programador!",
+      "lineas": [
+        "for i in range(10):",
+        "    print(i)"
+      ],
+      "xp": 40
+    }
+  ],
+  "retos": [
+    {
+      "id": "m08-r1",
+      "titulo": "Cinco veces",
+      "resumen": "Tu primer for.",
+      "enunciado": "Muestra la palabra <code>Python</code> cinco veces, una por renglón, usando <b>un solo</b> <code>print</code> dentro de un <code>for</code>.",
+      "inicio": "for i in range(«»):\n    print(\"Python\")",
+      "requiere": [
+        "for",
+        "print<=1"
+      ],
+      "pruebas": [
+        {
+          "exacto": "Python\nPython\nPython\nPython\nPython"
+        }
+      ],
+      "solucion": "for i in range(5):\n    print(\"Python\")",
+      "pistas": [
+        "range(n) da n vueltas.",
+        "Escribe en el hueco cuántas veces se repite.",
+        "El hueco es <code>5</code>."
+      ]
+    },
+    {
+      "id": "m08-r2",
+      "titulo": "De 2 en 2",
+      "resumen": "range con paso.",
+      "enunciado": "Muestra los números pares del 0 al 20 (0, 2, 4, … 20), uno por renglón.",
+      "inicio": "for n in range(«»):\n    print(n)",
+      "requiere": [
+        "for",
+        "range"
+      ],
+      "pruebas": [
+        {
+          "exacto": "0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20"
+        }
+      ],
+      "solucion": "for n in range(0, 21, 2):\n    print(n)",
+      "pistas": [
+        "range puede recibir tres números: inicio, fin y paso.",
+        "El fin no se incluye: para llegar a 20, el fin debe ser 21.",
+        "Escribe en el hueco <code>0, 21, 2</code>."
+      ]
+    },
+    {
+      "id": "m08-r3",
+      "titulo": "Escalera de estrellas",
+      "resumen": "Figuras con *.",
+      "enunciado": "Dibuja esta escalera de 4 escalones:<br><code>*</code><br><code>**</code><br><code>***</code><br><code>****</code>",
+      "inicio": "for i in range(1, 5):\n    print(«»)",
+      "requiere": [
+        "for",
+        "print<=1"
+      ],
+      "pruebas": [
+        {
+          "exacto": "*\n**\n***\n****"
+        }
+      ],
+      "solucion": "for i in range(1, 5):\n    print(\"*\" * i)",
+      "pistas": [
+        "En cada vuelta, el número de estrellas es igual a <code>i</code>.",
+        "Un texto multiplicado por un número se repite.",
+        "El hueco es <code>\"*\" * i</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m08-mision",
+    "titulo": "Tablas de multiplicar",
+    "historia": "Mañana es el examen de tablas.",
+    "enunciado": "Pide un número y muestra su tabla de multiplicar del 1 al 10, con este formato:<br><code>7 x 1 = 7</code><br><code>7 x 2 = 14</code><br>…<br><code>7 x 10 = 70</code><br>Usa un <code>for</code>: ¡no escribas 10 print!",
+    "requiere": [
+      "for",
+      "range",
+      "print<=2"
+    ],
+    "pruebas": [
+      {
+        "nombre": "Tabla del 7",
+        "entradas": [
+          "7"
+        ],
+        "contiene": [
+          "7 x 1 = 7",
+          "7 x 5 = 35",
+          "7 x 10 = 70"
+        ],
+        "no_contiene": [
+          "7 x 11",
+          "7 x 0"
+        ]
+      },
+      {
+        "nombre": "Tabla del 3",
+        "entradas": [
+          "3"
+        ],
+        "contiene": [
+          "3 x 1 = 3",
+          "3 x 2 = 6",
+          "3 x 10 = 30"
+        ],
+        "no_contiene": [
+          "3 x 11"
+        ]
+      }
+    ],
+    "pistas": [
+      "Pide el número con <code>int(input(...))</code> y usa <code>for i in range(...)</code>.",
+      "Para ir del 1 al 10, range empieza en 1 y termina en 11. Dentro: un print con el número, i y el resultado.",
+      "La línea de adentro es <code>print(n, \"x\", i, \"=\", n * i)</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "Escribe en los huecos el rango del for y el resultado de la multiplicación.",
+        "inicio": "n = int(input(\"¿Qué tabla quieres? \"))\nfor i in range(«»):\n    print(n, \"x\", i, \"=\", «»)",
+        "solucion": "n = int(input(\"¿Qué tabla quieres? \"))\nfor i in range(1, 11):\n    print(n, \"x\", i, \"=\", n * i)"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "n = int(input(\"¿Qué tabla quieres? \"))\nfor i in range(1, 11):\n    print(n, \"x\", i, \"=\", n * i)"
+      },
+      "maestro": {
+        "enunciado": "después de la tabla, dibuja un triángulo de asteriscos con tantos renglones como el número elegido.",
+        "inicio": "",
+        "requiere": [
+          "for*2",
+          "print<=3"
+        ],
+        "pruebas": [
+          {
+            "nombre": "Tabla del 4 y triángulo",
+            "entradas": [
+              "4"
+            ],
+            "exacto": "4 x 1 = 4\n4 x 2 = 8\n4 x 3 = 12\n4 x 4 = 16\n4 x 5 = 20\n4 x 6 = 24\n4 x 7 = 28\n4 x 8 = 32\n4 x 9 = 36\n4 x 10 = 40\n*\n**\n***\n****"
+          },
+          {
+            "nombre": "Tabla del 2 y triángulo",
+            "entradas": [
+              "2"
+            ],
+            "contiene": [
+              "2 x 10 = 20",
+              "*",
+              "**"
+            ],
+            "no_contiene": [
+              "***"
+            ]
+          }
+        ],
+        "solucion": "n = int(input(\"¿Qué tabla quieres? \"))\nfor i in range(1, 11):\n    print(n, \"x\", i, \"=\", n * i)\nfor i in range(1, n + 1):\n    print(\"*\" * i)"
+      }
+    }
+  },
+  "extra": {
+    "id": "m08-extra",
+    "titulo": "Cuenta regresiva con for",
+    "historia": "El cohete del club de ciencias está listo.",
+    "enunciado": "Usa un <code>for</code> con <code>range</code> hacia atrás para contar del 10 al 1 y luego muestra <code>¡Despegue!</code>.",
+    "inicio": "",
+    "requiere": [
+      "for",
+      "print<=2"
+    ],
+    "pruebas": [
+      {
+        "exacto": "10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n¡Despegue!"
+      }
+    ],
+    "solucion": "for i in range(10, 0, -1):\n    print(i)\nprint(\"¡Despegue!\")"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué números da <code>range(4)</code>?",
+        "opciones": [
+          "1 2 3 4",
+          "0 1 2 3 4",
+          "4",
+          "0 1 2 3"
+        ],
+        "correcta": 3
+      },
+      {
+        "pregunta": "¿Cuántas veces se muestra «Hola»?",
+        "opciones": [
+          "1",
+          "4",
+          "6",
+          "5"
+        ],
+        "correcta": 3,
+        "codigo": "for i in range(5):\n    print(\"Hola\")",
+        "tiempo": 30
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "123",
+          "0\n1\n2",
+          "1\n2\n3\n4",
+          "1\n2\n3"
+        ],
+        "correcta": 3,
+        "codigo": "for i in range(1, 4):\n    print(i)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué range da 2, 4, 6, 8?",
+        "opciones": [
+          "range(2, 8)",
+          "range(2, 8, 2)",
+          "range(2, 9, 2)",
+          "range(8)"
+        ],
+        "correcta": 2,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Error",
+          "***",
+          "3",
+          "*\n*\n*"
+        ],
+        "correcta": 1,
+        "codigo": "print(\"*\" * 3)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "codigoOpciones": true
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "En <code>range(1, 5)</code> el 5 sí se incluye.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
+        "tiempo": 15,
+        "explicacion": "El final nunca se incluye: da 1, 2, 3 y 4."
+      },
+      {
+        "pregunta": "¿Qué le falta a esta línea?",
+        "opciones": [
+          "Nada",
+          "Un punto",
+          "Los dos puntos al final",
+          "Comillas"
+        ],
+        "correcta": 2,
+        "codigo": "for i in range(3)",
+        "tiempo": 30
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "6",
+          "10",
+          "0",
+          "3"
+        ],
+        "correcta": 0,
+        "codigo": "suma = 0\nfor n in range(4):\n    suma = suma + n\nprint(suma)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué range cuenta hacia atrás de 3 a 1?",
+        "opciones": [
+          "range(3, 1)",
+          "range(1, 3)",
+          "range(-3)",
+          "range(3, 0, -1)"
+        ],
+        "correcta": 3,
+        "codigoOpciones": true
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "🔁",
+      "texto": "<code>for</code> repite un bloque; la variable cambia en cada vuelta.",
+      "codigo": "for i in range(5):\n    print(i)"
+    },
+    {
+      "icono": "🏁",
+      "texto": "<code>range(inicio, fin, paso)</code>: el fin no se incluye."
+    },
+    {
+      "icono": "↔️",
+      "texto": "Lo que se repite va con sangría dentro del <code>for</code>."
+    }
+  ],
+  "glosario": [
+    {
+      "en": "for",
+      "es": "para (cada)",
+      "def": "Bucle que repite para cada valor de una secuencia."
+    },
+    {
+      "en": "range",
+      "es": "rango",
+      "def": "Genera una secuencia de números."
+    },
+    {
+      "en": "iteration",
+      "es": "iteración, vuelta",
+      "def": "Cada repetición de un bucle."
+    },
+    {
+      "en": "step",
+      "es": "paso, incremento",
+      "def": "De cuánto en cuánto avanza range: <code>range(0, 10, 2)</code>."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Qué números genera <code>range(2, 8)</code>?",
+      "respuesta": "2, 3, 4, 5, 6 y 7 (el 8 no se incluye)."
+    },
+    {
+      "pregunta": "¿Qué instrucciones se repiten en un for?",
+      "respuesta": "Solo las que tienen sangría debajo de la línea del for."
+    },
+    {
+      "pregunta": "¿Qué da <code>\"ab\" * 3</code>?",
+      "respuesta": "<code>\"ababab\"</code>: el texto se repite 3 veces."
+    }
+  ],
+  "plan": {
+    "activacion": "Pide al grupo dar 5 aplausos contando desde 0: «0, 1, 2, 3, 4». Así cuenta range(5).",
+    "ejemplo": "Ejemplo «La tabla del 2»: predicen cuántas líneas muestra y cambian la tabla.",
+    "practica": "Actividades: relacionar range, traza del acumulador y caza el error de sangría.",
+    "reto": "Retos rápidos y la misión «Tablas de multiplicar».",
+    "cierre": "Kahoot en equipos. Pregunta: ¿por qué range(5) no incluye el 5?"
+  }
+}

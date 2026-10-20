@@ -1,0 +1,802 @@
+{
+  "numero": 5,
+  "unidad": 3,
+  "titulo": "Comparar y decidir",
+  "icono": "⚖️",
+  "modo": 3,
+  "python": [
+    "bool",
+    "==",
+    "<",
+    ">=",
+    "if / else"
+  ],
+  "historiaIcono": "✅",
+  "historia": "La maestra de Matemáticas revisa decenas de calificaciones y quiere un programa que diga al instante si una calificación es aprobatoria. Para eso el programa tiene que <b>tomar decisiones</b>.",
+  "objetivos": [
+    "Comparar valores con <code>== != &lt; &lt;= &gt; &gt;=</code>.",
+    "Reconocer los valores lógicos <code>True</code> y <code>False</code> (tipo <code>bool</code>).",
+    "Tomar decisiones con <code>if</code> y <code>else</code>.",
+    "Usar la sangría para indicar qué instrucciones van dentro del if."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "⚖️",
+      "titulo": "Programas que deciden",
+      "texto": "Los programas toman decisiones todo el tiempo: ¿la contraseña es correcta? ¿ganaste el juego? Para decidir, primero hay que <b>comparar</b>."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "balanza",
+      "titulo": "Comparar da True o False",
+      "texto": "Una comparación es como una balanza: la respuesta siempre es <code>True</code> (verdadero) o <code>False</code> (falso). Ese tipo de dato se llama <code>bool</code>.",
+      "datos": {
+        "izq": "7",
+        "op": ">",
+        "der": "3",
+        "resultado": "True"
+      }
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Operadores de comparación",
+      "encabezados": [
+        "Símbolo",
+        "Significa",
+        "Ejemplo",
+        "Resultado"
+      ],
+      "filas": [
+        [
+          "<code>==</code>",
+          "igual a",
+          "<code>5 == 5</code>",
+          "<code>True</code>"
+        ],
+        [
+          "<code>!=</code>",
+          "distinto de",
+          "<code>5 != 3</code>",
+          "<code>True</code>"
+        ],
+        [
+          "<code>&gt;</code>",
+          "mayor que",
+          "<code>2 &gt; 7</code>",
+          "<code>False</code>"
+        ],
+        [
+          "<code>&lt;</code>",
+          "menor que",
+          "<code>2 &lt; 7</code>",
+          "<code>True</code>"
+        ],
+        [
+          "<code>&gt;=</code>",
+          "mayor o igual",
+          "<code>6 &gt;= 6</code>",
+          "<code>True</code>"
+        ],
+        [
+          "<code>&lt;=</code>",
+          "menor o igual",
+          "<code>9 &lt;= 4</code>",
+          "<code>False</code>"
+        ]
+      ]
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "comparar",
+      "titulo": "Laboratorio de comparaciones",
+      "texto": "Cambia los valores y el operador. ¿Cuándo da <code>True</code>?"
+    },
+    {
+      "tipo": "comparar",
+      "titulo": "= no es ==",
+      "texto": "Un <code>=</code> guarda; dos <code>==</code> comparan.",
+      "mal": {
+        "codigo": "if edad = 12:\n    print(\"Doce\")",
+        "nota": "Con un solo <code>=</code> Python marca <b>SyntaxError</b>."
+      },
+      "bien": {
+        "codigo": "if edad == 12:\n    print(\"Doce\")",
+        "nota": "Con <code>==</code> se pregunta si son iguales."
+      }
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "camino-if",
+      "titulo": "if / else: dos caminos",
+      "texto": "Si la condición es <code>True</code>, se ejecuta el bloque del <code>if</code>; si es <code>False</code>, el del <code>else</code>. Nunca los dos.",
+      "datos": {
+        "condicion": "edad >= 12",
+        "si": "print(\"Puedes pasar\")",
+        "no": "print(\"Todavía no\")",
+        "marcar": "si"
+      }
+    },
+    {
+      "tipo": "animacion",
+      "animacion": "decision",
+      "titulo": "La decisión en acción",
+      "texto": "Observa qué camino toma el programa según el valor."
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "si",
+      "titulo": "Simulador de if",
+      "texto": "Cambia el valor y mira qué rama se ejecuta."
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "La sangría importa",
+      "texto": "Las líneas dentro del <code>if</code> llevan <b>4 espacios</b> al inicio (sangría) y la línea del <code>if</code> termina con <b>dos puntos</b>. Pruébalo con varios números.",
+      "codigo": "n = int(input(\"Escribe un número: \"))\nif n > 0:\n    print(\"Positivo\")\nelse:\n    print(\"Cero o negativo\")\nprint(\"Fin\")",
+      "py": "Lo que no tiene sangría, como <code>print(\"Fin\")</code>, se ejecuta siempre."
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "Si escribes 3, ¿qué muestra?",
+      "opciones": [
+        "Impar",
+        "Par e Impar",
+        "Par",
+        "Nada"
+      ],
+      "correcta": 0,
+      "explicacion": "<code>3 % 2</code> es 1, no 0: la condición es False y se ejecuta el <code>else</code>.",
+      "codigo": "n = int(input())\nif n % 2 == 0:\n    print(\"Par\")\nelse:\n    print(\"Impar\")"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "La montaña rusa",
+    "descripcion": "En la feria solo pueden subir a la montaña rusa quienes tienen 12 años o más.",
+    "codigo": "edad = 11\nif edad >= 12:\n    print(\"Puedes subir a la montaña rusa\")\nelse:\n    print(\"Todavía no puedes subir\")\nprint(\"¡Diviértete en la feria!\")",
+    "prediccion": {
+      "pregunta": "¿Qué se muestra?",
+      "codigoOpciones": true,
+      "opciones": [
+        "Todavía no puedes subir\n¡Diviértete en la feria!",
+        "Puedes subir a la montaña rusa\n¡Diviértete en la feria!",
+        "Todavía no puedes subir",
+        "Puedes subir a la montaña rusa\nTodavía no puedes subir"
+      ],
+      "correcta": 0,
+      "explicacion": "11 >= 12 es False, así que se ejecuta el else. La última línea no tiene sangría: está fuera del if y se ejecuta siempre."
+    },
+    "investigar": [
+      "Cambia la edad a 12: ¿qué camino toma? ¿Y con 13?",
+      "¿Por qué «¡Diviértete en la feria!» aparece en los dos casos?",
+      "¿Qué pasaría si cambias <code>&gt;=</code> por <code>&gt;</code>?"
+    ],
+    "modificar": "Haz que la edad se pida con <code>input()</code> (no olvides <code>int()</code>)."
+  },
+  "actividades": [
+    {
+      "id": "m05-a1",
+      "tipo": "clasificar",
+      "titulo": "Si edad vale 15…",
+      "instrucciones": "La variable <code>edad</code> vale 15. Clasifica cada comparación según su resultado.",
+      "categorias": [
+        {
+          "id": "t",
+          "nombre": "True",
+          "color": "#26890C",
+          "icono": "✔"
+        },
+        {
+          "id": "f",
+          "nombre": "False",
+          "color": "#E21B3C",
+          "icono": "✘"
+        }
+      ],
+      "elementos": [
+        {
+          "texto": "edad > 12",
+          "cat": "t"
+        },
+        {
+          "texto": "edad == 15",
+          "cat": "t"
+        },
+        {
+          "texto": "edad < 10",
+          "cat": "f"
+        },
+        {
+          "texto": "edad >= 15",
+          "cat": "t"
+        },
+        {
+          "texto": "edad != 15",
+          "cat": "f"
+        },
+        {
+          "texto": "edad <= 14",
+          "cat": "f"
+        }
+      ]
+    },
+    {
+      "id": "m05-a2",
+      "tipo": "ordenar",
+      "titulo": "¿Positivo?",
+      "instrucciones": "Ordena las piezas y usa ◀ ▶ para poner la sangría donde va.",
+      "lineas": [
+        "n = int(input(\"Número: \"))",
+        "if n > 0:",
+        "    print(\"Positivo\")",
+        "else:",
+        "    print(\"No es positivo\")"
+      ],
+      "sangria": true,
+      "entradas": [
+        "5"
+      ]
+    },
+    {
+      "id": "m05-a3",
+      "tipo": "error",
+      "titulo": "Caza el error: los dos puntos",
+      "instrucciones": "Este programa tiene <b>un error</b>. Toca la línea donde está.",
+      "codigo": "clave = input(\"Contraseña: \")\nif clave == \"1234\"\n    print(\"Acceso concedido\")\nelse:\n    print(\"Acceso denegado\")",
+      "tipoError": "SyntaxError",
+      "explicacion": "A la línea del <code>if</code> le faltan los <b>dos puntos</b> al final.",
+      "correccion": "if clave == \"1234\":",
+      "linea": 2,
+      "entradas": [
+        "1234"
+      ]
+    },
+    {
+      "id": "m05-a4",
+      "tipo": "completar",
+      "titulo": "¿Par o impar?",
+      "instrucciones": "Escribe lo que falta en cada hueco.",
+      "codigo": "n = int(input(\"Número: \"))\nif n % 2 ⟦==⟧ 0:\n    print(\"Par\")\n⟦else⟧:\n    print(\"Impar\")",
+      "opciones": [
+        "==",
+        "=",
+        "else",
+        "elif"
+      ],
+      "entradas": [
+        "8"
+      ]
+    },
+    {
+      "id": "m05-a5",
+      "tipo": "salida",
+      "titulo": "¿Qué camino toma?",
+      "instrucciones": "¿Qué aparece en la pantalla? Elige la opción correcta.",
+      "codigo": "temperatura = 25\nif temperatura > 30:\n    print(\"Hace calor\")\nelse:\n    print(\"Está agradable\")\nprint(\"Listo\")",
+      "respuesta": "Está agradable\nListo",
+      "opciones": [
+        "Hace calor\nEstá agradable\nListo",
+        "Está agradable\nListo",
+        "Hace calor\nListo",
+        "Está agradable"
+      ],
+      "correcta": 1
+    },
+    {
+      "id": "m05-a6",
+      "tipo": "vf",
+      "titulo": "¿True o False?",
+      "instrucciones": "¿Verdadero o falso? ¡Contra reloj! Necesitas 70 % de aciertos.",
+      "tiempo": 12,
+      "afirmaciones": [
+        {
+          "texto": "<code>5 &gt; 3</code> da True",
+          "correcta": true
+        },
+        {
+          "texto": "<code>4 == 4.0</code> da True",
+          "correcta": true,
+          "explicacion": "Python compara el valor: 4 y 4.0 valen lo mismo."
+        },
+        {
+          "texto": "<code>\"Ana\" == \"ana\"</code> da True",
+          "correcta": false,
+          "explicacion": "Las mayúsculas cuentan: son textos distintos."
+        },
+        {
+          "texto": "<code>7 &lt;= 7</code> da True",
+          "correcta": true
+        },
+        {
+          "texto": "<code>10 != 10</code> da True",
+          "correcta": false
+        },
+        {
+          "texto": "<code>3 &gt;= 8</code> da True",
+          "correcta": false
+        }
+      ]
+    }
+  ],
+  "retos": [
+    {
+      "id": "m05-r1",
+      "titulo": "¿Es positivo?",
+      "resumen": "Tu primera condición.",
+      "enunciado": "Completa la condición del <code>if</code> (en el hueco ___) para que el programa diga <code>Positivo</code> si el número es mayor que 0, y <code>No es positivo</code> si no.",
+      "inicio": "n = int(input(\"Escribe un número: \"))\nif «»:\n    print(\"Positivo\")\nelse:\n    print(\"No es positivo\")",
+      "requiere": [
+        "if",
+        "else"
+      ],
+      "pruebas": [
+        {
+          "nombre": "5",
+          "entradas": [
+            "5"
+          ],
+          "contiene": [
+            "Positivo"
+          ],
+          "no_contiene": [
+            "No es"
+          ]
+        },
+        {
+          "nombre": "-3",
+          "entradas": [
+            "-3"
+          ],
+          "contiene": [
+            "No es positivo"
+          ]
+        },
+        {
+          "nombre": "0",
+          "entradas": [
+            "0"
+          ],
+          "contiene": [
+            "No es positivo"
+          ]
+        }
+      ],
+      "solucion": "n = int(input(\"Escribe un número: \"))\nif n > 0:\n    print(\"Positivo\")\nelse:\n    print(\"No es positivo\")",
+      "pistas": [
+        "Mayor que se escribe <code>&gt;</code>.",
+        "La condición compara la variable <code>n</code> con 0.",
+        "Escribe en el hueco: <code>n &gt; 0</code>."
+      ]
+    },
+    {
+      "id": "m05-r2",
+      "titulo": "La contraseña",
+      "resumen": "Compara textos con ==.",
+      "enunciado": "Si la contraseña escrita es <code>1234</code>, muestra <code>Acceso concedido</code>; si no, <code>Acceso denegado</code>.",
+      "inicio": "clave = input(\"Contraseña: \")\nif «»:\n    print(\"Acceso concedido\")\nelse:\n    print(___)",
+      "requiere": [
+        "=="
+      ],
+      "pruebas": [
+        {
+          "nombre": "Correcta",
+          "entradas": [
+            "1234"
+          ],
+          "contiene": [
+            "Acceso concedido"
+          ],
+          "no_contiene": [
+            "denegado"
+          ]
+        },
+        {
+          "nombre": "Incorrecta",
+          "entradas": [
+            "4321"
+          ],
+          "contiene": [
+            "Acceso denegado"
+          ],
+          "no_contiene": [
+            "concedido"
+          ]
+        }
+      ],
+      "solucion": "clave = input(\"Contraseña: \")\nif clave == \"1234\":\n    print(\"Acceso concedido\")\nelse:\n    print(\"Acceso denegado\")",
+      "pistas": [
+        "Para comparar se usan dos signos: <code>==</code>.",
+        "input() da texto, así que compara con el texto <code>\"1234\"</code> (con comillas).",
+        "La condición es <code>clave == \"1234\"</code> y el otro mensaje es <code>\"Acceso denegado\"</code>."
+      ]
+    },
+    {
+      "id": "m05-r3",
+      "titulo": "¿Par o impar?",
+      "resumen": "El residuo decide.",
+      "enunciado": "Pide un número entero y di si es <code>Par</code> o <code>Impar</code>. Un número es par si el residuo de dividirlo entre 2 es 0.",
+      "inicio": "n = int(input(\"Número: \"))\nif «»:\n    print(\"Par\")\nelse:\n    print(\"Impar\")",
+      "requiere": [
+        "%",
+        "=="
+      ],
+      "pruebas": [
+        {
+          "nombre": "4",
+          "entradas": [
+            "4"
+          ],
+          "contiene": [
+            "Par"
+          ],
+          "no_contiene": [
+            "Impar"
+          ]
+        },
+        {
+          "nombre": "7",
+          "entradas": [
+            "7"
+          ],
+          "contiene": [
+            "Impar"
+          ]
+        },
+        {
+          "nombre": "0",
+          "entradas": [
+            "0"
+          ],
+          "contiene": [
+            "Par"
+          ],
+          "no_contiene": [
+            "Impar"
+          ]
+        }
+      ],
+      "solucion": "n = int(input(\"Número: \"))\nif n % 2 == 0:\n    print(\"Par\")\nelse:\n    print(\"Impar\")",
+      "pistas": [
+        "El residuo se calcula con <code>%</code>.",
+        "Compara <code>n % 2</code> con 0 usando <code>==</code>.",
+        "La condición es <code>n % 2 == 0</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m05-mision",
+    "titulo": "¿Aprobado o reprobado?",
+    "historia": "La maestra necesita revisar calificaciones rápidamente.",
+    "enunciado": "Pide una calificación (puede tener decimales, de 0 a 10). Si es <b>6 o más</b>, muestra <code>Aprobado</code>; si no, muestra <code>Reprobado</code>.",
+    "requiere": [
+      "input",
+      "float",
+      "if",
+      "else"
+    ],
+    "pruebas": [
+      {
+        "nombre": "8.5",
+        "entradas": [
+          "8.5"
+        ],
+        "contiene": [
+          "Aprobado"
+        ],
+        "no_contiene": [
+          "Reprobado"
+        ]
+      },
+      {
+        "nombre": "6 (justo en el límite)",
+        "entradas": [
+          "6"
+        ],
+        "contiene": [
+          "Aprobado"
+        ],
+        "no_contiene": [
+          "Reprobado"
+        ]
+      },
+      {
+        "nombre": "5.9",
+        "entradas": [
+          "5.9"
+        ],
+        "contiene": [
+          "Reprobado"
+        ]
+      }
+    ],
+    "pistas": [
+      "Necesitas <code>float(input(...))</code> y un <code>if</code> con <code>else</code>.",
+      "Primero se pide la calificación; luego la decisión con dos caminos.",
+      "La condición es <code>calificacion >= 6</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "Escribe la condición en el hueco ✎ y el mensaje que falta.",
+        "inicio": "calificacion = float(input(\"Calificación: \"))\nif «»:\n    print(\"Aprobado\")\nelse:\n    print(___)",
+        "solucion": "calificacion = float(input(\"Calificación: \"))\nif calificacion >= 6:\n    print(\"Aprobado\")\nelse:\n    print(\"Reprobado\")"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "calificacion = float(input(\"Calificación: \"))\nif calificacion >= 6:\n    print(\"Aprobado\")\nelse:\n    print(\"Reprobado\")"
+      },
+      "maestro": {
+        "enunciado": "además, si la calificación es exactamente 10 muestra también <code>¡Excelente!</code>. Usa otro <code>if</code> después del primero.",
+        "inicio": "",
+        "pruebas": [
+          {
+            "nombre": "10",
+            "entradas": [
+              "10"
+            ],
+            "contiene": [
+              "Aprobado",
+              "Excelente"
+            ]
+          },
+          {
+            "nombre": "8",
+            "entradas": [
+              "8"
+            ],
+            "contiene": [
+              "Aprobado"
+            ],
+            "no_contiene": [
+              "Excelente",
+              "Reprobado"
+            ]
+          },
+          {
+            "nombre": "4",
+            "entradas": [
+              "4"
+            ],
+            "contiene": [
+              "Reprobado"
+            ],
+            "no_contiene": [
+              "Excelente"
+            ]
+          }
+        ],
+        "solucion": "calificacion = float(input(\"Calificación: \"))\nif calificacion >= 6:\n    print(\"Aprobado\")\nelse:\n    print(\"Reprobado\")\nif calificacion == 10:\n    print(\"¡Excelente!\")"
+      }
+    }
+  },
+  "extra": {
+    "id": "m05-extra",
+    "titulo": "¿Ya puedes votar?",
+    "historia": "En México se vota a partir de los 18 años.",
+    "enunciado": "Pide el año de nacimiento y calcula la edad en 2026. Si es de 18 o más, muestra <code>Puedes votar</code>; si no, muestra cuántos años faltan: <code>Te faltan 5 años</code>.",
+    "inicio": "",
+    "requiere": [
+      "if",
+      "else"
+    ],
+    "pruebas": [
+      {
+        "nombre": "Nació en 2000",
+        "entradas": [
+          "2000"
+        ],
+        "contiene": [
+          "Puedes votar"
+        ]
+      },
+      {
+        "nombre": "Nació en 2013",
+        "entradas": [
+          "2013"
+        ],
+        "contiene": [
+          "Te faltan 5 años"
+        ]
+      },
+      {
+        "nombre": "Nació en 2008",
+        "entradas": [
+          "2008"
+        ],
+        "contiene": [
+          "Puedes votar"
+        ]
+      }
+    ],
+    "solucion": "anio = int(input(\"¿En qué año naciste? \"))\nedad = 2026 - anio\nif edad >= 18:\n    print(\"Puedes votar\")\nelse:\n    print(\"Te faltan\", 18 - edad, \"años\")"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué resultado da <code>8 &gt; 3</code>?",
+        "opciones": [
+          "8",
+          "False",
+          "True",
+          "Error"
+        ],
+        "correcta": 2
+      },
+      {
+        "pregunta": "¿Qué símbolo pregunta si dos valores son iguales?",
+        "opciones": [
+          "=",
+          ">=",
+          "==",
+          "!="
+        ],
+        "correcta": 2,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "Si escribes 7, ¿qué muestra?",
+        "opciones": [
+          "Aprobado Reprobado",
+          "Nada",
+          "Reprobado",
+          "Aprobado"
+        ],
+        "correcta": 3,
+        "codigo": "cal = int(input())\nif cal >= 6:\n    print(\"Aprobado\")\nelse:\n    print(\"Reprobado\")",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "entradas": [
+          "7"
+        ]
+      },
+      {
+        "pregunta": "¿Qué le falta a esta línea?",
+        "opciones": [
+          "Comillas",
+          "Dos puntos al final",
+          "Un punto y coma",
+          "Paréntesis"
+        ],
+        "correcta": 1,
+        "codigo": "if edad >= 18",
+        "tiempo": 30
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "<code>\"Hola\" == \"hola\"</code> da True.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
+        "tiempo": 15,
+        "explicacion": "Las mayúsculas cuentan: son textos distintos."
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Mayor\nFin",
+          "Nada",
+          "Fin",
+          "Mayor"
+        ],
+        "correcta": 2,
+        "codigo": "x = 3\nif x > 5:\n    print(\"Mayor\")\nprint(\"Fin\")",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Cuántos espacios se usan normalmente para la sangría en Python?",
+        "opciones": [
+          "1",
+          "4",
+          "10",
+          "0"
+        ],
+        "correcta": 1
+      },
+      {
+        "pregunta": "¿Qué tipo de dato es <code>True</code>?",
+        "opciones": [
+          "int",
+          "str",
+          "bool",
+          "float"
+        ],
+        "correcta": 2
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Par",
+          "Impar",
+          "Nada",
+          "Error"
+        ],
+        "correcta": 1,
+        "codigo": "n = 9\nif n % 2 == 0:\n    print(\"Par\")\nelse:\n    print(\"Impar\")",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "En un if / else se pueden ejecutar los dos bloques.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
+        "tiempo": 15,
+        "explicacion": "Solo uno: el del if si la condición es True, o el del else si es False."
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "⚖️",
+      "texto": "Las comparaciones (<code>== != &gt; &lt; &gt;= &lt;=</code>) dan <code>True</code> o <code>False</code>."
+    },
+    {
+      "icono": "🔀",
+      "texto": "<code>if</code> / <code>else</code> elige un camino según la condición.",
+      "codigo": "if edad >= 12:\n    print(\"Puedes pasar\")\nelse:\n    print(\"Todavía no\")"
+    },
+    {
+      "icono": "↔️",
+      "texto": "No olvides los dos puntos <code>:</code> y la sangría de 4 espacios."
+    }
+  ],
+  "glosario": [
+    {
+      "en": "if",
+      "es": "si",
+      "def": "Ejecuta un bloque solo si la condición es verdadera."
+    },
+    {
+      "en": "else",
+      "es": "si no",
+      "def": "Lo que se ejecuta cuando la condición del if es falsa."
+    },
+    {
+      "en": "condition",
+      "es": "condición",
+      "def": "Expresión que da True o False."
+    },
+    {
+      "en": "bool (boolean)",
+      "es": "booleano, lógico",
+      "def": "Tipo de dato con dos valores: <code>True</code> y <code>False</code>."
+    },
+    {
+      "en": "indentation",
+      "es": "sangría",
+      "def": "Espacios al inicio de una línea; indican qué va dentro de un bloque."
+    },
+    {
+      "en": "IndentationError",
+      "es": "error de sangría",
+      "def": "Aparece cuando los espacios al inicio de una línea no son los esperados."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Qué diferencia hay entre <code>=</code> y <code>==</code>?",
+      "respuesta": "<code>=</code> guarda un valor en una variable; <code>==</code> pregunta si dos valores son iguales y da True o False."
+    },
+    {
+      "pregunta": "¿Cómo sabe Python qué instrucciones están dentro del if?",
+      "respuesta": "Por la sangría: las líneas con 4 espacios más que el if están dentro de él."
+    },
+    {
+      "pregunta": "¿Qué da <code>6 >= 6</code>?",
+      "respuesta": "True, porque 6 es mayor <b>o igual</b> que 6."
+    }
+  ],
+  "plan": {
+    "activacion": "Juego «de pie o sentados»: di afirmaciones (\"7 es mayor que 3\") y el grupo se pone de pie si es True.",
+    "ejemplo": "Ejemplo «La montaña rusa»: predicen qué pasa con distintas estaturas.",
+    "practica": "Actividades: clasificar True/False, ordenar con sangría y caza el error de los dos puntos.",
+    "reto": "Retos rápidos y la misión «¿Aprobado o reprobado?».",
+    "cierre": "Kahoot en equipos. Pregunta final: ¿qué diferencia hay entre = y ==?"
+  }
+}

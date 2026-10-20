@@ -1,0 +1,15 @@
+{
+  "idCurso": "mision-python",
+  "nombreCurso": "Misión Python",
+  "nombreCorto": "Misión Python",
+  "lema": "Aprende Python jugando: teoría con dibujos, retos, Kahoots y logros. ¡Despega, cadete!",
+  "descripcion": "Aprende Python desde cero: teoría con dibujos, laboratorios, juegos, retos de programación, Kahoots y logros. Para secundaria; funciona en el navegador.",
+  "pinDocente": "2468",
+  "urlPublica": "https://carlossm17.github.io/mision-python/",
+  "carpetaPrivada": "../mision-python-privado",
+  "evaluacion": {
+    "pesos": { "retos": 35, "actividades": 15, "kahoots": 20, "proyectoFinal": 30 },
+    "creditoExplorador": 0.5,
+    "sesionProyectoFinal": 15
+  }
+}

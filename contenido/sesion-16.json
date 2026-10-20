@@ -1,0 +1,134 @@
+{
+  "numero": 16,
+  "unidad": 7,
+  "titulo": "Presentación de proyectos",
+  "icono": "🎓",
+  "modo": 4,
+  "python": [],
+  "historiaIcono": "🎉",
+  "historia": "¡Es día de presentaciones! Cada quien mostrará su proyecto al grupo, evaluará el de alguien más y hará la prueba final para ver cuánto avanzó desde la Sesión 0.",
+  "objetivos": [
+    "Presentar tu proyecto y explicar cómo funciona tu código.",
+    "Evaluar con la rúbrica el proyecto de un compañero o compañera, con respeto y con sugerencias útiles.",
+    "Responder la prueba final y comparar con tu prueba diagnóstica."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🎤",
+      "titulo": "¡Presenta tu proyecto!",
+      "texto": "Hoy muestras tu programa al grupo. En 3 minutos vas a explicar qué hace, demostrarlo y contar qué aprendiste."
+    },
+    {
+      "tipo": "pasos",
+      "titulo": "Cómo presentar (3 minutos)",
+      "pasos": [
+        {
+          "icono": "💬",
+          "texto": "<b>¿Qué hace?</b> Explica la idea de tu programa en una frase."
+        },
+        {
+          "icono": "▶️",
+          "texto": "<b>Demostración</b>: ejecútalo y juega una partida frente al grupo."
+        },
+        {
+          "icono": "🔍",
+          "texto": "<b>Una parte del código</b>: elige una función y explícala línea por línea."
+        },
+        {
+          "icono": "🌱",
+          "texto": "<b>¿Qué aprendiste y qué mejorarías?</b>"
+        }
+      ]
+    },
+    {
+      "tipo": "idea",
+      "icono": "🔬",
+      "titulo": "Como una feria de ciencias",
+      "texto": "En una feria no basta con traer el experimento: hay que explicar qué hiciste y por qué. Tu código es tu experimento."
+    },
+    {
+      "tipo": "pasos",
+      "titulo": "Cómo coevaluar",
+      "pasos": [
+        {
+          "icono": "👀",
+          "texto": "Pon atención a la presentación completa."
+        },
+        {
+          "icono": "📋",
+          "texto": "Usa la rúbrica: elige el nivel de cada criterio."
+        },
+        {
+          "icono": "💚",
+          "texto": "Di algo que te gustó (¡sé específico!)."
+        },
+        {
+          "icono": "💡",
+          "texto": "Da una sugerencia amable para mejorar."
+        }
+      ],
+      "py": "Una buena sugerencia empieza con «Podrías…» y no con «Está mal…»."
+    },
+    {
+      "tipo": "pasos",
+      "titulo": "Cierre del curso",
+      "pasos": [
+        {
+          "icono": "📝",
+          "texto": "Haz la <b>prueba final</b>: son las mismas preguntas de la Misión 0. ¡Compara cuánto avanzaste!"
+        },
+        {
+          "icono": "🏆",
+          "texto": "Juega el <b>Gran Kahoot final</b>."
+        },
+        {
+          "icono": "🎓",
+          "texto": "Abre tu <b>certificado</b> de Misión Python."
+        }
+      ]
+    }
+  ],
+  "coevaluacion": {
+    "titulo": "Coevaluación del proyecto de un compañero",
+    "instrucciones": "Después de ver la presentación, evalúa el proyecto con la rúbrica. Puedes hacer más de una coevaluación."
+  },
+  "kahoot": {
+    "titulo": "🏆 Gran Kahoot final",
+    "aleatorio": 20
+  },
+  "prueba": "final",
+  "certificado": true,
+  "resumen": [
+    {
+      "icono": "🎤",
+      "texto": "Presentar es explicar qué hace tu programa y cómo lo hiciste."
+    },
+    {
+      "icono": "🤝",
+      "texto": "Coevaluar con respeto ayuda a todos a mejorar."
+    },
+    {
+      "icono": "🚀",
+      "texto": "¡Ya programas en Python! Sigue creando."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Qué concepto del curso te costó más trabajo y cómo lo superaste?",
+      "respuesta": "Respuesta personal. Comparte tu reflexión con tu docente o escríbela en el comentario del resumen."
+    },
+    {
+      "pregunta": "¿Qué te gustaría programar después de este curso?",
+      "respuesta": "Respuesta personal. Algunas ideas: juegos con gráficos (Pygame), proyectos de ciencia con datos, el Puzzle de 15 o la Torre de Hanói."
+    }
+  ],
+  "plan": {
+    "activacion": "Sortea el orden de las presentaciones con <code>random.choice</code> en el proyector.",
+    "ejemplo": "Modela una presentación de 3 minutos con el proyecto de ejemplo.",
+    "practica": "Presentaciones; el grupo coevalúa en la plataforma.",
+    "reto": "Prueba final individual (las mismas preguntas de la diagnóstica).",
+    "cierre": "Gran Kahoot final en equipos y entrega de certificados.",
+    "notas": "Recoge los archivos de progreso (Mi progreso → Exportar) y consolídalos en el Panel docente."
+  }
+}

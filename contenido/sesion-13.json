@@ -1,0 +1,567 @@
+{
+  "numero": 13,
+  "unidad": 6,
+  "titulo": "Crear instrucciones propias",
+  "icono": "🏗️",
+  "modo": 3,
+  "python": [
+    "def",
+    "parámetros"
+  ],
+  "historiaIcono": "🏭",
+  "historia": "Imagina que pudieras inventar tus propias instrucciones de Python: <code>saludar(\"Ana\")</code>, <code>dibujar_marco(\"Hola\")</code>… ¡Puedes! En Scratch se llamaban «Mis bloques»; en Python se llaman <b>funciones</b>.",
+  "objetivos": [
+    "Definir funciones propias con <code>def</code>.",
+    "Usar <b>parámetros</b> para que una función trabaje con distintos datos.",
+    "Llamar una función las veces que haga falta.",
+    "Organizar un programa en partes con nombre."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🏗️",
+      "titulo": "Inventa tus propias instrucciones",
+      "texto": "Python trae instrucciones como <code>print()</code> o <code>len()</code>. Con <code>def</code> puedes crear las tuyas: se llaman <b>funciones</b>."
+    },
+    {
+      "tipo": "idea",
+      "icono": "📦",
+      "titulo": "Definir y llamar",
+      "texto": "Primero <b>defines</b> la función (le enseñas a Python qué hacer). Después la <b>llamas</b> por su nombre cada vez que la necesites.",
+      "codigo": "def saludar():\n    print(\"¡Hola, tripulación!\")\n    print(\"Prepárense para despegar\")\n\nsaludar()\nsaludar()",
+      "salida": "¡Hola, tripulación!\nPrepárense para despegar\n¡Hola, tripulación!\nPrepárense para despegar"
+    },
+    {
+      "tipo": "animacion",
+      "animacion": "funcion",
+      "titulo": "La función trabajando",
+      "texto": "Observa cómo el programa salta a la función y luego regresa."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "maquina-funcion",
+      "titulo": "Parámetros: datos que entran",
+      "texto": "Un <b>parámetro</b> es una variable que recibe un dato cuando llamas la función.",
+      "datos": {
+        "nombre": "saludo",
+        "parametro": "nombre",
+        "entrada": "\"Ana\"",
+        "codigo": "print(f\"¡Hola, {nombre}!\")",
+        "salida": "¡Hola, Ana!"
+      },
+      "codigo": "def saludo(nombre):\n    print(f\"¡Hola, {nombre}!\")\n\nsaludo(\"Ana\")\nsaludo(\"Leo\")"
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "funciones",
+      "titulo": "Laboratorio de funciones",
+      "texto": "Cambia el dato de entrada y mira qué hace la función."
+    },
+    {
+      "tipo": "comparar",
+      "titulo": "Primero definir, después llamar",
+      "texto": "Python lee de arriba hacia abajo: la función debe estar definida antes de usarla.",
+      "mal": {
+        "codigo": "linea()\n\ndef linea():\n    print(\"----------\")",
+        "nota": "<b>NameError</b>: cuando se llama a <code>linea()</code>, todavía no existe."
+      },
+      "bien": {
+        "codigo": "def linea():\n    print(\"----------\")\n\nlinea()",
+        "nota": "Primero se define, luego se usa."
+      }
+    },
+    {
+      "tipo": "idea",
+      "icono": "✌️",
+      "titulo": "Varios parámetros",
+      "texto": "Separa los parámetros con comas. Los datos se acomodan en el mismo orden.",
+      "codigo": "def presentar(nombre, edad):\n    print(f\"{nombre} tiene {edad} años\")\n\npresentar(\"Luis\", 13)",
+      "salida": "Luis tiene 13 años"
+    },
+    {
+      "tipo": "pasos",
+      "titulo": "¿Para qué sirven las funciones?",
+      "pasos": [
+        {
+          "icono": "♻️",
+          "texto": "<b>Reutilizar</b>: escribes una vez y usas muchas veces."
+        },
+        {
+          "icono": "🧩",
+          "texto": "<b>Dividir</b> un problema grande en partes pequeñas."
+        },
+        {
+          "icono": "📖",
+          "texto": "<b>Leer</b> mejor: el nombre explica qué hace."
+        },
+        {
+          "icono": "🔧",
+          "texto": "<b>Corregir</b> en un solo lugar."
+        }
+      ]
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "¿Cuántas veces se muestra «Hola»?",
+      "opciones": [
+        "0",
+        "3",
+        "1",
+        "4"
+      ],
+      "correcta": 1,
+      "explicacion": "Definir no ejecuta nada; cada llamada muestra «Hola» una vez.",
+      "codigo": "def saludar():\n    print(\"Hola\")\n\nsaludar()\nsaludar()\nsaludar()"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "Bienvenida al club",
+    "descripcion": "Una función que saluda a quien le digas.",
+    "codigo": "def saludar(nombre):\n    print(\"¡Hola,\", nombre + \"!\")\n    print(\"Bienvenido al club\")\n\nsaludar(\"Ana\")\nsaludar(\"Luis\")",
+    "prediccion": {
+      "pregunta": "¿Cuántos renglones se muestran en total?",
+      "opciones": [
+        "4",
+        "2",
+        "3",
+        "6"
+      ],
+      "correcta": 0,
+      "explicacion": "La función muestra 2 renglones y se llama 2 veces: 4 renglones."
+    },
+    "investigar": [
+      "Con 👣 Paso a paso: ¿en qué momento entra el programa a la función? Observa la tabla «Dentro de la función».",
+      "¿Qué pasa si llamas <code>saludar()</code> sin nombre?",
+      "¿Qué pasa si mueves las llamadas arriba del <code>def</code>?"
+    ],
+    "modificar": "Agrega un segundo parámetro <code>club</code> para que el mensaje diga a qué club se da la bienvenida."
+  },
+  "actividades": [
+    {
+      "id": "m13-a1",
+      "tipo": "ordenar",
+      "titulo": "Tu primera función",
+      "instrucciones": "Arma un programa que muestre el título entre dos líneas. Acomoda la sangría.",
+      "lineas": [
+        "def linea():",
+        "    print(\"----------\")",
+        "linea()",
+        "print(\"Misión Python\")",
+        "linea()"
+      ],
+      "sangria": true
+    },
+    {
+      "id": "m13-a2",
+      "tipo": "salida",
+      "titulo": "Llamadas",
+      "instrucciones": "Escribe exactamente lo que aparecerá en la pantalla.",
+      "codigo": "def eco(palabra):\n    print(palabra, palabra)\n\neco(\"hola\")\neco(\"adiós\")",
+      "respuesta": "hola hola\nadiós adiós"
+    },
+    {
+      "id": "m13-a3",
+      "tipo": "error",
+      "titulo": "Caza el error: el orden",
+      "instrucciones": "Este programa tiene <b>un error</b>. Toca la línea donde está.",
+      "codigo": "saludo(\"Ana\")\n\ndef saludo(nombre):\n    print(\"Hola,\", nombre)",
+      "tipoError": "NameError",
+      "explicacion": "La función se llama en la línea 1, pero se define después. La llamada debe ir al final, cuando la función ya existe.",
+      "correccion": "# mueve saludo(\"Ana\") al final",
+      "linea": 1
+    },
+    {
+      "id": "m13-a4",
+      "tipo": "completar",
+      "titulo": "El cuadrado",
+      "instrucciones": "Completa la definición y llama la función con el número 3.",
+      "codigo": "⟦def⟧ cuadrado(n):\n    print(\"El cuadrado de\", n, \"es\", n * n)\n\ncuadrado(⟦3⟧)",
+      "opciones": [
+        "def",
+        "fun",
+        "3",
+        "n"
+      ]
+    },
+    {
+      "id": "m13-a5",
+      "tipo": "relacionar",
+      "titulo": "Vocabulario de funciones",
+      "instrucciones": "Une cada elemento con su pareja.",
+      "pares": [
+        [
+          "<code>def</code>",
+          "Palabra para crear una función"
+        ],
+        [
+          "Parámetro",
+          "Variable que recibe un dato"
+        ],
+        [
+          "Llamar",
+          "Usar la función por su nombre"
+        ],
+        [
+          "<code>saludo(\"Ana\")</code>",
+          "Una llamada con un dato"
+        ],
+        [
+          "Sangría",
+          "Marca qué líneas son parte de la función"
+        ]
+      ],
+      "codigoIzq": false,
+      "codigoDer": false
+    },
+    {
+      "id": "m13-a6",
+      "tipo": "teclear",
+      "titulo": "Dedos veloces: def",
+      "instrucciones": "Escribe cada línea exactamente igual. ¡Entrena tus dedos de programador!",
+      "lineas": [
+        "def saludo(nombre):",
+        "    print(\"Hola,\", nombre)"
+      ],
+      "xp": 40
+    }
+  ],
+  "retos": [
+    {
+      "id": "m13-r1",
+      "titulo": "Tu primera función",
+      "resumen": "Definir y llamar.",
+      "enunciado": "Define la función <code>linea()</code> que muestre <code>----------</code> (10 guiones) y llámala 3 veces.",
+      "inicio": "def linea():\n    ___\n\n# Llama la función 3 veces\n",
+      "requiere": [
+        "def"
+      ],
+      "pruebas": [
+        {
+          "exacto": "----------\n----------\n----------"
+        }
+      ],
+      "solucion": "def linea():\n    print(\"----------\")\n\nlinea()\nlinea()\nlinea()",
+      "pistas": [
+        "Dentro de la función va un print con sangría.",
+        "Para llamarla se escribe su nombre con paréntesis, sin sangría, debajo de la definición.",
+        "Escribe <code>linea()</code> tres veces."
+      ]
+    },
+    {
+      "id": "m13-r2",
+      "titulo": "El cuadrado",
+      "resumen": "Un parámetro.",
+      "enunciado": "Define <code>cuadrado(n)</code> que muestre <code>El cuadrado de 3 es 9</code>. Llámala con 3 y con 5.",
+      "inicio": "def cuadrado(n):\n    print(\"El cuadrado de\", n, \"es\", ___)\n\ncuadrado(3)\ncuadrado(___)",
+      "requiere": [
+        "def"
+      ],
+      "pruebas": [
+        {
+          "exacto": "El cuadrado de 3 es 9\nEl cuadrado de 5 es 25"
+        }
+      ],
+      "solucion": "def cuadrado(n):\n    print(\"El cuadrado de\", n, \"es\", n * n)\n\ncuadrado(3)\ncuadrado(5)",
+      "pistas": [
+        "El cuadrado de un número es el número por sí mismo.",
+        "Dentro de la función, el número se llama <code>n</code>.",
+        "Los huecos son <code>n * n</code> y <code>5</code>."
+      ]
+    },
+    {
+      "id": "m13-r3",
+      "titulo": "Presentaciones",
+      "resumen": "Dos parámetros.",
+      "enunciado": "Define <code>presentar(nombre, edad)</code> que muestre <code>Luis tiene 13 años</code>. Pide un nombre y una edad y llama la función con ellos.",
+      "inicio": "def presentar(___):\n    print(nombre, \"tiene\", edad, \"años\")\n\nn = input(\"Nombre: \")\ne = input(\"Edad: \")\n___",
+      "requiere": [
+        "def"
+      ],
+      "pruebas": [
+        {
+          "nombre": "Luis, 13",
+          "entradas": [
+            "Luis",
+            "13"
+          ],
+          "contiene": [
+            "Luis tiene 13 años"
+          ]
+        },
+        {
+          "nombre": "Ana, 12",
+          "entradas": [
+            "Ana",
+            "12"
+          ],
+          "contiene": [
+            "Ana tiene 12 años"
+          ]
+        }
+      ],
+      "solucion": "def presentar(nombre, edad):\n    print(nombre, \"tiene\", edad, \"años\")\n\nn = input(\"Nombre: \")\ne = input(\"Edad: \")\npresentar(n, e)",
+      "pistas": [
+        "Los parámetros van separados por comas.",
+        "Al llamar la función, los valores van en el mismo orden que los parámetros.",
+        "Queda <code>def presentar(nombre, edad):</code> y al final <code>presentar(n, e)</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m13-mision",
+    "titulo": "Fábrica de saludos y marcos",
+    "historia": "El club de lectura quiere letreros de bienvenida automáticos.",
+    "enunciado": "Define dos funciones:<ul><li><code>saludo(nombre)</code>: muestra <code>¡Hola, Ana!</code>.</li><li><code>marco(texto)</code>: muestra el texto dentro de un marco de asteriscos; el borde mide <code>len(texto) + 4</code>.</li></ul>Luego pide un nombre, llama <code>saludo(nombre)</code> y después <code>marco(\"Bienvenido \" + nombre)</code>. Para Ana:<br><code>¡Hola, Ana!</code><br><code>******************</code><br><code>* Bienvenido Ana *</code><br><code>******************</code>",
+    "requiere": [
+      "def*2"
+    ],
+    "pruebas": [
+      {
+        "nombre": "Ana",
+        "entradas": [
+          "Ana"
+        ],
+        "exacto": "¡Hola, Ana!\n******************\n* Bienvenido Ana *\n******************"
+      },
+      {
+        "nombre": "Luis",
+        "entradas": [
+          "Luis"
+        ],
+        "exacto": "¡Hola, Luis!\n*******************\n* Bienvenido Luis *\n*******************"
+      }
+    ],
+    "pistas": [
+      "Dos <code>def</code> con un parámetro cada uno; en <code>marco</code> usa <code>\"*\" * (len(texto) + 4)</code>.",
+      "Orden: las dos definiciones arriba; abajo, pedir el nombre y llamar las dos funciones.",
+      "La línea del medio del marco es <code>print(\"* \" + texto + \" *\")</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "Completa las partes marcadas con ___.",
+        "inicio": "def saludo(nombre):\n    print(\"¡Hola, \" + nombre + \"!\")\n\ndef marco(texto):\n    borde = \"*\" * (len(___) + 4)\n    print(borde)\n    print(\"* \" + texto + \" *\")\n    print(___)\n\nnombre = input(\"Nombre: \")\nsaludo(___)\nmarco(\"Bienvenido \" + nombre)",
+        "solucion": "def saludo(nombre):\n    print(\"¡Hola, \" + nombre + \"!\")\n\ndef marco(texto):\n    borde = \"*\" * (len(texto) + 4)\n    print(borde)\n    print(\"* \" + texto + \" *\")\n    print(borde)\n\nnombre = input(\"Nombre: \")\nsaludo(nombre)\nmarco(\"Bienvenido \" + nombre)"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "def saludo(nombre):\n    print(\"¡Hola, \" + nombre + \"!\")\n\ndef marco(texto):\n    borde = \"*\" * (len(texto) + 4)\n    print(borde)\n    print(\"* \" + texto + \" *\")\n    print(borde)\n\nnombre = input(\"Nombre: \")\nsaludo(nombre)\nmarco(\"Bienvenido \" + nombre)"
+      },
+      "maestro": {
+        "enunciado": "agrega a <code>marco</code> un segundo parámetro <code>simbolo</code> para elegir el carácter del borde, y llama <code>marco(\"Bienvenido \" + nombre, \"#\")</code>.",
+        "inicio": "",
+        "pruebas": [
+          {
+            "nombre": "Ana con #",
+            "entradas": [
+              "Ana"
+            ],
+            "exacto": "¡Hola, Ana!\n##################\n# Bienvenido Ana #\n##################"
+          }
+        ],
+        "solucion": "def saludo(nombre):\n    print(\"¡Hola, \" + nombre + \"!\")\n\ndef marco(texto, simbolo):\n    borde = simbolo * (len(texto) + 4)\n    print(borde)\n    print(simbolo + \" \" + texto + \" \" + simbolo)\n    print(borde)\n\nnombre = input(\"Nombre: \")\nsaludo(nombre)\nmarco(\"Bienvenido \" + nombre, \"#\")"
+      }
+    }
+  },
+  "extra": {
+    "id": "m13-extra",
+    "titulo": "Rectángulos a la medida",
+    "historia": "Un taller de dibujo con símbolos.",
+    "enunciado": "Define <code>rectangulo(ancho, alto)</code> que dibuje un rectángulo de asteriscos. Pide el ancho y el alto y llama la función. Para 4 y 2:<br><code>****</code><br><code>****</code>",
+    "inicio": "",
+    "requiere": [
+      "def",
+      "for"
+    ],
+    "pruebas": [
+      {
+        "nombre": "4 x 2",
+        "entradas": [
+          "4",
+          "2"
+        ],
+        "exacto": "****\n****"
+      },
+      {
+        "nombre": "2 x 3",
+        "entradas": [
+          "2",
+          "3"
+        ],
+        "exacto": "**\n**\n**"
+      }
+    ],
+    "solucion": "def rectangulo(ancho, alto):\n    for i in range(alto):\n        print(\"*\" * ancho)\n\nancho = int(input(\"Ancho: \"))\nalto = int(input(\"Alto: \"))\nrectangulo(ancho, alto)"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué palabra crea una función?",
+        "opciones": [
+          "function",
+          "create",
+          "func",
+          "def"
+        ],
+        "correcta": 3,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué muestra este programa?",
+        "opciones": [
+          "Hola\nHola",
+          "Hola",
+          "Nada",
+          "Error"
+        ],
+        "correcta": 2,
+        "codigo": "def saludar():\n    print(\"Hola\")",
+        "tiempo": 30,
+        "explicacion": "Solo define la función; nunca la llama."
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Error",
+          "¡Hola, nombre!",
+          "Leo",
+          "¡Hola, Leo!"
+        ],
+        "correcta": 3,
+        "codigo": "def saludo(nombre):\n    print(f\"¡Hola, {nombre}!\")\n\nsaludo(\"Leo\")",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué es un parámetro?",
+        "opciones": [
+          "Un tipo de bucle",
+          "El nombre de la función",
+          "Un error",
+          "Una variable que recibe un dato al llamar la función"
+        ],
+        "correcta": 3
+      },
+      {
+        "pregunta": "¿Qué error da llamar una función antes de definirla?",
+        "opciones": [
+          "IndexError",
+          "Ninguno",
+          "NameError",
+          "TypeError"
+        ],
+        "correcta": 2
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "Una función se puede llamar muchas veces.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 0,
+        "tiempo": 15
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Error",
+          "Mía tiene 12 años",
+          "12 tiene Mía años",
+          "nombre tiene edad años"
+        ],
+        "correcta": 1,
+        "codigo": "def presentar(nombre, edad):\n    print(nombre, \"tiene\", edad, \"años\")\n\npresentar(\"Mía\", 12)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué le falta a esta línea?",
+        "opciones": [
+          "Los dos puntos al final",
+          "Un print",
+          "Comillas",
+          "Nada"
+        ],
+        "correcta": 0,
+        "codigo": "def saludar()",
+        "tiempo": 30
+      },
+      {
+        "pregunta": "¿Cuántos renglones muestra?",
+        "opciones": [
+          "0",
+          "1",
+          "4",
+          "2"
+        ],
+        "correcta": 2,
+        "codigo": "def doble_linea():\n    print(\"---\")\n    print(\"---\")\n\ndoble_linea()\ndoble_linea()",
+        "tiempo": 30
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "🏗️",
+      "texto": "<code>def</code> crea una función; se usa llamándola por su nombre.",
+      "codigo": "def saludar():\n    print(\"¡Hola!\")\n\nsaludar()"
+    },
+    {
+      "icono": "📥",
+      "texto": "Los parámetros reciben datos al llamar la función.",
+      "codigo": "def saludo(nombre):\n    print(\"Hola,\", nombre)"
+    },
+    {
+      "icono": "⬆️",
+      "texto": "Primero se define, después se llama."
+    }
+  ],
+  "glosario": [
+    {
+      "en": "function",
+      "es": "función",
+      "def": "Grupo de instrucciones con nombre que se puede usar muchas veces."
+    },
+    {
+      "en": "def (define)",
+      "es": "definir",
+      "def": "Palabra para crear una función."
+    },
+    {
+      "en": "parameter",
+      "es": "parámetro",
+      "def": "Variable de la función que recibe un valor al llamarla."
+    },
+    {
+      "en": "argument",
+      "es": "argumento",
+      "def": "Valor que se le da a la función al llamarla."
+    },
+    {
+      "en": "call",
+      "es": "llamar",
+      "def": "Usar una función escribiendo su nombre con paréntesis."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Qué pasa si defines una función pero nunca la llamas?",
+      "respuesta": "No pasa nada: sus instrucciones no se ejecutan hasta que la llamas."
+    },
+    {
+      "pregunta": "¿Qué es un parámetro?",
+      "respuesta": "Una variable de la función que recibe el valor que le das al llamarla."
+    },
+    {
+      "pregunta": "¿Por qué conviene usar funciones?",
+      "respuesta": "Para no repetir código, dar nombre a las partes del programa y que sea más fácil de leer y corregir."
+    }
+  ],
+  "plan": {
+    "activacion": "Enseña al grupo una «coreografía» con un nombre (por ejemplo «saludo espacial») y luego solo di su nombre para repetirla: eso es definir y llamar.",
+    "ejemplo": "Ejemplo «Bienvenida al club»: identifican la definición, los parámetros y las llamadas.",
+    "practica": "Actividades: tu primera función, caza el error del orden y vocabulario.",
+    "reto": "Retos rápidos y la misión «Fábrica de saludos y marcos».",
+    "cierre": "Kahoot y pregunta: ¿por qué conviene usar funciones?"
+  }
+}

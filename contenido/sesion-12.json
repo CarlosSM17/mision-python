@@ -1,0 +1,698 @@
+{
+  "numero": 12,
+  "unidad": 5,
+  "titulo": "Recorrer listas",
+  "icono": "🔎",
+  "modo": 3,
+  "python": [
+    "for x in lista",
+    "in",
+    "max()",
+    "sum()",
+    "random.choice()"
+  ],
+  "historiaIcono": "📊",
+  "historia": "Al final del bimestre hay que sacar promedios, encontrar la calificación más alta… y sortear quién expone primero. Con listas y un <code>for</code> que las recorra, todo eso toma pocas líneas.",
+  "objetivos": [
+    "Recorrer una lista elemento por elemento con <code>for x in lista</code>.",
+    "Preguntar si un valor está en una lista con <code>in</code>.",
+    "Usar <code>sum()</code>, <code>max()</code>, <code>min()</code> y <code>len()</code> con listas.",
+    "Elegir un elemento al azar con <code>random.choice()</code>."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🔎",
+      "titulo": "Recorrer una lista",
+      "texto": "Con <code>for</code> puedes visitar cada elemento de una lista, uno por uno, sin usar índices."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "pista-for",
+      "titulo": "Una vuelta por elemento",
+      "texto": "En cada vuelta, la variable (<code>nombre</code>) toma el siguiente elemento de la lista.",
+      "datos": {
+        "valores": [
+          "\"Ana\"",
+          "\"Leo\"",
+          "\"Mía\""
+        ],
+        "codigo": "for nombre in nombres:"
+      },
+      "codigo": "nombres = [\"Ana\", \"Leo\", \"Mía\"]\nfor nombre in nombres:\n    print(\"Hola,\", nombre)"
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "recorrer",
+      "titulo": "Laboratorio: recorrer",
+      "texto": "Mira cómo la variable visita cada elemento."
+    },
+    {
+      "tipo": "idea",
+      "icono": "❓",
+      "titulo": "¿Está en la lista?",
+      "texto": "<code>in</code> revisa si un valor está en la lista y da True o False.",
+      "codigo": "invitados = [\"Ana\", \"Leo\", \"Mía\"]\nprint(\"Leo\" in invitados)\nprint(\"Beto\" in invitados)",
+      "salida": "True\nFalse"
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Funciones útiles",
+      "encabezados": [
+        "Código",
+        "Resultado con <code>[4, 9, 2, 7]</code>"
+      ],
+      "filas": [
+        [
+          "<code>sum(lista)</code>",
+          "22"
+        ],
+        [
+          "<code>max(lista)</code>",
+          "9"
+        ],
+        [
+          "<code>min(lista)</code>",
+          "2"
+        ],
+        [
+          "<code>len(lista)</code>",
+          "4"
+        ],
+        [
+          "<code>sum(lista) / len(lista)</code>",
+          "5.5 (el promedio)"
+        ]
+      ]
+    },
+    {
+      "tipo": "idea",
+      "icono": "🎲",
+      "titulo": "Elegir al azar",
+      "texto": "<code>random.choice(lista)</code> elige un elemento al azar. ¡Ideal para sorteos!",
+      "codigo": "import random\nequipo = [\"Ana\", \"Beto\", \"Caro\"]\nprint(\"Le toca a\", random.choice(equipo))"
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Contar con un recorrido",
+      "texto": "Recorrido + if + contador: cuenta cuántas calificaciones son aprobatorias.",
+      "codigo": "notas = [8, 5, 10, 6, 4]\naprobadas = 0\nfor n in notas:\n    if n >= 6:\n        aprobadas += 1\nprint(\"Aprobadas:\", aprobadas)"
+    },
+    {
+      "tipo": "idea",
+      "icono": "🔤",
+      "titulo": "¡Los textos también se recorren!",
+      "texto": "Un <code>for</code> sobre un texto visita cada letra.",
+      "codigo": "for letra in \"sol\":\n    print(letra)",
+      "salida": "s\no\nl"
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "¿Qué muestra?",
+      "opciones": [
+        "3",
+        "381",
+        "12",
+        "8"
+      ],
+      "correcta": 2,
+      "explicacion": "3 + 8 + 1 = 12.",
+      "codigo": "nums = [3, 8, 1]\ntotal = 0\nfor n in nums:\n    total += n\nprint(total)"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "Frutas favoritas",
+    "descripcion": "Un for que recorre una lista y una pregunta con in.",
+    "codigo": "frutas = [\"mango\", \"uva\", \"piña\"]\nfor fruta in frutas:\n    print(\"Me gusta el\", fruta)\nprint(\"¿Hay uva?\", \"uva\" in frutas)",
+    "prediccion": {
+      "pregunta": "¿Cuántas veces aparece «Me gusta el»?",
+      "opciones": [
+        "3",
+        "1",
+        "4",
+        "0"
+      ],
+      "correcta": 0,
+      "explicacion": "La lista tiene 3 frutas, así que el for da 3 vueltas."
+    },
+    "investigar": [
+      "Con 👣 Paso a paso, ¿qué valor tiene <code>fruta</code> en cada vuelta?",
+      "¿Qué muestra la última línea? ¿Y si preguntas por «fresa»?",
+      "Agrega una fruta a la lista: ¿cuántas vueltas da ahora el for?"
+    ],
+    "modificar": "Cuenta cuántas frutas tienen más de 4 letras usando <code>len(fruta)</code> dentro del for."
+  },
+  "actividades": [
+    {
+      "id": "m12-a1",
+      "tipo": "salida",
+      "titulo": "Recorrido en mayúsculas",
+      "instrucciones": "Escribe exactamente lo que aparecerá en la pantalla.",
+      "codigo": "animales = [\"gato\", \"perro\", \"pez\"]\nfor a in animales:\n    print(a.upper())",
+      "respuesta": "GATO\nPERRO\nPEZ"
+    },
+    {
+      "id": "m12-a2",
+      "tipo": "completar",
+      "titulo": "¿Estás invitado?",
+      "instrucciones": "Escribe lo que falta en cada hueco.",
+      "codigo": "invitados = [\"Ana\", \"Leo\", \"Mía\"]\nnombre = input(\"Nombre: \")\nif nombre ⟦in⟧ invitados:\n    print(\"Puedes pasar\")\nelse:\n    print(\"No estás en la lista\")",
+      "opciones": [
+        "in",
+        "==",
+        "for",
+        "not"
+      ],
+      "entradas": [
+        "Leo"
+      ]
+    },
+    {
+      "id": "m12-a3",
+      "tipo": "relacionar",
+      "titulo": "Funciones con listas",
+      "instrucciones": "La variable <code>lista</code> vale <code>[5, 1, 9, 3]</code>. Une cada código con su resultado.",
+      "pares": [
+        [
+          "sum(lista)",
+          "18"
+        ],
+        [
+          "max(lista)",
+          "9"
+        ],
+        [
+          "min(lista)",
+          "1"
+        ],
+        [
+          "len(lista)",
+          "4"
+        ],
+        [
+          "9 in lista",
+          "True"
+        ]
+      ]
+    },
+    {
+      "id": "m12-a4",
+      "tipo": "ordenar",
+      "titulo": "Cuenta los aprobados",
+      "instrucciones": "Arma el programa tocando las piezas en el orden correcto.",
+      "lineas": [
+        "notas = [8, 5, 10, 6, 4]",
+        "aprobados = 0",
+        "for n in notas:",
+        "    if n >= 6:",
+        "        aprobados += 1",
+        "print(\"Aprobados:\", aprobados)"
+      ],
+      "sangria": true
+    },
+    {
+      "id": "m12-a5",
+      "tipo": "traza",
+      "titulo": "El mayor, a mano",
+      "instrucciones": "Sigue el programa vuelta por vuelta. La línea 3 se ejecuta al empezar cada vuelta.",
+      "codigo": "nums = [4, 9, 2]\nmayor = nums[0]\nfor n in nums:\n    if n > mayor:\n        mayor = n\nprint(mayor)",
+      "variables": [
+        "n",
+        "mayor"
+      ],
+      "filas": [
+        {
+          "linea": 2,
+          "valores": {
+            "n": "",
+            "mayor": "4"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "n": "4",
+            "mayor": "4"
+          }
+        },
+        {
+          "linea": 5,
+          "valores": {
+            "n": "9",
+            "mayor": "9"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "n": "2",
+            "mayor": "9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m12-a6",
+      "tipo": "memorama",
+      "titulo": "Memorama de recorridos",
+      "instrucciones": "Voltea dos cartas a la vez y encuentra las parejas.",
+      "pares": [
+        [
+          "for x in [1, 2]:",
+          "Da 2 vueltas"
+        ],
+        [
+          "\"a\" in \"casa\"",
+          "<code>True</code>"
+        ],
+        [
+          "max([3, 7])",
+          "<code>7</code>"
+        ],
+        [
+          "sum([2, 2, 2])",
+          "<code>6</code>"
+        ],
+        [
+          "random.choice(lista)",
+          "Elige uno al azar"
+        ]
+      ],
+      "codigo": [
+        0
+      ]
+    }
+  ],
+  "retos": [
+    {
+      "id": "m12-r1",
+      "titulo": "Saluda a todos",
+      "resumen": "Recorrer una lista.",
+      "enunciado": "Recorre la lista <code>nombres</code> con un <code>for</code> y saluda a cada quien: <code>Hola, Ana</code>, <code>Hola, Leo</code>, <code>Hola, Mía</code>.",
+      "inicio": "nombres = [\"Ana\", \"Leo\", \"Mía\"]\nfor ___ in ___:\n    print(\"Hola,\", ___)",
+      "requiere": [
+        "for",
+        "print<=1"
+      ],
+      "pruebas": [
+        {
+          "exacto": "Hola, Ana\nHola, Leo\nHola, Mía"
+        }
+      ],
+      "solucion": "nombres = [\"Ana\", \"Leo\", \"Mía\"]\nfor nombre in nombres:\n    print(\"Hola,\", nombre)",
+      "pistas": [
+        "La forma es <code>for variable in lista:</code>.",
+        "Elige un nombre para la variable (por ejemplo, <code>nombre</code>) y úsalo en el print.",
+        "Queda <code>for nombre in nombres:</code> y <code>print(\"Hola,\", nombre)</code>."
+      ]
+    },
+    {
+      "id": "m12-r2",
+      "titulo": "¿Estás invitado?",
+      "resumen": "Buscar con in.",
+      "enunciado": "Pide un nombre. Si está en la lista de invitados muestra <code>Puedes pasar</code>; si no, <code>No estás en la lista</code>.",
+      "inicio": "invitados = [\"Ana\", \"Leo\", \"Mía\", \"Sara\"]\nnombre = input(\"¿Cómo te llamas? \")\nif ___:\n    print(\"Puedes pasar\")\nelse:\n    print(\"No estás en la lista\")",
+      "requiere": [
+        "in"
+      ],
+      "pruebas": [
+        {
+          "nombre": "Leo",
+          "entradas": [
+            "Leo"
+          ],
+          "contiene": [
+            "Puedes pasar"
+          ]
+        },
+        {
+          "nombre": "Pepe",
+          "entradas": [
+            "Pepe"
+          ],
+          "contiene": [
+            "No estás en la lista"
+          ]
+        }
+      ],
+      "solucion": "invitados = [\"Ana\", \"Leo\", \"Mía\", \"Sara\"]\nnombre = input(\"¿Cómo te llamas? \")\nif nombre in invitados:\n    print(\"Puedes pasar\")\nelse:\n    print(\"No estás en la lista\")",
+      "pistas": [
+        "<code>in</code> pregunta si algo está dentro de una lista.",
+        "Lo que buscas va a la izquierda de <code>in</code>; la lista, a la derecha.",
+        "La condición es <code>nombre in invitados</code>."
+      ]
+    },
+    {
+      "id": "m12-r3",
+      "titulo": "Suma y máximo",
+      "resumen": "sum() y max().",
+      "enunciado": "Con la lista <code>[4, 9, 2, 7]</code> muestra <code>Suma: 22</code> y <code>Mayor: 9</code> usando <code>sum()</code> y <code>max()</code>.",
+      "inicio": "numeros = [4, 9, 2, 7]\nprint(\"Suma:\", ___)\nprint(\"Mayor:\", ___)",
+      "requiere": [
+        "sum",
+        "max"
+      ],
+      "pruebas": [
+        {
+          "contiene": [
+            "Suma: 22",
+            "Mayor: 9"
+          ]
+        }
+      ],
+      "solucion": "numeros = [4, 9, 2, 7]\nprint(\"Suma:\", sum(numeros))\nprint(\"Mayor:\", max(numeros))",
+      "pistas": [
+        "Las funciones reciben la lista entre paréntesis.",
+        "<code>sum(lista)</code> suma; <code>max(lista)</code> da el mayor.",
+        "Escribe <code>sum(numeros)</code> y <code>max(numeros)</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m12-mision",
+    "titulo": "Promedio de calificaciones y sorteo",
+    "historia": "Fin de bimestre: hay que calcular promedios y sortear quién expone.",
+    "enunciado": "<ol><li>Pide <b>4 calificaciones</b> (enteros) y guárdalas en una lista.</li><li>Muestra <code>Promedio: 8.5</code>, <code>Más alta: 10</code> y <code>Más baja: 7</code>.</li><li>Con la lista <code>equipo = [\"Ana\", \"Beto\", \"Caro\", \"Dani\"]</code>, sortea quién expone: <code>Expone: Caro</code>.</li></ol>",
+    "requiere": [
+      "for",
+      "append",
+      "sum",
+      "max",
+      "choice"
+    ],
+    "pruebas": [
+      {
+        "nombre": "8, 9, 10, 7 y sale Caro",
+        "entradas": [
+          "8",
+          "9",
+          "10",
+          "7"
+        ],
+        "azar": [
+          "Caro"
+        ],
+        "contiene": [
+          "Promedio: 8.5",
+          "Más alta: 10",
+          "Más baja: 7",
+          "Expone: Caro"
+        ]
+      },
+      {
+        "nombre": "10, 10, 9, 9 y sale Ana",
+        "entradas": [
+          "10",
+          "10",
+          "9",
+          "9"
+        ],
+        "azar": [
+          "Ana"
+        ],
+        "contiene": [
+          "Promedio: 9.5",
+          "Más alta: 10",
+          "Más baja: 9",
+          "Expone: Ana"
+        ]
+      }
+    ],
+    "pistas": [
+      "Usa un <code>for</code> con <code>range(4)</code> y <code>append</code> para llenar la lista; luego <code>sum</code>, <code>len</code>, <code>max</code>, <code>min</code> y <code>random.choice</code>.",
+      "Orden: <code>import random</code>, lista vacía, for que pide y agrega, tres print de resultados, la lista del equipo y el sorteo.",
+      "El promedio es <code>sum(calificaciones) / len(calificaciones)</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "Completa las partes marcadas con ___.",
+        "inicio": "import random\ncalificaciones = []\nfor i in range(4):\n    cal = int(input(\"Calificación: \"))\n    calificaciones.append(___)\nprint(\"Promedio:\", sum(calificaciones) / ___)\nprint(\"Más alta:\", max(calificaciones))\nprint(\"Más baja:\", ___)\nequipo = [\"Ana\", \"Beto\", \"Caro\", \"Dani\"]\nprint(\"Expone:\", random.choice(___))",
+        "solucion": "import random\ncalificaciones = []\nfor i in range(4):\n    cal = int(input(\"Calificación: \"))\n    calificaciones.append(cal)\nprint(\"Promedio:\", sum(calificaciones) / len(calificaciones))\nprint(\"Más alta:\", max(calificaciones))\nprint(\"Más baja:\", min(calificaciones))\nequipo = [\"Ana\", \"Beto\", \"Caro\", \"Dani\"]\nprint(\"Expone:\", random.choice(equipo))"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "import random\n\ncalificaciones = []\nfor i in range(4):\n    cal = int(input(\"Calificación: \"))\n    calificaciones.append(cal)\n\nprint(\"Promedio:\", sum(calificaciones) / len(calificaciones))\nprint(\"Más alta:\", max(calificaciones))\nprint(\"Más baja:\", min(calificaciones))\n\nequipo = [\"Ana\", \"Beto\", \"Caro\", \"Dani\"]\nprint(\"Expone:\", random.choice(equipo))"
+      },
+      "maestro": {
+        "enunciado": "además, recorre la lista con <code>for cal in calificaciones:</code> y cuenta cuántas son aprobatorias (6 o más): <code>Aprobadas: 2</code>.",
+        "inicio": "",
+        "requiere": [
+          "for*2"
+        ],
+        "pruebas": [
+          {
+            "nombre": "8, 5, 10, 4",
+            "entradas": [
+              "8",
+              "5",
+              "10",
+              "4"
+            ],
+            "azar": [
+              "Dani"
+            ],
+            "contiene": [
+              "Promedio: 6.75",
+              "Más alta: 10",
+              "Más baja: 4",
+              "Aprobadas: 2",
+              "Expone: Dani"
+            ]
+          },
+          {
+            "nombre": "6, 7, 8, 9",
+            "entradas": [
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "azar": [
+              "Beto"
+            ],
+            "contiene": [
+              "Aprobadas: 4",
+              "Expone: Beto"
+            ]
+          }
+        ],
+        "solucion": "import random\ncalificaciones = []\nfor i in range(4):\n    cal = int(input(\"Calificación: \"))\n    calificaciones.append(cal)\nprint(\"Promedio:\", sum(calificaciones) / len(calificaciones))\nprint(\"Más alta:\", max(calificaciones))\nprint(\"Más baja:\", min(calificaciones))\naprobadas = 0\nfor cal in calificaciones:\n    if cal >= 6:\n        aprobadas += 1\nprint(\"Aprobadas:\", aprobadas)\nequipo = [\"Ana\", \"Beto\", \"Caro\", \"Dani\"]\nprint(\"Expone:\", random.choice(equipo))"
+      }
+    }
+  },
+  "extra": {
+    "id": "m12-extra",
+    "titulo": "Cuenta las vocales",
+    "historia": "Un texto también se puede recorrer letra por letra.",
+    "enunciado": "Pide una palabra y recórrela con <code>for letra in palabra:</code>. Cuenta las vocales (a, e, i, o, u) usando <code>in</code>: <code>Vocales: 5</code>.",
+    "inicio": "",
+    "requiere": [
+      "for",
+      "in"
+    ],
+    "pruebas": [
+      {
+        "nombre": "murcielago",
+        "entradas": [
+          "murcielago"
+        ],
+        "contiene": [
+          "Vocales: 5"
+        ]
+      },
+      {
+        "nombre": "sol",
+        "entradas": [
+          "sol"
+        ],
+        "contiene": [
+          "Vocales: 1"
+        ]
+      },
+      {
+        "nombre": "PYTHON",
+        "entradas": [
+          "PYTHON"
+        ],
+        "contiene": [
+          "Vocales: 1"
+        ]
+      }
+    ],
+    "solucion": "palabra = input(\"Palabra: \").lower()\nvocales = 0\nfor letra in palabra:\n    if letra in \"aeiou\":\n        vocales += 1\nprint(\"Vocales:\", vocales)"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Hola, nombres",
+          "Hola, Ana Leo",
+          "Hola, Ana\nHola, Leo",
+          "Error"
+        ],
+        "correcta": 2,
+        "codigo": "nombres = [\"Ana\", \"Leo\"]\nfor n in nombres:\n    print(\"Hola,\", n)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué da <code>\"Leo\" in [\"Ana\", \"Leo\"]</code>?",
+        "opciones": [
+          "True",
+          "Error",
+          "False",
+          "1"
+        ],
+        "correcta": 0
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "2",
+          "9",
+          "22",
+          "4"
+        ],
+        "correcta": 1,
+        "codigo": "print(max([4, 9, 2, 7]))",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "9",
+          "22",
+          "4",
+          "4927"
+        ],
+        "correcta": 1,
+        "codigo": "print(sum([4, 9, 2, 7]))",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué hace <code>random.choice(lista)</code>?",
+        "opciones": [
+          "Borra un elemento",
+          "Elige un elemento al azar",
+          "Ordena la lista",
+          "Elige siempre el primero"
+        ],
+        "correcta": 1
+      },
+      {
+        "pregunta": "¿Cuántas vueltas da el for?",
+        "opciones": [
+          "3",
+          "4",
+          "5",
+          "1"
+        ],
+        "correcta": 1,
+        "codigo": "for x in [\"a\", \"b\", \"c\", \"d\"]:\n    print(x)",
+        "tiempo": 30
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "Con <code>for letra in \"hola\"</code> se recorre cada letra del texto.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 0,
+        "tiempo": 15
+      },
+      {
+        "pregunta": "¿Cómo se calcula el promedio de una lista?",
+        "opciones": [
+          "sum(lista) / len(lista)",
+          "len(lista) / sum(lista)",
+          "max(lista) / 2",
+          "sum(lista) * len(lista)"
+        ],
+        "correcta": 0,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "4",
+          "0",
+          "2",
+          "3"
+        ],
+        "correcta": 2,
+        "codigo": "notas = [8, 5, 10, 4]\nc = 0\nfor n in notas:\n    if n >= 6:\n        c += 1\nprint(c)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "🔎",
+      "texto": "<code>for x in lista:</code> visita cada elemento.",
+      "codigo": "for nombre in nombres:\n    print(\"Hola,\", nombre)"
+    },
+    {
+      "icono": "❓",
+      "texto": "<code>in</code> revisa si un valor está en la lista."
+    },
+    {
+      "icono": "📊",
+      "texto": "<code>sum()</code>, <code>max()</code>, <code>min()</code> y <code>random.choice()</code>.",
+      "codigo": "print(sum(notas) / len(notas))"
+    }
+  ],
+  "glosario": [
+    {
+      "en": "iterate (traverse)",
+      "es": "recorrer",
+      "def": "Visitar cada elemento de una lista, uno por uno."
+    },
+    {
+      "en": "in",
+      "es": "en, dentro de",
+      "def": "Pregunta si un valor está en una lista o texto."
+    },
+    {
+      "en": "sum",
+      "es": "suma",
+      "def": "Suma todos los números de una lista."
+    },
+    {
+      "en": "max / min",
+      "es": "máximo / mínimo",
+      "def": "El valor más grande / más pequeño."
+    },
+    {
+      "en": "choice",
+      "es": "elección",
+      "def": "<code>random.choice</code> elige un elemento al azar."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Qué ventaja tiene <code>for x in lista</code> sobre usar posiciones con <code>range</code>?",
+      "respuesta": "No necesitas contar posiciones ni preocuparte por el tamaño de la lista: el for toma cada elemento directamente."
+    },
+    {
+      "pregunta": "¿Qué da <code>\"a\" in \"casa\"</code>?",
+      "respuesta": "True: in también busca dentro de un texto."
+    },
+    {
+      "pregunta": "¿Qué necesita <code>random.choice</code> para funcionar?",
+      "respuesta": "<code>import random</code> al inicio y una lista (o texto) de donde elegir."
+    }
+  ],
+  "plan": {
+    "activacion": "El docente «recorre» la fila de alumnos saludando a cada uno: eso hace un for sobre una lista.",
+    "ejemplo": "Ejemplo «Frutas favoritas»: predicen la salida y agregan una fruta.",
+    "practica": "Actividades: completar con <code>in</code>, cuenta los aprobados y traza del mayor.",
+    "reto": "Retos rápidos y la misión «Promedio de calificaciones y sorteo».",
+    "cierre": "Sorteo en vivo con <code>random.choice</code> para elegir quién responde la primera pregunta del Kahoot."
+  }
+}

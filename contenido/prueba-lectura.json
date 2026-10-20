@@ -1,0 +1,88 @@
+{
+  "descripcion": "Los mismos 10 reactivos de lectura y predicción de código se aplican en la Sesión 0 (diagnóstica) y en la Sesión 16 (final).",
+  "items": [
+    {
+      "tema": "Secuencia y salida",
+      "pregunta": "¿Qué aparece en la pantalla?",
+      "codigo": "print(\"Hola\")\nprint(\"¿Cómo estás?\")\nprint(\"Adiós\")",
+      "codigoOpciones": true,
+      "opciones": ["Hola\n¿Cómo estás?\nAdiós", "Hola", "Hola ¿Cómo estás? Adiós", "Adiós\n¿Cómo estás?\nHola"],
+      "correcta": 0,
+      "explicacion": "Python ejecuta las instrucciones en orden, de arriba hacia abajo, y cada print escribe en un renglón nuevo."
+    },
+    {
+      "tema": "Variables",
+      "pregunta": "¿Qué número se muestra?",
+      "codigo": "x = 5\nx = x + 3\nprint(x)",
+      "opciones": ["5", "8", "x + 3", "53"],
+      "correcta": 1,
+      "explicacion": "Primero x vale 5; luego se calcula x + 3 = 8 y ese resultado se guarda de nuevo en x."
+    },
+    {
+      "tema": "Operaciones",
+      "pregunta": "¿Qué se muestra?",
+      "codigo": "a = 17\nprint(a // 5, a % 5)",
+      "opciones": ["3 2", "3.4 2", "3 3", "2 3"],
+      "correcta": 0,
+      "explicacion": "// es la división entera (17 entre 5 cabe 3 veces) y % es el residuo (sobran 2)."
+    },
+    {
+      "tema": "Leer datos y tipos",
+      "pregunta": "Al ejecutar el programa escribes <b>12</b> y presionas Enter. ¿Qué se muestra después?",
+      "codigo": "edad = input(\"Edad: \")\nprint(edad + edad)",
+      "entradasPrueba": ["12"],
+      "opciones": ["24", "1212", "edadedad", "Error"],
+      "correcta": 1,
+      "explicacion": "input() siempre devuelve texto. \"12\" + \"12\" une los textos: \"1212\". Para sumar habría que convertir con int()."
+    },
+    {
+      "tema": "Decisiones",
+      "pregunta": "¿Qué se muestra?",
+      "codigo": "puntos = 7\nif puntos >= 6:\n    print(\"Aprobado\")\nelse:\n    print(\"Reprobado\")",
+      "opciones": ["Aprobado", "Reprobado", "Aprobado y luego Reprobado", "Nada"],
+      "correcta": 0,
+      "explicacion": "7 >= 6 es True, así que se ejecuta solo el bloque del if."
+    },
+    {
+      "tema": "Varias opciones",
+      "pregunta": "¿Qué se muestra?",
+      "codigo": "t = 25\nif t > 30:\n    print(\"Calor\")\nelif t > 20 and t <= 30:\n    print(\"Templado\")\nelse:\n    print(\"Frío\")",
+      "opciones": ["Calor", "Templado", "Frío", "Templado y Frío"],
+      "correcta": 1,
+      "explicacion": "25 > 30 es False; luego 25 > 20 and 25 <= 30 es True, así que se muestra «Templado» y ya no se revisa el else."
+    },
+    {
+      "tema": "Repetir un número fijo de veces",
+      "pregunta": "¿Qué se muestra?",
+      "codigo": "for i in range(1, 4):\n    print(i * 2)",
+      "codigoOpciones": true,
+      "opciones": ["2\n4\n6", "1\n2\n3", "2\n4\n6\n8", "0\n2\n4"],
+      "correcta": 0,
+      "explicacion": "range(1, 4) da 1, 2 y 3 (el 4 no se incluye). Cada valor se multiplica por 2."
+    },
+    {
+      "tema": "Repetir mientras",
+      "pregunta": "¿Qué número se muestra al final?",
+      "codigo": "n = 1\nwhile n < 20:\n    n = n * 3\nprint(n)",
+      "opciones": ["9", "27", "20", "18"],
+      "correcta": 1,
+      "explicacion": "n pasa por 1, 3, 9 y 27. Cuando vale 27, la condición n < 20 es False y el bucle termina."
+    },
+    {
+      "tema": "Listas",
+      "pregunta": "¿Qué se muestra?",
+      "codigo": "colores = [\"rojo\", \"verde\", \"azul\"]\ncolores.append(\"negro\")\nprint(colores[1], len(colores))",
+      "opciones": ["rojo 4", "verde 3", "verde 4", "rojo 3"],
+      "correcta": 2,
+      "explicacion": "Las posiciones empiezan en 0: colores[1] es \"verde\". Después de append la lista tiene 4 elementos."
+    },
+    {
+      "tema": "Funciones",
+      "pregunta": "¿Qué número se muestra?",
+      "codigo": "def doble(n):\n    return n * 2\n\nr = doble(3) + doble(1)\nprint(r)",
+      "opciones": ["6", "8", "4", "Error"],
+      "correcta": 1,
+      "explicacion": "doble(3) devuelve 6 y doble(1) devuelve 2; 6 + 2 = 8."
+    }
+  ]
+}

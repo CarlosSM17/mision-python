@@ -1,0 +1,752 @@
+{
+  "numero": 9,
+  "unidad": 4,
+  "titulo": "Repetir mientras se cumpla algo",
+  "icono": "🎲",
+  "modo": 3,
+  "python": [
+    "while",
+    "contadores",
+    "random.randint()"
+  ],
+  "historiaIcono": "🎲",
+  "historia": "La computadora piensa un número del 1 al 20 y tú tienes que adivinarlo. No sabes cuántos intentos necesitarás… por eso hoy aprenderás a repetir <b>mientras</b> algo se cumpla.",
+  "objetivos": [
+    "Repetir instrucciones con <code>while</code> mientras una condición sea <code>True</code>.",
+    "Usar un <b>contador</b> para saber cuántas veces se repitió algo.",
+    "Generar números al azar con <code>random.randint()</code>.",
+    "Evitar los bucles infinitos."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🔄",
+      "titulo": "Repetir mientras…",
+      "texto": "A veces no sabes cuántas veces hay que repetir: «sigue preguntando <b>mientras</b> no adivines». Para eso existe <code>while</code>."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "ciclo-while",
+      "titulo": "El ciclo while",
+      "texto": "Antes de cada vuelta, <code>while</code> revisa la condición. Si es <code>True</code>, repite el bloque; si es <code>False</code>, sale del bucle.",
+      "datos": {
+        "condicion": "n > 0",
+        "cuerpo": [
+          "print(n)",
+          "n = n - 1"
+        ]
+      }
+    },
+    {
+      "tipo": "animacion",
+      "animacion": "mientras",
+      "titulo": "El while en acción",
+      "texto": "Observa cómo la condición se revisa antes de cada vuelta."
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "while",
+      "titulo": "Laboratorio de while",
+      "texto": "Cambia el inicio y el paso. ¿Cuántas vueltas da?"
+    },
+    {
+      "tipo": "idea",
+      "icono": "🚀",
+      "titulo": "Cuenta regresiva",
+      "texto": "La variable debe cambiar dentro del bucle para que algún día la condición sea False.",
+      "codigo": "n = 3\nwhile n > 0:\n    print(n)\n    n = n - 1\nprint(\"¡Despegue!\")",
+      "salida": "3\n2\n1\n¡Despegue!"
+    },
+    {
+      "tipo": "comparar",
+      "titulo": "¡Cuidado con el bucle infinito!",
+      "texto": "Si la variable nunca cambia, la condición siempre es True y el programa nunca termina.",
+      "mal": {
+        "codigo": "n = 3\nwhile n > 0:\n    print(n)",
+        "nota": "<code>n</code> siempre vale 3: ¡bucle infinito! (se para con ⏹ Detener)."
+      },
+      "bien": {
+        "codigo": "n = 3\nwhile n > 0:\n    print(n)\n    n = n - 1",
+        "nota": "<code>n</code> baja en cada vuelta y el bucle termina."
+      }
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "¿for o while?",
+      "encabezados": [
+        "Usa…",
+        "Cuando…",
+        "Ejemplo"
+      ],
+      "filas": [
+        [
+          "<code>for</code>",
+          "sabes cuántas veces repetir",
+          "Mostrar la tabla del 7"
+        ],
+        [
+          "<code>while</code>",
+          "repites hasta que algo pase",
+          "Pedir la contraseña hasta que sea correcta"
+        ]
+      ]
+    },
+    {
+      "tipo": "idea",
+      "icono": "🎲",
+      "titulo": "Números al azar",
+      "texto": "El módulo <code>random</code> elige números al azar. Escribe <code>import random</code> al inicio y usa <code>random.randint(a, b)</code>: da un entero entre a y b, ¡incluidos los dos!",
+      "codigo": "import random\ndado = random.randint(1, 6)\nprint(\"Salió\", dado)",
+      "py": "Cada vez que ejecutes saldrá un número diferente. ¡Perfecto para juegos!"
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Adivina el número (mini)",
+      "texto": "Juega: el programa repite mientras no adivines.",
+      "codigo": "import random\nsecreto = random.randint(1, 5)\nintento = int(input(\"Adivina (1 a 5): \"))\nwhile intento != secreto:\n    intento = int(input(\"¡No! Otra vez: \"))\nprint(\"¡Lo adivinaste!\")"
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "¿Cuántas veces se muestra «Hola»?",
+      "opciones": [
+        "4",
+        "Infinitas",
+        "3",
+        "2"
+      ],
+      "correcta": 2,
+      "explicacion": "<code>x</code> vale 0, 1 y 2 en las vueltas; cuando llega a 3, la condición es False.",
+      "codigo": "x = 0\nwhile x < 3:\n    print(\"Hola\")\n    x = x + 1"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "Cuenta regresiva",
+    "descripcion": "Un cohete está listo para despegar.",
+    "codigo": "n = 3\nwhile n > 0:\n    print(n)\n    n = n - 1\nprint(\"¡Despegue!\")",
+    "prediccion": {
+      "pregunta": "¿Qué se mostrará en la pantalla?",
+      "codigoOpciones": true,
+      "opciones": [
+        "3\n2\n1\n¡Despegue!",
+        "3\n2\n1\n0\n¡Despegue!",
+        "¡Despegue!",
+        "3\n¡Despegue!\n2\n¡Despegue!\n1\n¡Despegue!"
+      ],
+      "correcta": 0,
+      "explicacion": "n toma los valores 3, 2 y 1. Cuando n vale 0, la condición <code>n > 0</code> es False, el bucle termina y se muestra «¡Despegue!» una sola vez (está fuera del bucle)."
+    },
+    "investigar": [
+      "Usa 👣 <b>Paso a paso</b> y observa la tabla de variables: ¿cuántas veces se revisa la condición?",
+      "¿Qué pasaría si cambias <code>n > 0</code> por <code>n >= 0</code>?",
+      "¿Por qué «¡Despegue!» aparece una sola vez?"
+    ],
+    "modificar": "Haz que la cuenta empiece en 10 y que baje de 2 en 2."
+  },
+  "actividades": [
+    {
+      "id": "m09-a1",
+      "tipo": "traza",
+      "titulo": "Cuenta regresiva",
+      "instrucciones": "La línea 3 se ejecuta en cada vuelta. ¿Cuánto vale <code>n</code> después de cada vuelta?",
+      "codigo": "n = 3\nwhile n > 0:\n    n = n - 1\nprint(\"Fin\")",
+      "variables": [
+        "n"
+      ],
+      "filas": [
+        {
+          "linea": 1,
+          "valores": {
+            "n": "3"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "n": "2"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "n": "1"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "n": "0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m09-a2",
+      "tipo": "salida",
+      "titulo": "¿Qué muestra el while?",
+      "instrucciones": "Escribe exactamente lo que aparecerá en la pantalla.",
+      "codigo": "x = 1\nwhile x <= 8:\n    print(x)\n    x = x * 2",
+      "respuesta": "1\n2\n4\n8"
+    },
+    {
+      "id": "m09-a3",
+      "tipo": "error",
+      "titulo": "Caza el error: bucle infinito",
+      "instrucciones": "Este programa nunca termina: ¡es un bucle infinito! Toca la línea que lo causa.",
+      "codigo": "contador = 1\nwhile contador <= 5:\n    print(\"Vuelta\", contador)\n    contador = contador - 1",
+      "tipoError": "logico",
+      "explicacion": "<code>contador</code> baja en vez de subir: siempre es menor o igual que 5 y el bucle nunca termina. Debe ser <code>contador + 1</code>.",
+      "correccion": "    contador = contador + 1",
+      "linea": 4,
+      "ejecutable": false
+    },
+    {
+      "id": "m09-a4",
+      "tipo": "completar",
+      "titulo": "Contraseña insistente",
+      "instrucciones": "Escribe lo que falta en cada hueco.",
+      "codigo": "clave = input(\"Contraseña: \")\n⟦while⟧ clave ⟦!=⟧ \"python\":\n    print(\"Incorrecta\")\n    clave = input(\"Contraseña: \")\nprint(\"¡Acceso concedido!\")",
+      "opciones": [
+        "while",
+        "for",
+        "!=",
+        "=="
+      ],
+      "entradas": [
+        "hola",
+        "python"
+      ]
+    },
+    {
+      "id": "m09-a5",
+      "tipo": "vf",
+      "titulo": "while y random",
+      "instrucciones": "¿Verdadero o falso? ¡Contra reloj! Necesitas 70 % de aciertos.",
+      "tiempo": 12,
+      "afirmaciones": [
+        {
+          "texto": "<code>while</code> repite mientras la condición sea True.",
+          "correcta": true
+        },
+        {
+          "texto": "Un while siempre da exactamente 10 vueltas.",
+          "correcta": false
+        },
+        {
+          "texto": "<code>random.randint(1, 6)</code> puede dar 6.",
+          "correcta": true,
+          "explicacion": "randint incluye los dos extremos."
+        },
+        {
+          "texto": "Para usar random hay que escribir <code>import random</code>.",
+          "correcta": true
+        },
+        {
+          "texto": "Si la variable de la condición nunca cambia, el bucle puede ser infinito.",
+          "correcta": true
+        },
+        {
+          "texto": "<code>random.randint(1, 6)</code> puede dar 0.",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "id": "m09-a6",
+      "tipo": "ordenar",
+      "titulo": "Dado hasta sacar 6",
+      "instrucciones": "Arma un programa que lance un dado hasta que salga 6. Acomoda la sangría.",
+      "lineas": [
+        "import random",
+        "dado = 0",
+        "while dado != 6:",
+        "    dado = random.randint(1, 6)",
+        "    print(\"Salió\", dado)",
+        "print(\"¡Por fin un 6!\")"
+      ],
+      "sangria": true,
+      "azar": [
+        3,
+        6
+      ]
+    }
+  ],
+  "retos": [
+    {
+      "id": "m09-r1",
+      "titulo": "Cuenta hasta 5",
+      "resumen": "Un contador con while.",
+      "enunciado": "Completa el programa para que muestre los números del 1 al 5, uno por renglón. Escribe lo que falta en los huecos ___ ✎ la condición del <code>while</code> y el aumento del contador.",
+      "inicio": "contador = 1\nwhile «»:\n    print(contador)\n    contador = «»",
+      "bloques": [
+        "py_assign",
+        "py_var",
+        "py_while",
+        "py_print",
+        "py_number",
+        "py_arith",
+        "py_compare",
+        "py_hueco"
+      ],
+      "requiere": [
+        "while"
+      ],
+      "pruebas": [
+        {
+          "exacto": "1\n2\n3\n4\n5"
+        }
+      ],
+      "solucion": "contador = 1\nwhile contador <= 5:\n    print(contador)\n    contador = contador + 1",
+      "pistas": [
+        "La condición debe ser verdadera mientras <code>contador</code> no pase de 5.",
+        "Usa <code>&lt;=</code> (menor o igual) para incluir el 5.",
+        "Los huecos son <code>contador &lt;= 5</code> y <code>contador + 1</code>."
+      ]
+    },
+    {
+      "id": "m09-r2",
+      "titulo": "Lanza un dado",
+      "resumen": "Un número al azar.",
+      "enunciado": "Simula un dado: guarda en <code>dado</code> un número al azar entre 1 y 6 y muéstralo así: <code>Salió 4</code>.",
+      "inicio": "import random\ndado = «»\nprint(\"Salió\", dado)",
+      "bloques": [
+        "py_import",
+        "py_assign",
+        "py_var",
+        "py_print",
+        "py_string",
+        "py_randint",
+        "py_number",
+        "py_hueco"
+      ],
+      "requiere": [
+        "randint"
+      ],
+      "pruebas": [
+        {
+          "nombre": "Sale 4",
+          "azar": [
+            4
+          ],
+          "contiene": [
+            "Salió 4"
+          ]
+        },
+        {
+          "nombre": "Sale 6",
+          "azar": [
+            6
+          ],
+          "contiene": [
+            "Salió 6"
+          ]
+        }
+      ],
+      "solucion": "import random\ndado = random.randint(1, 6)\nprint(\"Salió\", dado)",
+      "pistas": [
+        "Necesitas <code>random.randint</code>.",
+        "Entre paréntesis van el número más chico y el más grande posibles.",
+        "El hueco es <code>random.randint(1, 6)</code>."
+      ]
+    },
+    {
+      "id": "m09-r3",
+      "titulo": "Ahorra para un balón",
+      "resumen": "¿Cuántas semanas tardas?",
+      "enunciado": "El balón cuesta $100. El programa pregunta cuánto ahorras por semana y debe decir cuántas semanas necesitas, así: <code>Necesitas 4 semanas</code>. Usa un <code>while</code> que sume el ahorro de cada semana mientras sea menor que 100.",
+      "inicio": "cantidad = int(input(\"¿Cuánto ahorras por semana? \"))\nahorro = 0\nsemanas = 0\nwhile «»:\n    ahorro = «»\n    semanas = semanas + 1\nprint(\"Necesitas\", semanas, \"semanas\")",
+      "requiere": [
+        "while"
+      ],
+      "pruebas": [
+        {
+          "nombre": "Ahorra 30",
+          "entradas": [
+            "30"
+          ],
+          "contiene": [
+            "Necesitas 4 semanas"
+          ]
+        },
+        {
+          "nombre": "Ahorra 50",
+          "entradas": [
+            "50"
+          ],
+          "contiene": [
+            "Necesitas 2 semanas"
+          ]
+        },
+        {
+          "nombre": "Ahorra 7",
+          "entradas": [
+            "7"
+          ],
+          "contiene": [
+            "Necesitas 15 semanas"
+          ]
+        }
+      ],
+      "solucion": "cantidad = int(input(\"¿Cuánto ahorras por semana? \"))\nahorro = 0\nsemanas = 0\nwhile ahorro < 100:\n    ahorro = ahorro + cantidad\n    semanas = semanas + 1\nprint(\"Necesitas\", semanas, \"semanas\")",
+      "pistas": [
+        "El bucle debe seguir mientras el ahorro todavía no llegue a 100.",
+        "Cada vuelta, el ahorro aumenta lo que guardas en una semana (<code>cantidad</code>).",
+        "Los huecos son <code>ahorro &lt; 100</code> y <code>ahorro + cantidad</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m09-mision",
+    "titulo": "Adivina el número",
+    "historia": "La computadora piensa un número del 1 al 20; tú lo adivinas con pistas de «más alto» o «más bajo».",
+    "enunciado": "Programa el juego: la computadora elige un número secreto al azar entre 1 y 20. Mientras no lo adivines, pide un número y responde <b>Más alto</b> o <b>Más bajo</b>. Cuenta los intentos y, al acertar, muestra <code>¡Lo lograste en 3 intentos!</code>.",
+    "requiere": [
+      "while",
+      "randint"
+    ],
+    "pruebas": [
+      {
+        "nombre": "Secreto 7",
+        "entradas": [
+          "10",
+          "5",
+          "7"
+        ],
+        "azar": [
+          7
+        ],
+        "contiene": [
+          "Más bajo",
+          "Más alto",
+          "Lo lograste en 3 intentos"
+        ]
+      },
+      {
+        "nombre": "Secreto 15",
+        "entradas": [
+          "3",
+          "15"
+        ],
+        "azar": [
+          15
+        ],
+        "contiene": [
+          "Más alto",
+          "Lo lograste en 2 intentos"
+        ],
+        "no_contiene": [
+          "Más bajo"
+        ]
+      },
+      {
+        "nombre": "Secreto 1",
+        "entradas": [
+          "20",
+          "10",
+          "2",
+          "1"
+        ],
+        "azar": [
+          1
+        ],
+        "contiene": [
+          "Más bajo",
+          "Más bajo",
+          "Más bajo",
+          "Lo lograste en 4 intentos"
+        ],
+        "no_contiene": [
+          "Más alto"
+        ]
+      }
+    ],
+    "pistas": [
+      "Necesitas un bucle <code>while</code> que se repita mientras no hayas adivinado, y un contador de intentos.",
+      "Antes del bucle: el número secreto, <code>intentos = 0</code> y <code>adivinado = False</code>. Dentro: pedir el número, sumar 1 a los intentos y comparar con if / elif / else.",
+      "La condición del bucle es <code>not adivinado</code> y el contador aumenta con <code>intentos + 1</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "El juego ya está armado. Completa la condición del <code>while</code>, el aumento del contador y el mensaje que falta.",
+        "inicio": "import random\nsecreto = random.randint(1, 20)\nintentos = 0\nadivinado = False\nwhile «»:\n    numero = int(input(\"Adivina un número del 1 al 20: \"))\n    intentos = «»\n    if numero < secreto:\n        print(\"Más alto\")\n    elif numero > secreto:\n        print(___)\n    else:\n        adivinado = True\nprint(\"¡Lo lograste en\", intentos, \"intentos!\")",
+        "solucion": "import random\nsecreto = random.randint(1, 20)\nintentos = 0\nadivinado = False\nwhile not adivinado:\n    numero = int(input(\"Adivina un número del 1 al 20: \"))\n    intentos = intentos + 1\n    if numero < secreto:\n        print(\"Más alto\")\n    elif numero > secreto:\n        print(\"Más bajo\")\n    else:\n        adivinado = True\nprint(\"¡Lo lograste en\", intentos, \"intentos!\")"
+      },
+      "programador": {
+        "descripcion": "Escribe el juego completo: el número secreto, el <code>while</code>, las pistas «Más alto» / «Más bajo» y el contador de intentos.",
+        "inicio": "",
+        "solucion": "import random\n\nsecreto = random.randint(1, 20)\nintentos = 0\nadivinado = False\n\nwhile not adivinado:\n    numero = int(input(\"Adivina un número del 1 al 20: \"))\n    intentos = intentos + 1\n    if numero < secreto:\n        print(\"Más alto\")\n    elif numero > secreto:\n        print(\"Más bajo\")\n    else:\n        adivinado = True\n\nprint(\"¡Lo lograste en\", intentos, \"intentos!\")"
+      },
+      "maestro": {
+        "enunciado": "limita el juego a <b>5 intentos</b>. Si se acaban, muestra <code>Perdiste, el número era 12</code> (con el número secreto). Si se adivina al primer intento, escribe «1 intento» en singular: <code>¡Lo lograste en 1 intento!</code>.",
+        "inicio": "",
+        "pruebas": [
+          {
+            "nombre": "A la primera",
+            "entradas": [
+              "7"
+            ],
+            "azar": [
+              7
+            ],
+            "contiene": [
+              "Lo lograste en 1 intento"
+            ],
+            "no_contiene": [
+              "1 intentos"
+            ]
+          },
+          {
+            "nombre": "En 3 intentos",
+            "entradas": [
+              "10",
+              "5",
+              "7"
+            ],
+            "azar": [
+              7
+            ],
+            "contiene": [
+              "Más bajo",
+              "Más alto",
+              "Lo lograste en 3 intentos"
+            ]
+          },
+          {
+            "nombre": "Se acaban los intentos",
+            "entradas": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "azar": [
+              12
+            ],
+            "contiene": [
+              "Más alto",
+              "Más alto",
+              "Más alto",
+              "Más alto",
+              "Más alto",
+              "Perdiste",
+              "12"
+            ],
+            "no_contiene": [
+              "Lo lograste"
+            ]
+          }
+        ],
+        "solucion": "import random\n\nsecreto = random.randint(1, 20)\nintentos = 0\nadivinado = False\n\nwhile not adivinado and intentos < 5:\n    numero = int(input(\"Adivina un número del 1 al 20: \"))\n    intentos = intentos + 1\n    if numero < secreto:\n        print(\"Más alto\")\n    elif numero > secreto:\n        print(\"Más bajo\")\n    else:\n        adivinado = True\n\nif adivinado:\n    if intentos == 1:\n        print(\"¡Lo lograste en 1 intento!\")\n    else:\n        print(\"¡Lo lograste en\", intentos, \"intentos!\")\nelse:\n    print(\"Perdiste, el número era\", secreto)"
+      }
+    }
+  },
+  "extra": {
+    "id": "m09-extra",
+    "titulo": "¿Otra partida?",
+    "historia": "Tu juego quedó tan bueno que todos quieren jugar otra vez.",
+    "enunciado": "Al terminar una partida, pregunta <code>¿Jugar otra vez? (s/n)</code>. Mientras la respuesta sea <code>s</code>, empieza una partida nueva con otro número secreto. Al final muestra <code>¡Hasta luego!</code>. Pista: necesitas un <code>while</code> dentro de otro.",
+    "inicio": "",
+    "requiere": [
+      "while*2",
+      "randint"
+    ],
+    "pruebas": [
+      {
+        "nombre": "Dos partidas",
+        "entradas": [
+          "7",
+          "s",
+          "5",
+          "3",
+          "n"
+        ],
+        "azar": [
+          7,
+          3
+        ],
+        "contiene": [
+          "Lo lograste en 1 intento",
+          "Más bajo",
+          "Lo lograste en 2 intentos",
+          "Hasta luego"
+        ]
+      }
+    ],
+    "solucion": "import random\n\notra = \"s\"\nwhile otra == \"s\":\n    secreto = random.randint(1, 20)\n    intentos = 0\n    adivinado = False\n    while not adivinado:\n        numero = int(input(\"Adivina un número del 1 al 20: \"))\n        intentos = intentos + 1\n        if numero < secreto:\n            print(\"Más alto\")\n        elif numero > secreto:\n            print(\"Más bajo\")\n        else:\n            adivinado = True\n    print(\"¡Lo lograste en\", intentos, \"intentos!\")\n    otra = input(\"¿Jugar otra vez? (s/n) \")\nprint(\"¡Hasta luego!\")"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Cuándo se detiene un while?",
+        "opciones": [
+          "Cuando su condición es True",
+          "Después de 10 vueltas",
+          "Nunca",
+          "Cuando su condición es False"
+        ],
+        "correcta": 3
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "3",
+          "3\n2\n1",
+          "1\n2\n3",
+          "3\n2\n1\n0"
+        ],
+        "correcta": 1,
+        "codigo": "n = 3\nwhile n > 0:\n    print(n)\n    n = n - 1",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué números puede dar <code>random.randint(1, 3)</code>?",
+        "opciones": [
+          "0, 1, 2 o 3",
+          "1, 2 o 3",
+          "Solo 3",
+          "1 o 2"
+        ],
+        "correcta": 1
+      },
+      {
+        "pregunta": "¿Qué línea va al inicio para usar random?",
+        "opciones": [
+          "use random",
+          "random()",
+          "include random",
+          "import random"
+        ],
+        "correcta": 3,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué problema tiene?",
+        "opciones": [
+          "No tiene problemas",
+          "Le faltan comillas",
+          "Muestra 1 una sola vez",
+          "Es un bucle infinito: x nunca cambia"
+        ],
+        "correcta": 3,
+        "codigo": "x = 1\nwhile x < 5:\n    print(x)",
+        "tiempo": 30
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "Si la condición del while es False desde el principio, el bloque no se ejecuta ni una vez.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 0,
+        "tiempo": 15
+      },
+      {
+        "pregunta": "¿Cuántas veces se muestra «Hola»?",
+        "opciones": [
+          "Infinitas",
+          "4",
+          "5",
+          "3"
+        ],
+        "correcta": 1,
+        "codigo": "x = 0\nwhile x < 4:\n    print(\"Hola\")\n    x = x + 1",
+        "tiempo": 30
+      },
+      {
+        "pregunta": "¿Qué conviene usar para pedir una contraseña hasta que sea correcta?",
+        "opciones": [
+          "print",
+          "while",
+          "for con range(3)",
+          "solo un if"
+        ],
+        "correcta": 1
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "16",
+          "2",
+          "32",
+          "8"
+        ],
+        "correcta": 0,
+        "codigo": "x = 1\nwhile x < 10:\n    x = x * 2\nprint(x)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "🔄",
+      "texto": "<code>while</code> repite mientras la condición sea True.",
+      "codigo": "while intento != secreto:\n    intento = int(input(\"Otra vez: \"))"
+    },
+    {
+      "icono": "⚠️",
+      "texto": "Cambia la variable dentro del bucle para no crear un bucle infinito."
+    },
+    {
+      "icono": "🎲",
+      "texto": "<code>random.randint(a, b)</code> da un entero al azar entre a y b.",
+      "codigo": "import random\ndado = random.randint(1, 6)"
+    }
+  ],
+  "glosario": [
+    {
+      "en": "while",
+      "es": "mientras",
+      "def": "Bucle que repite mientras una condición sea verdadera."
+    },
+    {
+      "en": "loop",
+      "es": "bucle, ciclo",
+      "def": "Instrucciones que se repiten."
+    },
+    {
+      "en": "counter",
+      "es": "contador",
+      "def": "Variable que cuenta cuántas veces pasa algo."
+    },
+    {
+      "en": "random",
+      "es": "aleatorio, al azar",
+      "def": "Módulo de Python para obtener valores al azar."
+    },
+    {
+      "en": "import",
+      "es": "importar",
+      "def": "Traer un módulo para poder usarlo."
+    },
+    {
+      "en": "infinite loop",
+      "es": "bucle infinito",
+      "def": "Bucle cuya condición nunca se vuelve falsa."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Cuándo conviene usar <code>while</code> en lugar de <code>for</code>?",
+      "respuesta": "Cuando no sabes cuántas vueltas habrá: repites hasta que pase algo (adivinar, escribir la contraseña correcta…). <code>for</code> es para un número de vueltas conocido."
+    },
+    {
+      "pregunta": "¿Qué pasa si olvidas aumentar el contador dentro del <code>while</code>?",
+      "respuesta": "La condición nunca cambia y el bucle no termina: es un bucle infinito. La plataforma lo detiene y te avisa."
+    },
+    {
+      "pregunta": "¿Qué valores puede dar <code>random.randint(1, 6)</code>?",
+      "respuesta": "Cualquier entero del 1 al 6, incluidos los dos extremos."
+    }
+  ],
+  "plan": {
+    "activacion": "Juego «adivina mi número» entre el docente y el grupo: ¿cuántas veces preguntaron? No se sabía de antemano: eso es un while.",
+    "ejemplo": "Ejemplo «Cuenta regresiva»: predicen la salida y luego provocan un bucle infinito a propósito (y lo detienen).",
+    "practica": "Actividades: traza de la cuenta regresiva, caza el bucle infinito y el dado hasta sacar 6.",
+    "reto": "Retos rápidos y la misión «Adivina el número».",
+    "cierre": "Torneo relámpago de «Adivina el número» en parejas y Kahoot."
+  }
+}

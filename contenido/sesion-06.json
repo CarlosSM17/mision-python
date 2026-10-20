@@ -1,0 +1,820 @@
+{
+  "numero": 6,
+  "unidad": 3,
+  "titulo": "Varias opciones",
+  "icono": "🚦",
+  "modo": 3,
+  "python": [
+    "elif",
+    "and",
+    "or",
+    "not"
+  ],
+  "historiaIcono": "🌦️",
+  "historia": "El club de ecología registra la temperatura cada mañana y quiere que un programa recomiende qué ropa usar. No basta con dos caminos: hay calor, templado, fresco y frío…",
+  "objetivos": [
+    "Elegir entre varias opciones con <code>if</code>, <code>elif</code> y <code>else</code>.",
+    "Combinar condiciones con <code>and</code>, <code>or</code> y <code>not</code>.",
+    "Ordenar las condiciones para que cada caso caiga en el lugar correcto."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🚦",
+      "titulo": "Más de dos caminos",
+      "texto": "Un semáforo tiene tres colores, una calificación tiene varios niveles… Cuando hay <b>más de dos opciones</b>, usamos <code>elif</code>."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "escalera-elif",
+      "titulo": "La escalera del elif",
+      "texto": "Python revisa las condiciones <b>de arriba hacia abajo</b> y se queda con la primera que sea <code>True</code>. Si ninguna se cumple, ejecuta el <code>else</code>.",
+      "datos": {
+        "pasos": [
+          [
+            "t >= 30",
+            "\"Calor\""
+          ],
+          [
+            "t >= 20",
+            "\"Templado\""
+          ],
+          [
+            "t >= 10",
+            "\"Fresco\""
+          ],
+          [
+            null,
+            "\"Frío\""
+          ]
+        ],
+        "marcar": 1
+      },
+      "py": "Aquí <code>t</code> vale 25: la primera condición es False, la segunda es True… ¡y ya no revisa las demás!"
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "El semáforo",
+      "texto": "Presiona ▶ Probar y escribe verde, amarillo, rojo o cualquier otra cosa.",
+      "codigo": "color = input(\"Color del semáforo: \")\nif color == \"verde\":\n    print(\"Avanza\")\nelif color == \"amarillo\":\n    print(\"Precaución\")\nelif color == \"rojo\":\n    print(\"Alto\")\nelse:\n    print(\"Color desconocido\")"
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "elif",
+      "titulo": "Simulador de elif",
+      "texto": "Mueve el valor y mira qué escalón se activa."
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Unir condiciones",
+      "encabezados": [
+        "Operador",
+        "Da True cuando…",
+        "Ejemplo"
+      ],
+      "filas": [
+        [
+          "<code>and</code>",
+          "las dos son True",
+          "<code>edad &gt;= 13 and edad &lt;= 19</code>"
+        ],
+        [
+          "<code>or</code>",
+          "al menos una es True",
+          "<code>dia == \"sábado\" or dia == \"domingo\"</code>"
+        ],
+        [
+          "<code>not</code>",
+          "la condición es False",
+          "<code>not lloviendo</code>"
+        ]
+      ],
+      "texto": "Con <code>and</code>, <code>or</code> y <code>not</code> puedes combinar condiciones."
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "logica",
+      "titulo": "Interruptores lógicos",
+      "texto": "Enciende y apaga las condiciones y mira cuándo se prende el foco."
+    },
+    {
+      "tipo": "comparar",
+      "titulo": "El orden importa",
+      "texto": "Pon primero las condiciones más exigentes.",
+      "mal": {
+        "codigo": "if cal >= 6:\n    print(\"Aprobado\")\nelif cal >= 9:\n    print(\"Excelente\")",
+        "nota": "Con 10 dice «Aprobado»: el <code>elif</code> nunca se alcanza."
+      },
+      "bien": {
+        "codigo": "if cal >= 9:\n    print(\"Excelente\")\nelif cal >= 6:\n    print(\"Aprobado\")",
+        "nota": "Con 10 dice «Excelente»."
+      }
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "Si <code>x</code> vale 15, ¿qué muestra?",
+      "opciones": [
+        "B y C",
+        "D",
+        "B",
+        "C"
+      ],
+      "correcta": 2,
+      "explicacion": "<code>15 &gt; 10</code> es la primera condición True; las demás ya no se revisan.",
+      "codigo": "x = 15\nif x > 20:\n    print(\"A\")\nelif x > 10:\n    print(\"B\")\nelif x > 5:\n    print(\"C\")\nelse:\n    print(\"D\")"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "¿Qué tiempo hace?",
+    "descripcion": "Un clasificador de temperatura con cuatro opciones.",
+    "codigo": "temperatura = 18\nif temperatura >= 30:\n    print(\"Hace calor\")\nelif temperatura >= 20:\n    print(\"Está templado\")\nelif temperatura >= 10:\n    print(\"Hace fresco\")\nelse:\n    print(\"Hace frío\")",
+    "prediccion": {
+      "pregunta": "Con <code>temperatura = 18</code>, ¿qué se muestra?",
+      "opciones": [
+        "Hace fresco",
+        "Está templado",
+        "Hace frío",
+        "Está templado y Hace fresco"
+      ],
+      "correcta": 0,
+      "explicacion": "18 >= 30 es False, 18 >= 20 es False, 18 >= 10 es True: se muestra «Hace fresco» y ya no se revisa nada más."
+    },
+    "investigar": [
+      "Ejecuta 👣 Paso a paso y observa qué condiciones se revisan.",
+      "Pon <code>temperatura = 35</code>: ¿por qué no se muestra también «Está templado» si 35 >= 20?",
+      "¿Qué pasa si cambias el orden y pones primero <code>temperatura >= 10</code>?"
+    ],
+    "modificar": "Agrega un caso para temperaturas de 40 o más: «¡Calor extremo!». ¿Dónde debe ir?"
+  },
+  "actividades": [
+    {
+      "id": "m06-a1",
+      "tipo": "ordenar",
+      "titulo": "Semáforo",
+      "instrucciones": "Ordena el semáforo y acomoda la sangría con ◀ ▶.",
+      "lineas": [
+        "color = input(\"Color: \")",
+        "if color == \"verde\":",
+        "    print(\"Avanza\")",
+        "elif color == \"amarillo\":",
+        "    print(\"Precaución\")",
+        "else:",
+        "    print(\"Alto\")"
+      ],
+      "sangria": true,
+      "entradas": [
+        "verde"
+      ]
+    },
+    {
+      "id": "m06-a2",
+      "tipo": "salida",
+      "titulo": "Escalera de calificaciones",
+      "instrucciones": "¿Qué aparece en la pantalla? Elige la opción correcta.",
+      "codigo": "cal = 8\nif cal >= 9:\n    print(\"Excelente\")\nelif cal >= 7:\n    print(\"Bien\")\nelif cal >= 6:\n    print(\"Suficiente\")\nelse:\n    print(\"Reprobado\")",
+      "respuesta": "Bien",
+      "opciones": [
+        "Excelente",
+        "Bien\nSuficiente",
+        "Bien",
+        "Suficiente"
+      ],
+      "correcta": 2,
+      "explicacion": "Se ejecuta solo el primer escalón cuya condición es True."
+    },
+    {
+      "id": "m06-a3",
+      "tipo": "clasificar",
+      "titulo": "and, or, not",
+      "instrucciones": "La variable <code>x</code> vale 5. ¿Cada condición da True o False?",
+      "categorias": [
+        {
+          "id": "t",
+          "nombre": "True",
+          "color": "#26890C",
+          "icono": "✔"
+        },
+        {
+          "id": "f",
+          "nombre": "False",
+          "color": "#E21B3C",
+          "icono": "✘"
+        }
+      ],
+      "elementos": [
+        {
+          "texto": "x > 2 and x < 10",
+          "cat": "t"
+        },
+        {
+          "texto": "x > 2 and x > 10",
+          "cat": "f"
+        },
+        {
+          "texto": "x < 2 or x == 5",
+          "cat": "t"
+        },
+        {
+          "texto": "x < 2 or x > 10",
+          "cat": "f"
+        },
+        {
+          "texto": "not x == 5",
+          "cat": "f"
+        },
+        {
+          "texto": "not x > 10",
+          "cat": "t"
+        }
+      ]
+    },
+    {
+      "id": "m06-a4",
+      "tipo": "error",
+      "titulo": "Caza el error: ¿and u or?",
+      "instrucciones": "Este programa no marca error, pero <b>dice algo falso</b>: con 40 años responde «Eres adolescente». Toca la línea equivocada.",
+      "codigo": "edad = int(input(\"Edad: \"))\nif edad >= 13 or edad <= 19:\n    print(\"Eres adolescente\")\nelse:\n    print(\"No eres adolescente\")",
+      "tipoError": "logico",
+      "explicacion": "Con <code>or</code> basta que una condición se cumpla, ¡así que todos serían adolescentes! Debe ser <code>and</code>: las dos al mismo tiempo.",
+      "correccion": "if edad >= 13 and edad <= 19:",
+      "linea": 2,
+      "entradas": [
+        "40"
+      ]
+    },
+    {
+      "id": "m06-a5",
+      "tipo": "completar",
+      "titulo": "¿Fin de semana?",
+      "instrucciones": "Escribe lo que falta en cada hueco.",
+      "codigo": "dia = input(\"Día: \")\nif dia == \"sábado\" ⟦or⟧ dia == \"domingo\":\n    print(\"¡A descansar!\")\n⟦else⟧:\n    print(\"A la escuela\")",
+      "opciones": [
+        "or",
+        "and",
+        "else",
+        "elif"
+      ],
+      "entradas": [
+        "domingo"
+      ]
+    }
+  ],
+  "retos": [
+    {
+      "id": "m06-r1",
+      "titulo": "Semáforo",
+      "resumen": "Tres colores, tres acciones.",
+      "enunciado": "Pide el color del semáforo: <code>verde</code> → <code>Avanza</code>, <code>amarillo</code> → <code>Precaución</code>, <code>rojo</code> → <code>Alto</code>. Cualquier otro → <code>Color desconocido</code>.",
+      "inicio": "color = input(\"Color del semáforo: \")\nif color == \"verde\":\n    print(\"Avanza\")\nelif «»:\n    print(\"Precaución\")\nelif «»:\n    print(\"Alto\")\nelse:\n    print(\"Color desconocido\")",
+      "requiere": [
+        "elif"
+      ],
+      "pruebas": [
+        {
+          "nombre": "verde",
+          "entradas": [
+            "verde"
+          ],
+          "contiene": [
+            "Avanza"
+          ]
+        },
+        {
+          "nombre": "amarillo",
+          "entradas": [
+            "amarillo"
+          ],
+          "contiene": [
+            "Precaución"
+          ]
+        },
+        {
+          "nombre": "rojo",
+          "entradas": [
+            "rojo"
+          ],
+          "contiene": [
+            "Alto"
+          ]
+        },
+        {
+          "nombre": "morado",
+          "entradas": [
+            "morado"
+          ],
+          "contiene": [
+            "Color desconocido"
+          ]
+        }
+      ],
+      "solucion": "color = input(\"Color del semáforo: \")\nif color == \"verde\":\n    print(\"Avanza\")\nelif color == \"amarillo\":\n    print(\"Precaución\")\nelif color == \"rojo\":\n    print(\"Alto\")\nelse:\n    print(\"Color desconocido\")",
+      "pistas": [
+        "Cada elif compara el color con otro texto.",
+        "Fíjate en cómo está escrita la condición del if y cópiala cambiando el color.",
+        "Los huecos son <code>color == \"amarillo\"</code> y <code>color == \"rojo\"</code>."
+      ]
+    },
+    {
+      "id": "m06-r2",
+      "titulo": "¿Adolescente?",
+      "resumen": "Un rango con and.",
+      "enunciado": "Pide la edad. Si está entre 13 y 19 (incluidos), muestra <code>Eres adolescente</code>; si no, <code>No eres adolescente</code>.",
+      "inicio": "edad = int(input(\"Edad: \"))\nif «»:\n    print(\"Eres adolescente\")\nelse:\n    print(\"No eres adolescente\")",
+      "requiere": [
+        "and"
+      ],
+      "pruebas": [
+        {
+          "nombre": "15",
+          "entradas": [
+            "15"
+          ],
+          "contiene": [
+            "Eres adolescente"
+          ],
+          "no_contiene": [
+            "No eres"
+          ]
+        },
+        {
+          "nombre": "13",
+          "entradas": [
+            "13"
+          ],
+          "contiene": [
+            "Eres adolescente"
+          ],
+          "no_contiene": [
+            "No eres"
+          ]
+        },
+        {
+          "nombre": "19",
+          "entradas": [
+            "19"
+          ],
+          "contiene": [
+            "Eres adolescente"
+          ],
+          "no_contiene": [
+            "No eres"
+          ]
+        },
+        {
+          "nombre": "12",
+          "entradas": [
+            "12"
+          ],
+          "contiene": [
+            "No eres adolescente"
+          ]
+        },
+        {
+          "nombre": "20",
+          "entradas": [
+            "20"
+          ],
+          "contiene": [
+            "No eres adolescente"
+          ]
+        }
+      ],
+      "solucion": "edad = int(input(\"Edad: \"))\nif edad >= 13 and edad <= 19:\n    print(\"Eres adolescente\")\nelse:\n    print(\"No eres adolescente\")",
+      "pistas": [
+        "Las dos cosas deben cumplirse: usa <code>and</code>.",
+        "Una parte revisa el mínimo (13) y la otra el máximo (19).",
+        "La condición es <code>edad >= 13 and edad <= 19</code>."
+      ]
+    },
+    {
+      "id": "m06-r3",
+      "titulo": "¡Fin de semana!",
+      "resumen": "Una u otra con or.",
+      "enunciado": "Pide el día de la semana (en minúsculas). Si es <code>sábado</code> o <code>domingo</code> muestra <code>¡A descansar!</code>; si no, <code>A la escuela</code>.",
+      "inicio": "dia = input(\"¿Qué día es hoy? \")\nif «»:\n    print(\"¡A descansar!\")\nelse:\n    print(\"A la escuela\")",
+      "requiere": [
+        "or"
+      ],
+      "pruebas": [
+        {
+          "nombre": "sábado",
+          "entradas": [
+            "sábado"
+          ],
+          "contiene": [
+            "A descansar"
+          ]
+        },
+        {
+          "nombre": "domingo",
+          "entradas": [
+            "domingo"
+          ],
+          "contiene": [
+            "A descansar"
+          ]
+        },
+        {
+          "nombre": "lunes",
+          "entradas": [
+            "lunes"
+          ],
+          "contiene": [
+            "A la escuela"
+          ],
+          "no_contiene": [
+            "descansar"
+          ]
+        }
+      ],
+      "solucion": "dia = input(\"¿Qué día es hoy? \")\nif dia == \"sábado\" or dia == \"domingo\":\n    print(\"¡A descansar!\")\nelse:\n    print(\"A la escuela\")",
+      "pistas": [
+        "Basta con que se cumpla una: usa <code>or</code>.",
+        "Repite la comparación completa a cada lado del or.",
+        "La condición es <code>dia == \"sábado\" or dia == \"domingo\"</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m06-mision",
+    "titulo": "Clasificador del clima",
+    "historia": "El club de ecología quiere recomendaciones de ropa.",
+    "enunciado": "Pide la temperatura (entero) y si está lloviendo (<code>s</code> o <code>n</code>). Muestra:<ul><li>30 o más: <code>Calor: usa ropa ligera</code></li><li>de 20 a 29: <code>Templado: una playera está bien</code></li><li>de 10 a 19: <code>Fresco: lleva suéter</code></li><li>menos de 10: <code>Frío: ponte chamarra</code></li></ul>Además, si llueve, muestra <code>No olvides el paraguas</code>.",
+    "requiere": [
+      "if",
+      "elif",
+      "else"
+    ],
+    "pruebas": [
+      {
+        "nombre": "32 °C sin lluvia",
+        "entradas": [
+          "32",
+          "n"
+        ],
+        "contiene": [
+          "Calor"
+        ],
+        "no_contiene": [
+          "paraguas",
+          "Templado"
+        ]
+      },
+      {
+        "nombre": "25 °C con lluvia",
+        "entradas": [
+          "25",
+          "s"
+        ],
+        "contiene": [
+          "Templado",
+          "paraguas"
+        ]
+      },
+      {
+        "nombre": "15 °C sin lluvia",
+        "entradas": [
+          "15",
+          "n"
+        ],
+        "contiene": [
+          "Fresco"
+        ],
+        "no_contiene": [
+          "paraguas"
+        ]
+      },
+      {
+        "nombre": "5 °C con lluvia",
+        "entradas": [
+          "5",
+          "s"
+        ],
+        "contiene": [
+          "Frío",
+          "paraguas"
+        ]
+      },
+      {
+        "nombre": "20 °C (límite)",
+        "entradas": [
+          "20",
+          "n"
+        ],
+        "contiene": [
+          "Templado"
+        ],
+        "no_contiene": [
+          "Fresco"
+        ]
+      },
+      {
+        "nombre": "10 °C (límite)",
+        "entradas": [
+          "10",
+          "n"
+        ],
+        "contiene": [
+          "Fresco"
+        ],
+        "no_contiene": [
+          "Frío"
+        ]
+      }
+    ],
+    "pistas": [
+      "Usa una cadena if / elif / elif / else para la temperatura y otro if aparte para la lluvia.",
+      "Ordena de la temperatura más alta a la más baja: así cada elif solo necesita una comparación.",
+      "Las condiciones son <code>t >= 30</code>, <code>t >= 20</code>, <code>t >= 10</code>; y aparte <code>if llueve == \"s\":</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "La estructura ya está. Escribe las condiciones en los huecos ✎.",
+        "inicio": "t = int(input(\"Temperatura: \"))\nllueve = input(\"¿Está lloviendo? (s/n) \")\nif «»:\n    print(\"Calor: usa ropa ligera\")\nelif «»:\n    print(\"Templado: una playera está bien\")\nelif «»:\n    print(\"Fresco: lleva suéter\")\nelse:\n    print(\"Frío: ponte chamarra\")\nif «»:\n    print(\"No olvides el paraguas\")",
+        "solucion": "t = int(input(\"Temperatura: \"))\nllueve = input(\"¿Está lloviendo? (s/n) \")\nif t >= 30:\n    print(\"Calor: usa ropa ligera\")\nelif t >= 20:\n    print(\"Templado: una playera está bien\")\nelif t >= 10:\n    print(\"Fresco: lleva suéter\")\nelse:\n    print(\"Frío: ponte chamarra\")\nif llueve == \"s\":\n    print(\"No olvides el paraguas\")"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "t = int(input(\"Temperatura: \"))\nllueve = input(\"¿Está lloviendo? (s/n) \")\nif t >= 30:\n    print(\"Calor: usa ropa ligera\")\nelif t >= 20:\n    print(\"Templado: una playera está bien\")\nelif t >= 10:\n    print(\"Fresco: lleva suéter\")\nelse:\n    print(\"Frío: ponte chamarra\")\nif llueve == \"s\":\n    print(\"No olvides el paraguas\")"
+      },
+      "maestro": {
+        "enunciado": "además, si hace frío (menos de 10) <b>y</b> llueve, muestra <code>Mejor quédate en casa</code>.",
+        "inicio": "",
+        "requiere": [
+          "and"
+        ],
+        "pruebas": [
+          {
+            "nombre": "5 °C con lluvia",
+            "entradas": [
+              "5",
+              "s"
+            ],
+            "contiene": [
+              "Frío",
+              "paraguas",
+              "quédate en casa"
+            ]
+          },
+          {
+            "nombre": "5 °C sin lluvia",
+            "entradas": [
+              "5",
+              "n"
+            ],
+            "contiene": [
+              "Frío"
+            ],
+            "no_contiene": [
+              "quédate",
+              "paraguas"
+            ]
+          },
+          {
+            "nombre": "25 °C con lluvia",
+            "entradas": [
+              "25",
+              "s"
+            ],
+            "contiene": [
+              "Templado",
+              "paraguas"
+            ],
+            "no_contiene": [
+              "quédate"
+            ]
+          },
+          {
+            "nombre": "32 °C sin lluvia",
+            "entradas": [
+              "32",
+              "n"
+            ],
+            "contiene": [
+              "Calor"
+            ],
+            "no_contiene": [
+              "paraguas"
+            ]
+          }
+        ],
+        "solucion": "t = int(input(\"Temperatura: \"))\nllueve = input(\"¿Está lloviendo? (s/n) \")\nif t >= 30:\n    print(\"Calor: usa ropa ligera\")\nelif t >= 20:\n    print(\"Templado: una playera está bien\")\nelif t >= 10:\n    print(\"Fresco: lleva suéter\")\nelse:\n    print(\"Frío: ponte chamarra\")\nif llueve == \"s\":\n    print(\"No olvides el paraguas\")\nif t < 10 and llueve == \"s\":\n    print(\"Mejor quédate en casa\")"
+      }
+    }
+  },
+  "extra": {
+    "id": "m06-extra",
+    "titulo": "¿Año bisiesto?",
+    "historia": "Febrero tiene 29 días en los años bisiestos.",
+    "enunciado": "Un año es bisiesto si es divisible entre 4 <b>y no</b> entre 100, <b>o</b> si es divisible entre 400. Pide un año y muestra <code>2024 es bisiesto</code> o <code>2023 no es bisiesto</code>.",
+    "inicio": "",
+    "requiere": [
+      "and",
+      "or"
+    ],
+    "pruebas": [
+      {
+        "nombre": "2024",
+        "entradas": [
+          "2024"
+        ],
+        "contiene": [
+          "2024 es bisiesto"
+        ]
+      },
+      {
+        "nombre": "2023",
+        "entradas": [
+          "2023"
+        ],
+        "contiene": [
+          "2023 no es bisiesto"
+        ]
+      },
+      {
+        "nombre": "1900",
+        "entradas": [
+          "1900"
+        ],
+        "contiene": [
+          "1900 no es bisiesto"
+        ]
+      },
+      {
+        "nombre": "2000",
+        "entradas": [
+          "2000"
+        ],
+        "contiene": [
+          "2000 es bisiesto"
+        ]
+      }
+    ],
+    "solucion": "anio = int(input(\"Año: \"))\nif (anio % 4 == 0 and anio % 100 != 0) or anio % 400 == 0:\n    print(anio, \"es bisiesto\")\nelse:\n    print(anio, \"no es bisiesto\")"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué palabra agrega más opciones entre if y else?",
+        "opciones": [
+          "elseif",
+          "elif",
+          "then",
+          "or"
+        ],
+        "correcta": 1,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "B",
+          "C",
+          "B\nC",
+          "A"
+        ],
+        "correcta": 0,
+        "codigo": "x = 7\nif x > 10:\n    print(\"A\")\nelif x > 5:\n    print(\"B\")\nelse:\n    print(\"C\")",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Cuándo es True <code>a and b</code>?",
+        "opciones": [
+          "Nunca",
+          "Cuando las dos son True",
+          "Cuando las dos son False",
+          "Cuando una es True"
+        ],
+        "correcta": 1
+      },
+      {
+        "pregunta": "¿Cuándo es True <code>a or b</code>?",
+        "opciones": [
+          "Cuando las dos son False",
+          "Solo cuando las dos son True",
+          "Cuando al menos una es True",
+          "Siempre"
+        ],
+        "correcta": 2
+      },
+      {
+        "pregunta": "¿Qué da <code>not True</code>?",
+        "opciones": [
+          "None",
+          "Error",
+          "True",
+          "False"
+        ],
+        "correcta": 3
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Niño",
+          "Adolescente",
+          "Nada",
+          "Adulto"
+        ],
+        "correcta": 1,
+        "codigo": "edad = 15\nif edad < 13:\n    print(\"Niño\")\nelif edad <= 19:\n    print(\"Adolescente\")\nelse:\n    print(\"Adulto\")",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "En un if / elif / else se pueden ejecutar varios bloques.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
+        "tiempo": 15,
+        "explicacion": "Se ejecuta solo el primero cuya condición sea True."
+      },
+      {
+        "pregunta": "¿Qué condición revisa que n esté entre 1 y 10?",
+        "opciones": [
+          "not n == 10",
+          "n > 1 and n > 10",
+          "n >= 1 or n <= 10",
+          "n >= 1 and n <= 10"
+        ],
+        "correcta": 3,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Error",
+          "A la escuela",
+          "Nada",
+          "¡A descansar!"
+        ],
+        "correcta": 3,
+        "codigo": "dia = \"sábado\"\nif dia == \"sábado\" or dia == \"domingo\":\n    print(\"¡A descansar!\")\nelse:\n    print(\"A la escuela\")",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "🪜",
+      "texto": "<code>elif</code> agrega opciones; Python se queda con la primera condición True.",
+      "codigo": "if t >= 30:\n    print(\"Calor\")\nelif t >= 20:\n    print(\"Templado\")\nelse:\n    print(\"Frío\")"
+    },
+    {
+      "icono": "🔗",
+      "texto": "<code>and</code>: las dos; <code>or</code>: al menos una; <code>not</code>: lo contrario."
+    },
+    {
+      "icono": "⚠️",
+      "texto": "El orden importa: pon primero las condiciones más exigentes."
+    }
+  ],
+  "glosario": [
+    {
+      "en": "elif (else if)",
+      "es": "si no, si",
+      "def": "Otra condición que se revisa solo si las anteriores fueron falsas."
+    },
+    {
+      "en": "and",
+      "es": "y",
+      "def": "Verdadero solo si las dos condiciones lo son."
+    },
+    {
+      "en": "or",
+      "es": "o",
+      "def": "Verdadero si al menos una condición lo es."
+    },
+    {
+      "en": "not",
+      "es": "no",
+      "def": "Invierte el valor: not True es False."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "Si varias condiciones de una cadena if/elif son True, ¿cuál se ejecuta?",
+      "respuesta": "Solo la primera que sea True. Las demás ya no se revisan."
+    },
+    {
+      "pregunta": "¿Cuándo da True <code>a and b</code>? ¿Y <code>a or b</code>?",
+      "respuesta": "<code>a and b</code> solo si las dos son True. <code>a or b</code> si al menos una es True."
+    },
+    {
+      "pregunta": "¿Por qué importa el orden en un clasificador de temperatura?",
+      "respuesta": "Porque se ejecuta la primera condición verdadera. Si pones primero <code>t >= 10</code>, 35 °C caería en «Fresco»."
+    }
+  ],
+  "plan": {
+    "activacion": "Dibuja un semáforo y pregunta: ¿cuántas decisiones hay? ¿Alcanza con if / else?",
+    "ejemplo": "Ejemplo «¿Qué tiempo hace?»: el grupo predice la salida para 35, 22 y 5 grados.",
+    "practica": "Actividades: ordenar el semáforo, clasificar and/or/not y caza el error lógico.",
+    "reto": "Retos rápidos y la misión «Clasificador del clima».",
+    "cierre": "Kahoot en equipos y autoevaluación."
+  }
+}

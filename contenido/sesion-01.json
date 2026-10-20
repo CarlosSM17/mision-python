@@ -1,0 +1,576 @@
+{
+  "numero": 1,
+  "unidad": 1,
+  "titulo": "Secuencia y salida",
+  "icono": "🖨️",
+  "modo": 3,
+  "python": [
+    "print()",
+    "comentarios #"
+  ],
+  "historiaIcono": "🪪",
+  "historia": "Es tu primera semana en la secundaria y tu nuevo grupo quiere conocerte. En lugar de presentarte en voz alta, vas a programar una <b>tarjeta de presentación</b> que aparezca en la pantalla.",
+  "objetivos": [
+    "Mostrar mensajes en la pantalla con <code>print()</code>.",
+    "Comprobar que Python ejecuta las instrucciones en orden, de arriba hacia abajo.",
+    "Escribir comentarios con <code>#</code> para explicar tu programa.",
+    "Distinguir entre un texto (entre comillas) y un número."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🖨️",
+      "titulo": "La secuencia",
+      "texto": "Un programa es una <b>secuencia</b>: una lista de instrucciones que la computadora sigue <b>en orden</b>, de arriba hacia abajo. Como una receta de cocina."
+    },
+    {
+      "tipo": "pasos",
+      "titulo": "Como una receta",
+      "pasos": [
+        {
+          "icono": "🥚",
+          "texto": "Rompe los huevos."
+        },
+        {
+          "icono": "🥣",
+          "texto": "Bátelos."
+        },
+        {
+          "icono": "🍳",
+          "texto": "Fríelos en el sartén."
+        },
+        {
+          "icono": "🍽️",
+          "texto": "Sírvelos."
+        }
+      ],
+      "texto": "Si cambias el orden de los pasos, ¡el resultado cambia!",
+      "py": "En Python pasa igual: la línea 1 se ejecuta antes que la línea 2."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "consola",
+      "titulo": "Cada print, un renglón",
+      "texto": "Cada <code>print()</code> muestra su mensaje en un renglón nuevo, en el mismo orden en que aparece.",
+      "datos": {
+        "codigo": "print(\"Me despierto\")\nprint(\"Desayuno\")\nprint(\"Voy a la escuela\")",
+        "salida": "Me despierto\nDesayuno\nVoy a la escuela"
+      }
+    },
+    {
+      "tipo": "idea",
+      "icono": "🔗",
+      "titulo": "Varias piezas en un print",
+      "texto": "Separa varias piezas con <b>comas</b>. Python pone un espacio entre cada pieza. Los números no necesitan comillas.",
+      "codigo": "print(\"Tengo\", 12, \"años\")",
+      "salida": "Tengo 12 años"
+    },
+    {
+      "tipo": "comparar",
+      "titulo": "Comillas: texto o código",
+      "texto": "Lo que va entre comillas se muestra tal cual. Sin comillas, Python cree que es un nombre o una cuenta.",
+      "mal": {
+        "codigo": "print(Hola)",
+        "nota": "Sin comillas, Python busca algo llamado <code>Hola</code> y marca <b>NameError</b>."
+      },
+      "bien": {
+        "codigo": "print(\"Hola\")",
+        "nota": "Con comillas es texto: se muestra Hola."
+      }
+    },
+    {
+      "tipo": "idea",
+      "icono": "🧮",
+      "titulo": "print también calcula",
+      "texto": "Sin comillas, Python hace la cuenta y muestra el resultado. Con comillas, muestra la cuenta como texto.",
+      "codigo": "print(2 + 3)\nprint(\"2 + 3\")",
+      "salida": "5\n2 + 3"
+    },
+    {
+      "tipo": "idea",
+      "icono": "💬",
+      "titulo": "Comentarios: notas para personas",
+      "texto": "Todo lo que va después de <code>#</code> es un <b>comentario</b>: Python lo ignora. Sirve para explicar tu código.",
+      "codigo": "# Programa de Ana\nprint(\"Hola\")  # saluda",
+      "salida": "Hola",
+      "py": "Usa comentarios para recordar qué hace cada parte. ¡Tu yo del futuro te lo agradecerá!"
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "print",
+      "titulo": "Laboratorio de print",
+      "texto": "Escribe tu propio print y descubre qué pasa con las comas y las comillas."
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "¿Qué muestra este programa?",
+      "opciones": [
+        "AB en un solo renglón",
+        "B y debajo A",
+        "Nada",
+        "A y debajo B"
+      ],
+      "correcta": 3,
+      "explicacion": "Cada print va en su propio renglón y se ejecutan en orden.",
+      "codigo": "print(\"A\")\nprint(\"B\")"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "La tarjeta de Robi",
+    "descripcion": "Robi, el explorador, ya hizo su tarjeta de presentación. Léela con calma.",
+    "codigo": "# Tarjeta de presentación de Robi\nprint(\"==============\")\nprint(\"Hola, soy Robi\")\nprint(\"Tengo\", 12, \"años\")\nprint(\"Me gusta explorar\")\nprint(\"==============\")",
+    "prediccion": {
+      "pregunta": "¿Cuántos renglones aparecerán en la pantalla?",
+      "opciones": [
+        "5",
+        "6",
+        "4",
+        "1"
+      ],
+      "correcta": 0,
+      "explicacion": "Hay 5 instrucciones print. La primera línea es un comentario: Python la ignora."
+    },
+    "investigar": [
+      "¿Qué pasa si cambias de lugar dos líneas <code>print</code>?",
+      "¿Qué hace la coma en <code>print(\"Tengo\", 12, \"años\")</code>? Fíjate en los espacios.",
+      "¿Por qué no aparece en la pantalla la primera línea del programa?"
+    ],
+    "modificar": "Cambia los datos de Robi por los tuyos y agrega una línea con tu comida favorita."
+  },
+  "actividades": [
+    {
+      "id": "m01-a1",
+      "tipo": "ordenar",
+      "titulo": "La rutina de la mañana",
+      "instrucciones": "Ordena las líneas para que la rutina tenga sentido.",
+      "lineas": [
+        "print(\"Me despierto\")",
+        "print(\"Desayuno\")",
+        "print(\"Me lavo los dientes\")",
+        "print(\"Voy a la escuela\")"
+      ]
+    },
+    {
+      "id": "m01-a2",
+      "tipo": "salida",
+      "titulo": "Tres renglones",
+      "instrucciones": "Escribe exactamente lo que aparecerá en la pantalla.",
+      "codigo": "print(\"Hola,\", \"Ana\")\nprint(3 + 4)\nprint(\"3 + 4\")",
+      "respuesta": "Hola, Ana\n7\n3 + 4",
+      "explicacion": "La coma pone un espacio; sin comillas se calcula; con comillas se muestra tal cual."
+    },
+    {
+      "id": "m01-a3",
+      "tipo": "error",
+      "titulo": "Caza el error: comillas",
+      "instrucciones": "Este programa tiene <b>un error</b>. Toca la línea donde está.",
+      "codigo": "print(\"Bienvenidos\")\nprint(\"a la nave)\nprint(\"¡Despegamos!\")",
+      "tipoError": "SyntaxError",
+      "explicacion": "En la línea 2 falta cerrar las comillas: el texto debe empezar <b>y terminar</b> con comillas.",
+      "correccion": "print(\"a la nave\")",
+      "linea": 2
+    },
+    {
+      "id": "m01-a4",
+      "tipo": "clasificar",
+      "titulo": "¿Texto o cálculo?",
+      "instrucciones": "Coloca cada elemento en su caja.",
+      "categorias": [
+        {
+          "id": "texto",
+          "nombre": "Muestra el texto tal cual",
+          "color": "#9966FF",
+          "icono": "🔤"
+        },
+        {
+          "id": "calculo",
+          "nombre": "Muestra un resultado",
+          "color": "#0FBD8C",
+          "icono": "🧮"
+        }
+      ],
+      "elementos": [
+        {
+          "texto": "print(\"5 + 5\")",
+          "cat": "texto"
+        },
+        {
+          "texto": "print(5 + 5)",
+          "cat": "calculo"
+        },
+        {
+          "texto": "print(\"Hola\")",
+          "cat": "texto"
+        },
+        {
+          "texto": "print(10 * 2)",
+          "cat": "calculo"
+        },
+        {
+          "texto": "print(\"10 * 2\")",
+          "cat": "texto"
+        },
+        {
+          "texto": "print(100 - 1)",
+          "cat": "calculo"
+        }
+      ]
+    },
+    {
+      "id": "m01-a5",
+      "tipo": "memorama",
+      "titulo": "Memorama de print",
+      "instrucciones": "Voltea dos cartas a la vez y encuentra las parejas.",
+      "pares": [
+        [
+          "print(\"Hola\")",
+          "🖥️ Hola"
+        ],
+        [
+          "print(2 + 2)",
+          "🖥️ 4"
+        ],
+        [
+          "print(\"2 + 2\")",
+          "🖥️ 2 + 2"
+        ],
+        [
+          "print(\"A\", \"B\")",
+          "🖥️ A B"
+        ],
+        [
+          "# nota",
+          "🖥️ (no muestra nada)"
+        ]
+      ],
+      "codigo": [
+        0
+      ]
+    }
+  ],
+  "retos": [
+    {
+      "id": "m01-r1",
+      "titulo": "Tu primer print",
+      "resumen": "Haz que aparezca «¡Hola, mundo!».",
+      "enunciado": "Haz que el programa muestre exactamente: <b>¡Hola, mundo!</b><br>Cambia el hueco <code>___</code> del <code>print</code> por el mensaje entre comillas.",
+      "inicio": "print(___)",
+      "bloques": [
+        "py_print",
+        "py_string"
+      ],
+      "pruebas": [
+        {
+          "contiene": [
+            "¡Hola, mundo!"
+          ]
+        }
+      ],
+      "solucion": "print(\"¡Hola, mundo!\")",
+      "pistas": [
+        "Un texto siempre va entre comillas: <code>\"...\"</code>.",
+        "Borra los guiones bajos <code>___</code> y escribe el texto con sus comillas.",
+        "Debe quedar <code>print(\"¡Hola, mundo!\")</code>."
+      ]
+    },
+    {
+      "id": "m01-r2",
+      "titulo": "En orden",
+      "resumen": "Acomoda la rutina de la mañana.",
+      "enunciado": "Los pasos de la mañana están revueltos. Cambia el orden de las líneas para que la pantalla muestre:<br><code>Me despierto</code><br><code>Desayuno</code><br><code>Voy a la escuela</code>",
+      "inicio": "print(\"Voy a la escuela\")\nprint(\"Me despierto\")\nprint(\"Desayuno\")",
+      "bloques": [
+        "py_print",
+        "py_string"
+      ],
+      "pruebas": [
+        {
+          "exacto": "Me despierto\nDesayuno\nVoy a la escuela"
+        }
+      ],
+      "solucion": "print(\"Me despierto\")\nprint(\"Desayuno\")\nprint(\"Voy a la escuela\")",
+      "pistas": [
+        "Python ejecuta las líneas de arriba hacia abajo.",
+        "Puedes cortar una línea (Ctrl+X) y pegarla en otro lugar (Ctrl+V).",
+        "La primera línea debe ser <code>print(\"Me despierto\")</code>."
+      ]
+    },
+    {
+      "id": "m01-r3",
+      "titulo": "Una nota para personas",
+      "resumen": "Agrega un comentario con tu nombre.",
+      "enunciado": "Agrega un <b>comentario</b> arriba del programa que diga quién lo hizo, por ejemplo <code># Programa de Ana</code>. El programa debe seguir mostrando lo mismo.",
+      "inicio": "print(\"Este programa es mío\")",
+      "bloques": [
+        "py_print",
+        "py_string",
+        "py_comment"
+      ],
+      "requiere": [
+        "comentario"
+      ],
+      "pruebas": [
+        {
+          "exacto": "Este programa es mío"
+        }
+      ],
+      "solucion": "# Programa de Ana\nprint(\"Este programa es mío\")",
+      "pistas": [
+        "Los comentarios empiezan con <code>#</code>.",
+        "Escribe una línea nueva arriba del <code>print</code> que empiece con <code>#</code>.",
+        "Por ejemplo: <code># Programa de Ana</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m01-mision",
+    "titulo": "Tarjeta de presentación",
+    "historia": "Tu grupo va a proyectar las tarjetas de todos el viernes. ¡Que la tuya se vea genial!",
+    "enunciado": "Programa tu tarjeta. Debe mostrar, en este orden:<ol><li>una línea de adorno hecha con símbolos (por ejemplo <code>*****</code>),</li><li><code>Hola, soy</code> y tu nombre,</li><li>tu edad con comas: <code>print(\"Tengo\", 12, \"años\")</code>,</li><li>algo que te guste,</li><li>otra línea de adorno.</li></ol>Agrega también un comentario al inicio.",
+    "requiere": [
+      "print*5",
+      "comentario"
+    ],
+    "pruebas": [
+      {
+        "nombre": "Tu tarjeta",
+        "contiene": [
+          "Hola, soy",
+          "Tengo",
+          "años"
+        ],
+        "no_contiene": [
+          "NOMBRE"
+        ],
+        "lineasMin": 5
+      }
+    ],
+    "pistas": [
+      "Necesitas varios <code>print</code>, uno por renglón, y un comentario <code>#</code>.",
+      "El orden es: adorno, nombre, edad, gusto, adorno. El comentario va hasta arriba.",
+      "Para la edad: un <code>print</code> con tres piezas separadas por comas: <code>\"Tengo\"</code>, un número y <code>\"años\"</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "La tarjeta ya está casi lista: cambia NOMBRE por tu nombre, pon tu edad en el hueco y agrega la línea de lo que te gusta.",
+        "inicio": "# Mi tarjeta de presentación\nprint(\"*****************\")\nprint(\"Hola, soy NOMBRE\")\nprint(\"Tengo\", ___, \"años\")\n# Agrega aquí un print con algo que te guste\nprint(\"*****************\")",
+        "solucion": "# Mi tarjeta de presentación\nprint(\"*****************\")\nprint(\"Hola, soy Ana\")\nprint(\"Tengo\", 12, \"años\")\nprint(\"Me gusta el futbol\")\nprint(\"*****************\")"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "# Tarjeta de presentación de Ana\nprint(\"~~~~~~~~~~~~~~~~~~~\")\nprint(\"Hola, soy Ana\")\nprint(\"Tengo\", 12, \"años\")\nprint(\"Me gusta dibujar\")\nprint(\"~~~~~~~~~~~~~~~~~~~\")"
+      },
+      "maestro": {
+        "enunciado": "debajo de la tarjeta, dibuja con <code>print</code> una figura de al menos 3 renglones hecha con símbolos (un gato, una cara, un cohete…).",
+        "inicio": "",
+        "requiere": [
+          "print*8"
+        ],
+        "pruebas": [
+          {
+            "nombre": "Tarjeta con dibujo",
+            "contiene": [
+              "Hola, soy",
+              "Tengo",
+              "años"
+            ],
+            "no_contiene": [
+              "NOMBRE"
+            ],
+            "lineasMin": 8
+          }
+        ],
+        "solucion": "# Tarjeta de presentación de Ana\nprint(\"*****************\")\nprint(\"Hola, soy Ana\")\nprint(\"Tengo\", 12, \"años\")\nprint(\"Me gustan los gatos\")\nprint(\"*****************\")\nprint(\" /\\\\_/\\\\ \")\nprint(\"( o.o )\")\nprint(\" > ^ < \")"
+      }
+    }
+  },
+  "extra": {
+    "id": "m01-extra",
+    "titulo": "Letrero de cumpleaños",
+    "historia": "Mañana es el cumpleaños de alguien de tu grupo.",
+    "enunciado": "Programa un letrero que diga <b>Feliz cumpleaños</b> y el nombre de la persona, con un pastel dibujado con símbolos de al menos 4 renglones. ¡Usa tu creatividad!",
+    "inicio": "",
+    "requiere": [
+      "print*6"
+    ],
+    "pruebas": [
+      {
+        "contiene": [
+          "Feliz cumpleaños"
+        ],
+        "lineasMin": 6
+      }
+    ],
+    "solucion": "print(\"   i i i i   \")\nprint(\"  |~~~~~~~|  \")\nprint(\"  |  :)   |  \")\nprint(\" (_________) \")\nprint()\nprint(\"Feliz cumpleaños, Leo\")\nprint(\"¡Que cumplas muchos más!\")"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿En qué orden se ejecutan las líneas?",
+        "opciones": [
+          "Primero las más cortas",
+          "De abajo hacia arriba",
+          "De arriba hacia abajo",
+          "Al azar"
+        ],
+        "correcta": 2
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Tengo 12 años",
+          "Tengo12años",
+          "Error",
+          "\"Tengo\", 12, \"años\""
+        ],
+        "correcta": 0,
+        "codigo": "print(\"Tengo\", 12, \"años\")",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Error",
+          "9",
+          "45",
+          "4 + 5"
+        ],
+        "correcta": 1,
+        "codigo": "print(4 + 5)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Error",
+          "9",
+          "45",
+          "4 + 5"
+        ],
+        "correcta": 3,
+        "codigo": "print(\"4 + 5\")",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Para qué sirve el símbolo <code>#</code>?",
+        "opciones": [
+          "Para terminar el programa",
+          "Para escribir comentarios que Python ignora",
+          "Para mostrar un número",
+          "Para hacer cuentas"
+        ],
+        "correcta": 1
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "Cada <code>print()</code> muestra su mensaje en un renglón nuevo.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 0,
+        "tiempo": 15
+      },
+      {
+        "pregunta": "¿Qué problema tiene <code>print(Hola)</code>?",
+        "opciones": [
+          "Le falta un punto",
+          "No tiene ningún problema",
+          "print va con mayúscula",
+          "Le faltan las comillas al texto"
+        ],
+        "correcta": 3
+      },
+      {
+        "pregunta": "¿Cuántos renglones muestra?",
+        "opciones": [
+          "4",
+          "3",
+          "2",
+          "1"
+        ],
+        "correcta": 1,
+        "codigo": "print(\"Uno\")\n# print(\"Dos\")\nprint(\"Tres\")\nprint(\"Cuatro\")",
+        "tiempo": 30
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "<code>Print(\"Hola\")</code> funciona igual que <code>print(\"Hola\")</code>.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
+        "tiempo": 15,
+        "explicacion": "Python distingue mayúsculas y minúsculas: <code>Print</code> no existe."
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "📜",
+      "texto": "Un programa es una secuencia: se ejecuta de arriba hacia abajo."
+    },
+    {
+      "icono": "🖨️",
+      "texto": "<code>print()</code> muestra texto (entre comillas) o el resultado de una cuenta.",
+      "codigo": "print(\"Tengo\", 12, \"años\")"
+    },
+    {
+      "icono": "💬",
+      "texto": "Los comentarios empiezan con <code>#</code> y Python los ignora.",
+      "codigo": "# Programa de Ana"
+    }
+  ],
+  "glosario": [
+    {
+      "en": "print",
+      "es": "imprimir, mostrar",
+      "def": "Muestra en la consola lo que va entre paréntesis."
+    },
+    {
+      "en": "string (str)",
+      "es": "cadena de texto",
+      "def": "Un texto entre comillas, como <code>\"Hola\"</code>."
+    },
+    {
+      "en": "comment",
+      "es": "comentario",
+      "def": "Nota para personas que empieza con <code>#</code>. Python no la ejecuta."
+    },
+    {
+      "en": "console",
+      "es": "consola",
+      "def": "La zona donde aparecen los resultados del programa."
+    },
+    {
+      "en": "sequence",
+      "es": "secuencia",
+      "def": "Instrucciones que se ejecutan una tras otra, en orden."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Por qué el texto va entre comillas?",
+      "respuesta": "Para que Python sepa que es un texto que debe mostrar tal cual. Sin comillas, Python pensaría que es el nombre de algo (una variable) o una cuenta."
+    },
+    {
+      "pregunta": "¿Para qué sirve un comentario?",
+      "respuesta": "Para dejar notas a las personas que leen el programa. Python ignora todo lo que va después de <code>#</code>."
+    },
+    {
+      "pregunta": "¿Qué muestra <code>print(\"Tengo\", 12, \"años\")</code>?",
+      "respuesta": "<code>Tengo 12 años</code>: las comas separan las piezas y Python pone un espacio entre ellas."
+    }
+  ],
+  "plan": {
+    "activacion": "Pide a dos voluntarios que den instrucciones para hacer un sándwich en desorden; comenta por qué importa el orden.",
+    "ejemplo": "Proyecta «La tarjeta de Robi»: el grupo predice la salida antes de ejecutar y luego modifican una línea.",
+    "practica": "Actividades en parejas: ordenar la rutina, caza el error y memorama.",
+    "reto": "Retos rápidos y la misión «Tarjeta de presentación» (cada quien elige su nivel).",
+    "cierre": "Kahoot de la misión en equipos y autoevaluación con emojis."
+  }
+}

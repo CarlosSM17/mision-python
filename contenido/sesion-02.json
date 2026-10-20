@@ -1,0 +1,684 @@
+{
+  "numero": 2,
+  "unidad": 1,
+  "titulo": "Variables y operaciones",
+  "icono": "📦",
+  "modo": 3,
+  "python": [
+    "=",
+    "+ - * / // %",
+    "int",
+    "float"
+  ],
+  "historiaIcono": "🥪",
+  "historia": "En el recreo, la fila de la tiendita escolar es larguísima: la encargada hace todas las cuentas a mano. ¿Y si le ayudas con un programa que calcule el total y el cambio?",
+  "objetivos": [
+    "Guardar datos en <b>variables</b> con <code>=</code>.",
+    "Hacer cuentas con <code>+ - * / // %</code>.",
+    "Distinguir números enteros (<code>int</code>) de números con decimales (<code>float</code>).",
+    "Elegir nombres de variables claros y válidos."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "📦",
+      "titulo": "Variables: cajas con nombre",
+      "texto": "Una <b>variable</b> guarda un dato para usarlo después. Imagínala como una caja con etiqueta: la etiqueta es el <b>nombre</b> y adentro está el <b>valor</b>."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "caja",
+      "titulo": "Guardar un dato",
+      "texto": "El signo <code>=</code> significa <b>guarda</b> (no «es igual»). Se lee de derecha a izquierda: el valor entra en la caja.",
+      "datos": {
+        "cajas": [
+          {
+            "nombre": "edad",
+            "valor": "12"
+          },
+          {
+            "nombre": "nombre",
+            "valor": "\"Ana\""
+          }
+        ]
+      },
+      "codigo": "edad = 12\nnombre = \"Ana\""
+    },
+    {
+      "tipo": "animacion",
+      "animacion": "variables",
+      "titulo": "Mira cómo cambia una caja",
+      "texto": "Si guardas un valor nuevo, el anterior se borra. Presiona los botones para verlo paso a paso."
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "variables",
+      "titulo": "Laboratorio de variables",
+      "texto": "Crea variables, cambia sus valores y observa las cajas."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "tipos",
+      "titulo": "Tipos de datos",
+      "texto": "Cada dato tiene un <b>tipo</b>. Por ahora usaremos enteros (<code>int</code>), decimales (<code>float</code>) y texto (<code>str</code>)."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "operadores",
+      "titulo": "Operadores aritméticos",
+      "texto": "Python es una calculadora muy poderosa. Fíjate en <code>//</code> (división entera) y <code>%</code> (residuo).",
+      "py": "<code>7 // 2</code> es 3 porque el 2 cabe 3 veces en el 7; y sobra 1, por eso <code>7 % 2</code> es 1."
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "operadores",
+      "titulo": "Prueba los operadores",
+      "texto": "Elige dos números y un operador. ¿Qué pasa con <code>//</code> y <code>%</code>?"
+    },
+    {
+      "tipo": "idea",
+      "icono": "🧮",
+      "titulo": "Cuentas con variables",
+      "texto": "Puedes hacer cuentas con variables y guardar el resultado en otra variable.",
+      "codigo": "precio = 15\ncantidad = 3\ntotal = precio * cantidad\nprint(\"Total:\", total)",
+      "salida": "Total: 45"
+    },
+    {
+      "tipo": "comparar",
+      "titulo": "Nombres de variables",
+      "texto": "Los nombres van sin espacios ni acentos y no pueden empezar con número. Usa guion bajo para separar palabras.",
+      "mal": {
+        "codigo": "2do_lugar = 5\nmi edad = 12",
+        "nota": "Empieza con número y tiene espacios: <b>SyntaxError</b>."
+      },
+      "bien": {
+        "codigo": "segundo_lugar = 5\nmi_edad = 12",
+        "nota": "Claros y válidos."
+      }
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "¿Cuánto vale <code>x</code> al final?",
+      "opciones": [
+        "5",
+        "3",
+        "8",
+        "x + 3"
+      ],
+      "correcta": 2,
+      "explicacion": "Primero se calcula <code>x + 3</code> con el valor viejo (5) y el resultado (8) se guarda en <code>x</code>.",
+      "codigo": "x = 5\nx = x + 3"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "Pizza para el grupo",
+    "descripcion": "El grupo pidió pizzas para celebrar. Hay que repartir las rebanadas en partes iguales.",
+    "codigo": "rebanadas = 8\npizzas = 3\nalumnos = 7\ntotal = rebanadas * pizzas\npor_alumno = total // alumnos\nsobran = total % alumnos\nprint(\"Rebanadas en total:\", total)\nprint(\"A cada quien le tocan:\", por_alumno)\nprint(\"Sobran:\", sobran)",
+    "prediccion": {
+      "pregunta": "¿Cuántas rebanadas sobran?",
+      "opciones": [
+        "3",
+        "0",
+        "24",
+        "3.4"
+      ],
+      "correcta": 0,
+      "explicacion": "Hay 8 × 3 = 24 rebanadas. 24 // 7 = 3 a cada quien (eso usa 21) y 24 % 7 = 3 sobran."
+    },
+    "investigar": [
+      "Con 👣 Paso a paso, observa en qué momento aparece cada variable en la tabla.",
+      "¿Qué cambia si usas <code>/</code> en lugar de <code>//</code>?",
+      "¿Qué pasa si hay 8 alumnos?"
+    ],
+    "modificar": "Cambia el número de pizzas y de alumnos. ¿Con cuántas pizzas no sobra ninguna rebanada para 8 alumnos?"
+  },
+  "actividades": [
+    {
+      "id": "m02-a1",
+      "tipo": "traza",
+      "titulo": "La caja cambia",
+      "instrucciones": "Sé la computadora: escribe cuánto vale cada variable después de cada línea.",
+      "codigo": "a = 4\nb = a * 2\na = a + 1\nb = b - a",
+      "variables": [
+        "a",
+        "b"
+      ],
+      "filas": [
+        {
+          "linea": 1,
+          "valores": {
+            "a": "4",
+            "b": ""
+          }
+        },
+        {
+          "linea": 2,
+          "valores": {
+            "a": "4",
+            "b": "8"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "a": "5",
+            "b": "8"
+          }
+        },
+        {
+          "linea": 4,
+          "valores": {
+            "a": "5",
+            "b": "3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m02-a2",
+      "tipo": "clasificar",
+      "titulo": "¿Qué tipo de dato es?",
+      "instrucciones": "Coloca cada elemento en su caja.",
+      "categorias": [
+        {
+          "id": "int",
+          "nombre": "int · entero",
+          "color": "#4C97FF",
+          "icono": "🔢"
+        },
+        {
+          "id": "float",
+          "nombre": "float · decimal",
+          "color": "#0FBD8C",
+          "icono": "🌡️"
+        },
+        {
+          "id": "str",
+          "nombre": "str · texto",
+          "color": "#9966FF",
+          "icono": "🔤"
+        }
+      ],
+      "elementos": [
+        {
+          "texto": "15",
+          "cat": "int"
+        },
+        {
+          "texto": "-3",
+          "cat": "int"
+        },
+        {
+          "texto": "3.5",
+          "cat": "float"
+        },
+        {
+          "texto": "0.25",
+          "cat": "float"
+        },
+        {
+          "texto": "\"hola\"",
+          "cat": "str"
+        },
+        {
+          "texto": "\"15\"",
+          "cat": "str"
+        },
+        {
+          "texto": "2026",
+          "cat": "int"
+        },
+        {
+          "texto": "9.0",
+          "cat": "float"
+        }
+      ],
+      "explicacion": "Ojo: <code>\"15\"</code> lleva comillas, así que es texto aunque parezca número."
+    },
+    {
+      "id": "m02-a3",
+      "tipo": "relacionar",
+      "titulo": "Operaciones y resultados",
+      "instrucciones": "Une cada elemento con su pareja.",
+      "pares": [
+        [
+          "7 + 2",
+          "9"
+        ],
+        [
+          "7 * 2",
+          "14"
+        ],
+        [
+          "7 / 2",
+          "3.5"
+        ],
+        [
+          "7 // 2",
+          "3"
+        ],
+        [
+          "7 % 2",
+          "1"
+        ],
+        [
+          "7 ** 2",
+          "49"
+        ]
+      ]
+    },
+    {
+      "id": "m02-a4",
+      "tipo": "completar",
+      "titulo": "Caja de dulces",
+      "instrucciones": "Hay 3 bolsas con 12 dulces cada una. Completa el programa para calcular el total.",
+      "codigo": "bolsas = 3\ndulces_por_bolsa = 12\ntotal = bolsas ⟦*⟧ dulces_por_bolsa\nprint(\"Total de dulces:\", ⟦total⟧)",
+      "opciones": [
+        "*",
+        "+",
+        "total",
+        "bolsas"
+      ]
+    },
+    {
+      "id": "m02-a5",
+      "tipo": "vf",
+      "titulo": "Variables: ¿verdadero o falso?",
+      "instrucciones": "¿Verdadero o falso? ¡Contra reloj! Necesitas 70 % de aciertos.",
+      "tiempo": 12,
+      "afirmaciones": [
+        {
+          "texto": "En Python, <code>=</code> significa «guarda en».",
+          "correcta": true
+        },
+        {
+          "texto": "<code>mi edad = 12</code> tiene un nombre de variable válido.",
+          "correcta": false,
+          "explicacion": "Los nombres no llevan espacios: usa <code>mi_edad</code>."
+        },
+        {
+          "texto": "<code>10 / 4</code> da 2.5",
+          "correcta": true
+        },
+        {
+          "texto": "<code>10 // 4</code> da 2.5",
+          "correcta": false,
+          "explicacion": "<code>//</code> es división entera: da 2."
+        },
+        {
+          "texto": "<code>\"5\"</code> es un número entero.",
+          "correcta": false,
+          "explicacion": "Está entre comillas: es texto (<code>str</code>)."
+        },
+        {
+          "texto": "Al guardar un valor nuevo en una variable, el anterior se pierde.",
+          "correcta": true
+        }
+      ]
+    }
+  ],
+  "retos": [
+    {
+      "id": "m02-r1",
+      "titulo": "Caja de dulces",
+      "resumen": "Multiplica dos variables.",
+      "enunciado": "Hay 3 bolsas con 12 dulces cada una. Completa el programa para que <code>total</code> guarde la cantidad de dulces y se muestre <code>Dulces: 36</code>. Usa las variables, no escribas 36 directamente.",
+      "inicio": "bolsas = 3\ndulces_por_bolsa = 12\ntotal = ___\nprint(\"Dulces:\", total)",
+      "bloques": [
+        "py_assign",
+        "py_var",
+        "py_number",
+        "py_arith",
+        "py_print",
+        "py_string"
+      ],
+      "requiere": [
+        "*"
+      ],
+      "pruebas": [
+        {
+          "contiene": [
+            "Dulces: 36"
+          ]
+        }
+      ],
+      "solucion": "bolsas = 3\ndulces_por_bolsa = 12\ntotal = bolsas * dulces_por_bolsa\nprint(\"Dulces:\", total)",
+      "pistas": [
+        "Necesitas multiplicar.",
+        "Usa el operador <code>*</code> entre las dos variables.",
+        "El hueco es <code>bolsas * dulces_por_bolsa</code>."
+      ]
+    },
+    {
+      "id": "m02-r2",
+      "titulo": "Reparte las canicas",
+      "resumen": "División entera y residuo.",
+      "enunciado": "Tienes 50 canicas para repartir entre 6 amigos en partes iguales. Muestra cuántas le tocan a cada uno y cuántas sobran: <code>A cada uno: 8</code> y <code>Sobran: 2</code>.",
+      "inicio": "canicas = 50\namigos = 6\nprint(\"A cada uno:\", ___)\nprint(\"Sobran:\", ___)",
+      "bloques": [
+        "py_assign",
+        "py_var",
+        "py_number",
+        "py_arith",
+        "py_print",
+        "py_string"
+      ],
+      "requiere": [
+        "//",
+        "%"
+      ],
+      "pruebas": [
+        {
+          "contiene": [
+            "A cada uno: 8",
+            "Sobran: 2"
+          ]
+        }
+      ],
+      "solucion": "canicas = 50\namigos = 6\nprint(\"A cada uno:\", canicas // amigos)\nprint(\"Sobran:\", canicas % amigos)",
+      "pistas": [
+        "<code>//</code> es la división entera y <code>%</code> es el residuo.",
+        "Escribe una operación en cada hueco: una con <code>//</code> y otra con <code>%</code>.",
+        "Los huecos son <code>canicas // amigos</code> y <code>canicas % amigos</code>."
+      ]
+    },
+    {
+      "id": "m02-r3",
+      "titulo": "Promedio de dos calificaciones",
+      "resumen": "El orden de las operaciones.",
+      "enunciado": "Calcula el promedio de dos calificaciones (8 y 9) y muéstralo: <code>Promedio: 8.5</code>. Ojo: primero se suma y después se divide.",
+      "inicio": "cal1 = 8\ncal2 = 9\npromedio = ___\nprint(\"Promedio:\", promedio)",
+      "bloques": [
+        "py_assign",
+        "py_var",
+        "py_number",
+        "py_arith",
+        "py_print",
+        "py_string"
+      ],
+      "requiere": [
+        "/",
+        "+"
+      ],
+      "pruebas": [
+        {
+          "contiene": [
+            "Promedio: 8.5"
+          ]
+        }
+      ],
+      "solucion": "cal1 = 8\ncal2 = 9\npromedio = (cal1 + cal2) / 2\nprint(\"Promedio:\", promedio)",
+      "pistas": [
+        "El promedio es la suma entre la cantidad de datos.",
+        "Escribe la suma entre paréntesis y luego divide entre 2.",
+        "Debe quedar <code>(cal1 + cal2) / 2</code>. Sin paréntesis, Python dividiría primero."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m02-mision",
+    "titulo": "Calculadora de la tiendita",
+    "historia": "La encargada de la tiendita necesita cobrar más rápido.",
+    "enunciado": "Una <b>torta</b> cuesta $28, un <b>jugo</b> $15 y una <b>galleta</b> $7. Un alumno compra 2 tortas, 1 jugo y 3 galletas, y paga con un billete de $100. Guarda los precios en variables, calcula el total y el cambio, y muestra:<br><code>Total: 92</code><br><code>Cambio: 8</code>",
+    "requiere": [
+      "variable*5",
+      "*",
+      "-"
+    ],
+    "pruebas": [
+      {
+        "nombre": "La compra",
+        "contiene": [
+          "Total: 92",
+          "Cambio: 8"
+        ]
+      }
+    ],
+    "pistas": [
+      "Usa una variable para cada precio, otra para el total y otra para el cambio.",
+      "Primero los precios; luego <code>total = torta * 2 + jugo + galleta * 3</code>; luego el cambio; al final los <code>print</code>.",
+      "El cambio es <code>100 - total</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "Los precios ya están guardados. Completa las fórmulas del total y del cambio.",
+        "inicio": "torta = 28\njugo = 15\ngalleta = 7\ntotal = ___\ncambio = ___\nprint(\"Total:\", total)\nprint(\"Cambio:\", cambio)",
+        "solucion": "torta = 28\njugo = 15\ngalleta = 7\ntotal = torta * 2 + jugo + galleta * 3\ncambio = 100 - total\nprint(\"Total:\", total)\nprint(\"Cambio:\", cambio)"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "# Precios de la tiendita\ntorta = 28\njugo = 15\ngalleta = 7\n# La compra\ntotal = torta * 2 + jugo + galleta * 3\ncambio = 100 - total\nprint(\"Total:\", total)\nprint(\"Cambio:\", cambio)"
+      },
+      "maestro": {
+        "enunciado": "además, calcula cuántas galletas se podrían comprar con el cambio y cuánto dinero sobraría: <code>Galletas con el cambio: 1</code> y <code>Sobran: 1</code>.",
+        "inicio": "",
+        "requiere": [
+          "//",
+          "%"
+        ],
+        "pruebas": [
+          {
+            "nombre": "La compra y el cambio",
+            "contiene": [
+              "Total: 92",
+              "Cambio: 8",
+              "Galletas con el cambio: 1",
+              "Sobran: 1"
+            ]
+          }
+        ],
+        "solucion": "torta = 28\njugo = 15\ngalleta = 7\ntotal = torta * 2 + jugo + galleta * 3\ncambio = 100 - total\nprint(\"Total:\", total)\nprint(\"Cambio:\", cambio)\nprint(\"Galletas con el cambio:\", cambio // galleta)\nprint(\"Sobran:\", cambio % galleta)"
+      }
+    }
+  },
+  "extra": {
+    "id": "m02-extra",
+    "titulo": "¿Cuánto dura la película?",
+    "historia": "La película del viernes dura 135 minutos.",
+    "enunciado": "Guarda los minutos en una variable y muestra cuántas horas y minutos son: <code>2 horas y 15 minutos</code>. Usa <code>//</code> y <code>%</code>.",
+    "inicio": "",
+    "requiere": [
+      "//",
+      "%"
+    ],
+    "pruebas": [
+      {
+        "contiene": [
+          "2 horas y 15 minutos"
+        ]
+      }
+    ],
+    "solucion": "minutos = 135\nhoras = minutos // 60\nresto = minutos % 60\nprint(horas, \"horas y\", resto, \"minutos\")"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué significa <code>=</code> en <code>edad = 12</code>?",
+        "opciones": [
+          "Guarda 12 en la variable edad",
+          "Suma 12",
+          "Muestra 12",
+          "Pregunta si edad es 12"
+        ],
+        "correcta": 0
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "1",
+          "3",
+          "4",
+          "3.5"
+        ],
+        "correcta": 1,
+        "codigo": "print(7 // 2)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "3",
+          "1",
+          "3.5",
+          "0"
+        ],
+        "correcta": 1,
+        "codigo": "print(7 % 2)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "Error",
+          "x + 5",
+          "15",
+          "10"
+        ],
+        "correcta": 2,
+        "codigo": "x = 10\nx = x + 5\nprint(x)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué nombre de variable es válido?",
+        "opciones": [
+          "total puntos",
+          "2puntos",
+          "total_puntos",
+          "total-puntos"
+        ],
+        "correcta": 2,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿De qué tipo es <code>3.14</code>?",
+        "opciones": [
+          "float",
+          "str",
+          "texto",
+          "int"
+        ],
+        "correcta": 0
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "2 ** 3",
+          "6",
+          "8",
+          "9"
+        ],
+        "correcta": 2,
+        "codigo": "print(2 ** 3)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "<code>\"12\"</code> y <code>12</code> son el mismo tipo de dato.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
+        "tiempo": 15,
+        "explicacion": "<code>\"12\"</code> es texto (str) y <code>12</code> es entero (int)."
+      },
+      {
+        "pregunta": "Hay 50 canicas para 6 amigos. ¿Qué operación da las canicas que sobran?",
+        "opciones": [
+          "50 // 6",
+          "50 % 6",
+          "50 - 6",
+          "50 / 6"
+        ],
+        "correcta": 1,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "45",
+          "Error",
+          "Total: precio * 3",
+          "Total: 45"
+        ],
+        "correcta": 3,
+        "codigo": "precio = 15\nprint(\"Total:\", precio * 3)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "📦",
+      "texto": "Una variable es una caja con nombre: <code>=</code> guarda el valor.",
+      "codigo": "edad = 12"
+    },
+    {
+      "icono": "🔢",
+      "texto": "Tipos: <code>int</code> (entero), <code>float</code> (decimal), <code>str</code> (texto)."
+    },
+    {
+      "icono": "🧮",
+      "texto": "Operadores: <code>+ - * / // % **</code>",
+      "codigo": "print(7 // 2, 7 % 2)"
+    }
+  ],
+  "glosario": [
+    {
+      "en": "variable",
+      "es": "variable",
+      "def": "Nombre que guarda un dato para usarlo después."
+    },
+    {
+      "en": "assignment",
+      "es": "asignación",
+      "def": "Guardar un valor en una variable con <code>=</code>."
+    },
+    {
+      "en": "int (integer)",
+      "es": "entero",
+      "def": "Número sin decimales: <code>12</code>."
+    },
+    {
+      "en": "float",
+      "es": "decimal, flotante",
+      "def": "Número con punto decimal: <code>12.5</code>."
+    },
+    {
+      "en": "operator",
+      "es": "operador",
+      "def": "Símbolo que hace una operación: <code>+ - * / // %</code>."
+    },
+    {
+      "en": "remainder (modulo)",
+      "es": "residuo",
+      "def": "Lo que sobra en una división entera: <code>%</code>."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Qué significa el <code>=</code> en Python?",
+      "respuesta": "«Guardar»: guarda el valor de la derecha en la variable de la izquierda. Para comparar si dos cosas son iguales se usa <code>==</code> (lo verás más adelante)."
+    },
+    {
+      "pregunta": "¿Cuánto da <code>17 // 5</code> y cuánto <code>17 % 5</code>?",
+      "respuesta": "<code>17 // 5</code> es 3 (cabe 3 veces) y <code>17 % 5</code> es 2 (sobran 2)."
+    },
+    {
+      "pregunta": "¿Por qué <code>mi nombre = \"Ana\"</code> da error?",
+      "respuesta": "Porque el nombre de una variable no puede tener espacios. Usa <code>mi_nombre</code>."
+    }
+  ],
+  "plan": {
+    "activacion": "Muestra tres cajas con etiquetas (edad, nombre, puntos) y pide al grupo cambiar su contenido: así funcionan las variables.",
+    "ejemplo": "Ejemplo «Pizza para el grupo»: predicen cuántas pizzas y rebanadas sobran antes de ejecutar.",
+    "practica": "Actividades: traza de variables, clasificar tipos y relacionar operaciones.",
+    "reto": "Retos rápidos y la misión «Calculadora de la tiendita».",
+    "cierre": "Kahoot y pregunta oral: ¿qué diferencia hay entre <code>/</code>, <code>//</code> y <code>%</code>?"
+  }
+}

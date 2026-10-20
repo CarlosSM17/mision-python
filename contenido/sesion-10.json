@@ -1,0 +1,696 @@
+{
+  "numero": 10,
+  "unidad": 4,
+  "titulo": "Acumular y validar",
+  "icono": "🧮",
+  "modo": 3,
+  "python": [
+    "acumuladores",
+    "+=",
+    "break"
+  ],
+  "historiaIcono": "🔐",
+  "historia": "La computadora de la biblioteca tiene una contraseña. Si alguien se equivoca tres veces, la cuenta se bloquea. Hoy programarás esa protección, y también aprenderás a sumar muchos valores dentro de un bucle.",
+  "objetivos": [
+    "Usar <b>acumuladores</b> para sumar valores dentro de un bucle.",
+    "Usar el atajo <code>+=</code>.",
+    "Salir de un bucle antes de tiempo con <code>break</code>.",
+    "Validar datos: volver a pedirlos mientras no sean correctos."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🧮",
+      "titulo": "Acumular: ir sumando",
+      "texto": "Un <b>acumulador</b> es una variable que va guardando una suma: el total de una compra, los puntos de un juego, los pasos del día…"
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "caja",
+      "titulo": "La alcancía",
+      "texto": "El acumulador es como una alcancía: empieza vacía (en 0) y en cada vuelta le echas algo.",
+      "datos": {
+        "cajas": [
+          {
+            "nombre": "total",
+            "valor": "0"
+          },
+          {
+            "nombre": "precio",
+            "valor": "15"
+          }
+        ]
+      },
+      "codigo": "total = 0\ntotal = total + 15\ntotal = total + 20\nprint(total)  # 35"
+    },
+    {
+      "tipo": "idea",
+      "icono": "➕",
+      "titulo": "El atajo +=",
+      "texto": "<code>total += 5</code> es lo mismo que <code>total = total + 5</code>. También existen <code>-=</code> y <code>*=</code>.",
+      "codigo": "puntos = 10\npuntos += 5\npuntos -= 3\nprint(puntos)",
+      "salida": "12"
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Suma del 1 al 100",
+      "texto": "¿Cuánto da? Pruébalo: ¡Python lo calcula en un instante!",
+      "codigo": "suma = 0\nfor n in range(1, 101):\n    suma += n\nprint(\"Suma:\", suma)",
+      "py": "Se cuenta que el matemático Gauss resolvió esta suma de niño en segundos. ¡Tú lo hiciste con 3 líneas!"
+    },
+    {
+      "tipo": "comparar",
+      "titulo": "Acumulador: ¿dentro o fuera?",
+      "texto": "El acumulador se crea en 0 <b>antes</b> del bucle.",
+      "mal": {
+        "codigo": "for n in range(3):\n    total = 0\n    total += 10\nprint(total)",
+        "nota": "Se reinicia en cada vuelta: muestra 10."
+      },
+      "bien": {
+        "codigo": "total = 0\nfor n in range(3):\n    total += 10\nprint(total)",
+        "nota": "Se acumula: muestra 30."
+      }
+    },
+    {
+      "tipo": "idea",
+      "icono": "🛑",
+      "titulo": "break: salir del bucle",
+      "texto": "<code>break</code> termina el bucle de inmediato, aunque todavía falten vueltas.",
+      "codigo": "for n in range(1, 10):\n    if n == 4:\n        break\n    print(n)\nprint(\"Salí\")",
+      "salida": "1\n2\n3\nSalí"
+    },
+    {
+      "tipo": "pasos",
+      "titulo": "Validar datos",
+      "pasos": [
+        {
+          "icono": "⌨️",
+          "texto": "Pide el dato."
+        },
+        {
+          "icono": "🔍",
+          "texto": "Mientras no sea válido…"
+        },
+        {
+          "icono": "⚠️",
+          "texto": "…muestra un aviso y pídelo otra vez."
+        },
+        {
+          "icono": "✅",
+          "texto": "Cuando sea válido, continúa."
+        }
+      ],
+      "texto": "Validar es revisar que un dato tenga sentido antes de usarlo."
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Edad válida",
+      "texto": "Prueba con -5, con 200 y después con 13.",
+      "codigo": "edad = int(input(\"Edad: \"))\nwhile edad < 0 or edad > 120:\n    print(\"Edad no válida\")\n    edad = int(input(\"Edad: \"))\nprint(\"Gracias, tienes\", edad, \"años\")"
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "¿Qué muestra?",
+      "opciones": [
+        "0",
+        "20",
+        "4",
+        "5"
+      ],
+      "correcta": 1,
+      "explicacion": "Cuatro vueltas sumando 5: 5 + 5 + 5 + 5 = 20.",
+      "codigo": "total = 0\nfor i in range(4):\n    total += 5\nprint(total)"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "La cuenta de la tiendita",
+    "descripcion": "La tiendita registra 4 productos y suma el total.",
+    "codigo": "total = 0\nfor i in range(4):\n    precio = int(input(\"Precio del producto: \"))\n    total = total + precio\nprint(\"Total a pagar:\", total)",
+    "entradasSugeridas": "10, 20, 5 y 15",
+    "entradasPrueba": [
+      "10",
+      "20",
+      "5",
+      "15"
+    ],
+    "prediccion": {
+      "pregunta": "Si escribes los precios <b>10, 20, 5 y 15</b>, ¿qué total se muestra?",
+      "opciones": [
+        "50",
+        "15",
+        "4",
+        "10201515"
+      ],
+      "correcta": 0,
+      "explicacion": "El acumulador va sumando: 0 + 10 = 10, + 20 = 30, + 5 = 35, + 15 = 50."
+    },
+    "investigar": [
+      "Con 👣 Paso a paso, observa cómo crece <code>total</code> en cada vuelta.",
+      "¿Qué pasaría si <code>total = 0</code> estuviera dentro del for?",
+      "Cambia <code>total = total + precio</code> por <code>total += precio</code>: ¿cambia algo?"
+    ],
+    "modificar": "Cuenta también cuántos productos cuestan más de 10."
+  },
+  "actividades": [
+    {
+      "id": "m10-a1",
+      "tipo": "relacionar",
+      "titulo": "Atajos y palabras clave",
+      "instrucciones": "Une cada elemento con su pareja.",
+      "pares": [
+        [
+          "x += 1",
+          "<code>x = x + 1</code>"
+        ],
+        [
+          "x -= 2",
+          "<code>x = x - 2</code>"
+        ],
+        [
+          "x *= 3",
+          "<code>x = x * 3</code>"
+        ],
+        [
+          "total = 0",
+          "Empieza el acumulador en cero"
+        ],
+        [
+          "break",
+          "Sale del bucle de inmediato"
+        ]
+      ],
+      "codigoDer": false
+    },
+    {
+      "id": "m10-a2",
+      "tipo": "traza",
+      "titulo": "La alcancía",
+      "instrucciones": "La línea 3 se ejecuta una vez por semana. Escribe los valores después de cada vuelta.",
+      "codigo": "ahorro = 0\nfor semana in range(1, 4):\n    ahorro += 20\nprint(ahorro)",
+      "variables": [
+        "semana",
+        "ahorro"
+      ],
+      "filas": [
+        {
+          "linea": 1,
+          "valores": {
+            "semana": "",
+            "ahorro": "0"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "semana": "1",
+            "ahorro": "20"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "semana": "2",
+            "ahorro": "40"
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "semana": "3",
+            "ahorro": "60"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m10-a3",
+      "tipo": "salida",
+      "titulo": "¿Dónde se detiene?",
+      "instrucciones": "¿Qué aparece en la pantalla? Elige la opción correcta.",
+      "codigo": "for n in range(10, 0, -2):\n    if n < 5:\n        break\n    print(n)",
+      "respuesta": "10\n8\n6",
+      "opciones": [
+        "10\n8\n6",
+        "10\n8\n6\n4\n2",
+        "10\n8\n6\n4",
+        "10"
+      ],
+      "correcta": 0,
+      "explicacion": "Cuando <code>n</code> vale 4, <code>4 &lt; 5</code> es True y el <code>break</code> termina el bucle antes de mostrarlo."
+    },
+    {
+      "id": "m10-a4",
+      "tipo": "error",
+      "titulo": "Caza el error: el acumulador",
+      "instrucciones": "Debería mostrar <code>Suma: 15</code>, pero muestra <code>Suma: 5</code>. Toca la línea que sobra.",
+      "codigo": "suma = 0\nfor n in range(1, 6):\n    suma = 0\n    suma = suma + n\nprint(\"Suma:\", suma)",
+      "tipoError": "logico",
+      "explicacion": "<code>suma = 0</code> dentro del bucle borra lo acumulado en cada vuelta. Ya está en la línea 1, antes del <code>for</code>: esta línea sobra.",
+      "correccion": "# (esta línea se borra)",
+      "linea": 3
+    },
+    {
+      "id": "m10-a5",
+      "tipo": "completar",
+      "titulo": "Detente en el cero",
+      "instrucciones": "Escribe lo que falta en cada hueco.",
+      "codigo": "total = 0\nwhile True:\n    n = int(input(\"Número (0 para terminar): \"))\n    if n == 0:\n        ⟦break⟧\n    total ⟦+=⟧ n\nprint(\"Total:\", total)",
+      "opciones": [
+        "break",
+        "continue",
+        "+=",
+        "="
+      ],
+      "entradas": [
+        "5",
+        "7",
+        "0"
+      ]
+    }
+  ],
+  "retos": [
+    {
+      "id": "m10-r1",
+      "titulo": "Suma del 1 al 10",
+      "resumen": "Un acumulador en un for.",
+      "enunciado": "Suma todos los números del 1 al 10 con un <code>for</code> y un acumulador, y muestra <code>Suma: 55</code>.",
+      "inicio": "suma = 0\nfor i in range(1, 11):\n    suma += «»\nprint(\"Suma:\", suma)",
+      "requiere": [
+        "for",
+        "acumula"
+      ],
+      "pruebas": [
+        {
+          "contiene": [
+            "Suma: 55"
+          ]
+        }
+      ],
+      "solucion": "suma = 0\nfor i in range(1, 11):\n    suma += i\nprint(\"Suma:\", suma)",
+      "pistas": [
+        "En cada vuelta hay que sumar el número de esa vuelta.",
+        "El número de la vuelta está en la variable <code>i</code>.",
+        "El hueco es <code>i</code>."
+      ]
+    },
+    {
+      "id": "m10-r2",
+      "titulo": "Detente en el cero",
+      "resumen": "Salir con break.",
+      "enunciado": "Pide números uno tras otro y muestra el doble de cada uno. Cuando escriban <code>0</code>, sal del bucle con <code>break</code> y muestra <code>Fin</code>.",
+      "inicio": "while True:\n    n = int(input(\"Número (0 para salir): \"))\n    if «»:\n        break\n    print(n * 2)\nprint(\"Fin\")",
+      "requiere": [
+        "break"
+      ],
+      "pruebas": [
+        {
+          "nombre": "3, 5, 0",
+          "entradas": [
+            "3",
+            "5",
+            "0"
+          ],
+          "exacto": "6\n10\nFin"
+        },
+        {
+          "nombre": "0 de inmediato",
+          "entradas": [
+            "0"
+          ],
+          "exacto": "Fin"
+        }
+      ],
+      "solucion": "while True:\n    n = int(input(\"Número (0 para salir): \"))\n    if n == 0:\n        break\n    print(n * 2)\nprint(\"Fin\")",
+      "pistas": [
+        "El bucle debe terminar cuando el número sea 0.",
+        "La condición compara <code>n</code> con 0.",
+        "El hueco es <code>n == 0</code>."
+      ]
+    },
+    {
+      "id": "m10-r3",
+      "titulo": "Edad válida",
+      "resumen": "Volver a pedir.",
+      "enunciado": "Pide la edad. Mientras sea menor que 0 o mayor que 120, muestra <code>Edad no válida</code> y vuelve a pedirla. Al final muestra <code>Edad registrada: 12</code>.",
+      "inicio": "edad = int(input(\"Edad: \"))\nwhile «»:\n    print(\"Edad no válida\")\n    edad = int(input(\"Edad: \"))\nprint(\"Edad registrada:\", edad)",
+      "requiere": [
+        "while",
+        "or"
+      ],
+      "pruebas": [
+        {
+          "nombre": "-5, 200, 12",
+          "entradas": [
+            "-5",
+            "200",
+            "12"
+          ],
+          "contiene": [
+            "Edad no válida",
+            "Edad no válida",
+            "Edad registrada: 12"
+          ]
+        },
+        {
+          "nombre": "12 de inmediato",
+          "entradas": [
+            "12"
+          ],
+          "contiene": [
+            "Edad registrada: 12"
+          ],
+          "no_contiene": [
+            "no válida"
+          ]
+        }
+      ],
+      "solucion": "edad = int(input(\"Edad: \"))\nwhile edad < 0 or edad > 120:\n    print(\"Edad no válida\")\n    edad = int(input(\"Edad: \"))\nprint(\"Edad registrada:\", edad)",
+      "pistas": [
+        "La edad es inválida si es demasiado chica <b>o</b> demasiado grande.",
+        "Usa <code>or</code> entre dos comparaciones.",
+        "La condición es <code>edad &lt; 0 or edad &gt; 120</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m10-mision",
+    "titulo": "Contraseña con 3 intentos",
+    "historia": "La computadora de la biblioteca debe bloquearse después de tres intentos fallidos.",
+    "enunciado": "La contraseña es <code>dragon</code>. Da hasta <b>3 intentos</b>:<ul><li>si la escriben bien, sal del bucle con <code>break</code> y muestra <code>Acceso concedido</code>;</li><li>cada vez que fallen, muestra <code>Incorrecta</code>;</li><li>si fallan las 3 veces, muestra <code>Cuenta bloqueada</code>.</li></ul>",
+    "requiere": [
+      "break",
+      "for|while"
+    ],
+    "pruebas": [
+      {
+        "nombre": "A la primera",
+        "entradas": [
+          "dragon"
+        ],
+        "contiene": [
+          "Acceso concedido"
+        ],
+        "no_contiene": [
+          "Incorrecta",
+          "bloqueada"
+        ]
+      },
+      {
+        "nombre": "En el segundo intento",
+        "entradas": [
+          "hola",
+          "dragon"
+        ],
+        "contiene": [
+          "Incorrecta",
+          "Acceso concedido"
+        ],
+        "no_contiene": [
+          "bloqueada"
+        ]
+      },
+      {
+        "nombre": "Tres fallos",
+        "entradas": [
+          "a",
+          "b",
+          "c"
+        ],
+        "contiene": [
+          "Incorrecta",
+          "Incorrecta",
+          "Incorrecta",
+          "Cuenta bloqueada"
+        ],
+        "no_contiene": [
+          "Acceso concedido"
+        ]
+      }
+    ],
+    "pistas": [
+      "Un <code>for</code> de 3 vueltas, un <code>if</code> que revise la contraseña y <code>break</code> para salir. Una variable <code>acceso = False</code> recuerda si entró.",
+      "Antes del for: <code>acceso = False</code>. Dentro: pedir, comparar; si es correcta, <code>acceso = True</code> y break; si no, «Incorrecta». Después del for: decidir el mensaje con <code>if acceso:</code>.",
+      "La comparación es <code>escrita == clave</code> y el bucle es <code>for intento in range(3):</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "La estructura está lista. Completa los huecos ✎: la condición, el valor de acceso y el rango del for.",
+        "inicio": "clave = \"dragon\"\nacceso = False\nfor intento in range(«»):\n    escrita = input(\"Contraseña: \")\n    if «»:\n        acceso = «»\n        break\n    print(\"Incorrecta\")\nif acceso:\n    print(\"Acceso concedido\")\nelse:\n    print(\"Cuenta bloqueada\")",
+        "solucion": "clave = \"dragon\"\nacceso = False\nfor intento in range(3):\n    escrita = input(\"Contraseña: \")\n    if escrita == clave:\n        acceso = True\n        break\n    print(\"Incorrecta\")\nif acceso:\n    print(\"Acceso concedido\")\nelse:\n    print(\"Cuenta bloqueada\")"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "clave = \"dragon\"\nacceso = False\nfor intento in range(3):\n    escrita = input(\"Contraseña: \")\n    if escrita == clave:\n        acceso = True\n        break\n    print(\"Incorrecta\")\nif acceso:\n    print(\"Acceso concedido\")\nelse:\n    print(\"Cuenta bloqueada\")"
+      },
+      "maestro": {
+        "enunciado": "al fallar, muestra cuántos intentos quedan: <code>Incorrecta. Te quedan 2 intentos</code>; y al entrar, di en qué intento: <code>Acceso concedido en el intento 2</code>.",
+        "inicio": "",
+        "pruebas": [
+          {
+            "nombre": "En el segundo intento",
+            "entradas": [
+              "hola",
+              "dragon"
+            ],
+            "contiene": [
+              "Te quedan 2 intentos",
+              "Acceso concedido en el intento 2"
+            ]
+          },
+          {
+            "nombre": "Tres fallos",
+            "entradas": [
+              "a",
+              "b",
+              "c"
+            ],
+            "contiene": [
+              "Te quedan 2",
+              "Te quedan 1",
+              "Te quedan 0",
+              "Cuenta bloqueada"
+            ],
+            "no_contiene": [
+              "Acceso concedido"
+            ]
+          },
+          {
+            "nombre": "A la primera",
+            "entradas": [
+              "dragon"
+            ],
+            "contiene": [
+              "Acceso concedido en el intento 1"
+            ],
+            "no_contiene": [
+              "Te quedan"
+            ]
+          }
+        ],
+        "solucion": "clave = \"dragon\"\nacceso = False\nfor intento in range(1, 4):\n    escrita = input(\"Contraseña: \")\n    if escrita == clave:\n        acceso = True\n        break\n    print(\"Incorrecta. Te quedan\", 3 - intento, \"intentos\")\nif acceso:\n    print(\"Acceso concedido en el intento\", intento)\nelse:\n    print(\"Cuenta bloqueada\")"
+      }
+    }
+  },
+  "extra": {
+    "id": "m10-extra",
+    "titulo": "Promedio hasta el -1",
+    "historia": "La maestra no sabe cuántas calificaciones va a capturar.",
+    "enunciado": "Pide calificaciones una por una hasta que escriban <code>-1</code>. Acumula la suma y cuenta cuántas son; al final muestra el promedio: <code>Promedio: 9.0</code>.",
+    "inicio": "",
+    "requiere": [
+      "while",
+      "acumula*2"
+    ],
+    "pruebas": [
+      {
+        "nombre": "8, 9, 10",
+        "entradas": [
+          "8",
+          "9",
+          "10",
+          "-1"
+        ],
+        "contiene": [
+          "Promedio: 9.0"
+        ]
+      },
+      {
+        "nombre": "Solo un 7",
+        "entradas": [
+          "7",
+          "-1"
+        ],
+        "contiene": [
+          "Promedio: 7.0"
+        ]
+      }
+    ],
+    "solucion": "suma = 0\ncantidad = 0\nwhile True:\n    cal = float(input(\"Calificación (-1 para terminar): \"))\n    if cal == -1:\n        break\n    suma += cal\n    cantidad += 1\nprint(\"Promedio:\", suma / cantidad)"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué hace <code>total += 5</code>?",
+        "opciones": [
+          "Compara total con 5",
+          "Muestra 5",
+          "Suma 5 a total",
+          "Guarda solo 5 en total"
+        ],
+        "correcta": 2
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "8",
+          "10",
+          "12",
+          "15"
+        ],
+        "correcta": 2,
+        "codigo": "p = 10\np += 5\np -= 3\nprint(p)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "5",
+          "15",
+          "0",
+          "1"
+        ],
+        "correcta": 1,
+        "codigo": "s = 0\nfor n in range(1, 6):\n    s += n\nprint(s)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué hace <code>break</code>?",
+        "opciones": [
+          "Sale del bucle de inmediato",
+          "Apaga la computadora",
+          "Repite el bucle",
+          "Salta una línea"
+        ],
+        "correcta": 0
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "1",
+          "1\n2\n3",
+          "1\n2\n3\n4",
+          "1\n2"
+        ],
+        "correcta": 3,
+        "codigo": "for n in range(1, 5):\n    if n == 3:\n        break\n    print(n)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Dónde se crea el acumulador?",
+        "opciones": [
+          "En el print",
+          "Después del bucle",
+          "Antes del bucle",
+          "Dentro del bucle"
+        ],
+        "correcta": 2
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "<code>x -= 1</code> es lo mismo que <code>x = x - 1</code>.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 0,
+        "tiempo": 15
+      },
+      {
+        "pregunta": "¿Qué condición detecta una calificación NO válida (fuera de 0 a 10)?",
+        "opciones": [
+          "cal >= 0 or cal <= 10",
+          "cal < 0 and cal > 10",
+          "cal == 10",
+          "cal < 0 or cal > 10"
+        ],
+        "correcta": 3,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "10",
+          "0",
+          "4",
+          "40"
+        ],
+        "correcta": 3,
+        "codigo": "total = 0\nfor i in range(4):\n    total += 10\nprint(total)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "🐷",
+      "texto": "Un acumulador empieza en 0 antes del bucle y va sumando.",
+      "codigo": "total = 0\nfor n in range(1, 6):\n    total += n"
+    },
+    {
+      "icono": "➕",
+      "texto": "<code>+=</code>, <code>-=</code> y <code>*=</code> son atajos."
+    },
+    {
+      "icono": "🛑",
+      "texto": "<code>break</code> sale del bucle; un <code>while</code> sirve para validar datos."
+    }
+  ],
+  "glosario": [
+    {
+      "en": "accumulator",
+      "es": "acumulador",
+      "def": "Variable que va sumando valores dentro de un bucle."
+    },
+    {
+      "en": "break",
+      "es": "romper, salir",
+      "def": "Termina el bucle inmediatamente."
+    },
+    {
+      "en": "validate",
+      "es": "validar",
+      "def": "Revisar que un dato sea correcto antes de usarlo."
+    },
+    {
+      "en": "+=",
+      "es": "sumar y guardar",
+      "def": "<code>x += 3</code> es lo mismo que <code>x = x + 3</code>."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Por qué el acumulador se pone en 0 antes del bucle y no dentro?",
+      "respuesta": "Si va dentro, en cada vuelta vuelve a 0 y se pierde lo que ya se había sumado."
+    },
+    {
+      "pregunta": "¿Qué diferencia hay entre un contador y un acumulador?",
+      "respuesta": "El contador suma 1 cada vez (cuenta cuántas veces); el acumulador suma cualquier valor (por ejemplo, precios)."
+    },
+    {
+      "pregunta": "¿Para qué sirve <code>while True:</code> con <code>break</code>?",
+      "respuesta": "Para repetir sin saber cuántas veces y salir justo cuando se cumpla algo, como escribir 0 o la palabra «salir»."
+    }
+  ],
+  "plan": {
+    "activacion": "Pasa una alcancía (o un frasco) y cada alumno «echa» una cantidad imaginaria; llevan la cuenta en el pizarrón.",
+    "ejemplo": "Ejemplo «La cuenta de la tiendita»: identifican el acumulador y dónde se reinicia.",
+    "practica": "Actividades: traza de la alcancía, ¿dónde se detiene? y caza el error del acumulador.",
+    "reto": "Retos rápidos y la misión «Contraseña con 3 intentos».",
+    "cierre": "Kahoot y pregunta: ¿por qué el acumulador va antes del bucle?"
+  }
+}

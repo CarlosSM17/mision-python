@@ -1,0 +1,708 @@
+{
+  "numero": 11,
+  "unidad": 5,
+  "titulo": "Guardar varios datos",
+  "icono": "🎒",
+  "modo": 3,
+  "python": [
+    "[ ]",
+    "índices desde 0",
+    ".append()",
+    "len()"
+  ],
+  "historiaIcono": "🎒",
+  "historia": "Tu mochila tiene muchas cosas: cuadernos, lápices, la lonchera… Guardar cada una en una variable distinta sería un desastre. Para eso existen las <b>listas</b>: muchas cosas guardadas en orden, bajo un solo nombre.",
+  "objetivos": [
+    "Crear listas con corchetes <code>[ ]</code>.",
+    "Leer y cambiar elementos por su posición (¡que empieza en 0!).",
+    "Agregar elementos con <code>.append()</code>.",
+    "Saber cuántos elementos hay con <code>len()</code>."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🎒",
+      "titulo": "Listas: muchos datos en una variable",
+      "texto": "¿Y si quieres guardar los nombres de todo tu equipo? En lugar de 10 variables, usa una <b>lista</b>."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "estante-lista",
+      "titulo": "Una lista es un estante",
+      "texto": "Los elementos van entre corchetes <code>[ ]</code>, separados por comas. Cada uno tiene una posición (<b>índice</b>) que empieza en 0.",
+      "datos": {
+        "nombre": "mochila",
+        "elementos": [
+          "\"lápiz\"",
+          "\"cuaderno\"",
+          "\"regla\""
+        ]
+      },
+      "codigo": "mochila = [\"lápiz\", \"cuaderno\", \"regla\"]"
+    },
+    {
+      "tipo": "animacion",
+      "animacion": "lista",
+      "titulo": "La lista en acción",
+      "texto": "Observa cómo se agregan y se leen elementos."
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "listas",
+      "titulo": "Laboratorio de listas",
+      "texto": "Agrega elementos, léelos por su índice y cámbialos."
+    },
+    {
+      "tipo": "idea",
+      "icono": "🔢",
+      "titulo": "Leer con el índice",
+      "texto": "Para leer un elemento escribe su índice entre corchetes. Con <code>-1</code> obtienes el último.",
+      "codigo": "colores = [\"rojo\", \"verde\", \"azul\"]\nprint(colores[0])\nprint(colores[-1])",
+      "salida": "rojo\nazul"
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Lo básico de las listas",
+      "encabezados": [
+        "Código",
+        "Qué hace"
+      ],
+      "filas": [
+        [
+          "<code>lista[0]</code>",
+          "Lee el primer elemento"
+        ],
+        [
+          "<code>lista[1] = \"x\"</code>",
+          "Cambia el segundo elemento"
+        ],
+        [
+          "<code>lista.append(\"x\")</code>",
+          "Agrega al final"
+        ],
+        [
+          "<code>len(lista)</code>",
+          "Cuenta los elementos"
+        ],
+        [
+          "<code>lista[-1]</code>",
+          "Lee el último"
+        ]
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Lista de compras",
+      "texto": "Escribe tres productos y mira cómo crece la lista.",
+      "codigo": "compras = []\nfor i in range(3):\n    producto = input(\"Producto: \")\n    compras.append(producto)\nprint(compras)\nprint(\"Son\", len(compras), \"productos\")"
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "error",
+      "titulo": "Fuera de rango",
+      "texto": "Si pides un índice que no existe, Python marca <b>IndexError</b>.",
+      "datos": {
+        "codigo": "dias = [\"lun\", \"mar\", \"mié\"]\nprint(dias[3])",
+        "linea": 2,
+        "tipo": "IndexError",
+        "mensaje": "El índice 3 no existe: la lista tiene 3 elementos (índices 0, 1 y 2)."
+      },
+      "py": "Una lista de 3 elementos tiene índices 0, 1 y 2. El último índice siempre es <code>len(lista) - 1</code>."
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "¿Qué muestra?",
+      "opciones": [
+        "Error",
+        "['Ana', 'Beto', 'Mía']",
+        "['Beto', 'Luis', 'Mía']",
+        "['Ana', 'Luis', 'Beto']"
+      ],
+      "correcta": 1,
+      "explicacion": "El índice 1 es el segundo elemento: Luis se reemplaza por Beto.",
+      "codigo": "equipo = [\"Ana\", \"Luis\", \"Mía\"]\nequipo[1] = \"Beto\"\nprint(equipo)"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "La mochila de Robi",
+    "descripcion": "Robi revisa qué lleva en la mochila.",
+    "codigo": "mochila = [\"lápiz\", \"cuaderno\", \"regla\"]\nprint(mochila[0])\nmochila.append(\"goma\")\nprint(len(mochila))\nprint(mochila)",
+    "prediccion": {
+      "pregunta": "¿Qué muestra la <b>primera</b> línea de la salida?",
+      "opciones": [
+        "lápiz",
+        "cuaderno",
+        "regla",
+        "Error"
+      ],
+      "correcta": 0,
+      "explicacion": "mochila[0] es el primer elemento: «lápiz». Python cuenta desde 0."
+    },
+    "investigar": [
+      "¿Qué se muestra si cambias <code>mochila[0]</code> por <code>mochila[3]</code> antes del append? ¿Y después?",
+      "¿Cuánto vale <code>len(mochila)</code> antes y después del append?",
+      "Si te atoras, abre el panel 🧩 Bloques → «Mi código»: ¿qué bloque corresponde a <code>.append</code>?"
+    ],
+    "modificar": "Agrega dos objetos más y muestra el último usando <code>len(mochila) - 1</code>."
+  },
+  "actividades": [
+    {
+      "id": "m11-a1",
+      "tipo": "salida",
+      "titulo": "Índices",
+      "instrucciones": "Escribe exactamente lo que aparecerá en la pantalla.",
+      "codigo": "frutas = [\"mango\", \"uva\", \"pera\", \"kiwi\"]\nprint(frutas[1])\nprint(frutas[-1])\nprint(len(frutas))",
+      "respuesta": "uva\nkiwi\n4"
+    },
+    {
+      "id": "m11-a2",
+      "tipo": "traza",
+      "titulo": "La lista crece",
+      "instrucciones": "Escribe cómo queda la lista después de cada línea, con corchetes y comas, por ejemplo <code>[5, 8]</code>.",
+      "codigo": "lista = []\nlista.append(5)\nlista.append(8)\nlista[0] = 3\nn = len(lista)",
+      "variables": [
+        "lista",
+        "n"
+      ],
+      "filas": [
+        {
+          "linea": 1,
+          "valores": {
+            "lista": "[]",
+            "n": ""
+          }
+        },
+        {
+          "linea": 2,
+          "valores": {
+            "lista": "[5]",
+            "n": ""
+          }
+        },
+        {
+          "linea": 3,
+          "valores": {
+            "lista": "[5, 8]",
+            "n": ""
+          }
+        },
+        {
+          "linea": 4,
+          "valores": {
+            "lista": "[3, 8]",
+            "n": ""
+          }
+        },
+        {
+          "linea": 5,
+          "valores": {
+            "lista": "[3, 8]",
+            "n": "2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m11-a3",
+      "tipo": "ordenar",
+      "titulo": "Inventario de la mochila",
+      "instrucciones": "Arma el programa tocando las piezas en el orden correcto.",
+      "lineas": [
+        "mochila = [\"cuaderno\", \"lápiz\"]",
+        "mochila.append(\"regla\")",
+        "mochila.append(\"goma\")",
+        "print(\"Tienes\", len(mochila), \"objetos\")",
+        "print(\"El último es\", mochila[-1])"
+      ],
+      "distractores": [
+        "mochila.append = \"goma\""
+      ],
+      "alternativas": [
+        [
+          "mochila = [\"cuaderno\", \"lápiz\"]",
+          "mochila.append(\"goma\")",
+          "mochila.append(\"regla\")",
+          "print(\"Tienes\", len(mochila), \"objetos\")",
+          "print(\"El último es\", mochila[-1])"
+        ]
+      ]
+    },
+    {
+      "id": "m11-a4",
+      "tipo": "error",
+      "titulo": "Caza el error: fuera de rango",
+      "instrucciones": "Este programa tiene <b>un error</b>. Toca la línea donde está.",
+      "codigo": "notas = [8, 9, 10]\nprint(\"Última nota:\", notas[3])",
+      "tipoError": "IndexError",
+      "explicacion": "La lista tiene 3 elementos: sus índices son 0, 1 y 2. Para el último usa <code>notas[2]</code> o, mejor, <code>notas[-1]</code>.",
+      "correccion": "print(\"Última nota:\", notas[-1])",
+      "linea": 2
+    },
+    {
+      "id": "m11-a5",
+      "tipo": "memorama",
+      "titulo": "Memorama de listas",
+      "instrucciones": "Voltea dos cartas a la vez y encuentra las parejas.",
+      "pares": [
+        [
+          "[\"a\", \"b\", \"c\"][0]",
+          "<code>\"a\"</code>"
+        ],
+        [
+          "len([4, 5, 6])",
+          "<code>3</code>"
+        ],
+        [
+          "[1, 2] + [3]",
+          "<code>[1, 2, 3]</code>"
+        ],
+        [
+          "[\"x\", \"y\"][-1]",
+          "<code>\"y\"</code>"
+        ],
+        [
+          "[]",
+          "Lista vacía"
+        ]
+      ],
+      "codigo": [
+        0
+      ]
+    },
+    {
+      "id": "m11-a6",
+      "tipo": "vf",
+      "titulo": "Listas: verdadero o falso",
+      "instrucciones": "¿Verdadero o falso? ¡Contra reloj! Necesitas 70 % de aciertos.",
+      "tiempo": 12,
+      "afirmaciones": [
+        {
+          "texto": "El primer elemento de una lista tiene índice 0.",
+          "correcta": true
+        },
+        {
+          "texto": "<code>lista.append(x)</code> agrega x al principio.",
+          "correcta": false,
+          "explicacion": "<code>append</code> agrega al final."
+        },
+        {
+          "texto": "<code>len([3, 6, 9])</code> da 3.",
+          "correcta": true
+        },
+        {
+          "texto": "En <code>dias = [\"lun\", \"mar\"]</code>, <code>dias[2]</code> es \"mar\".",
+          "correcta": false,
+          "explicacion": "<code>dias[2]</code> no existe (IndexError); \"mar\" es <code>dias[1]</code>."
+        },
+        {
+          "texto": "Una lista puede empezar vacía: <code>[]</code>.",
+          "correcta": true
+        },
+        {
+          "texto": "<code>lista[-1]</code> es el último elemento.",
+          "correcta": true
+        }
+      ]
+    }
+  ],
+  "retos": [
+    {
+      "id": "m11-r1",
+      "titulo": "Días de escuela",
+      "resumen": "Leer por posición.",
+      "enunciado": "Crea la lista <code>dias</code> con los días de lunes a viernes (en minúsculas) y muestra el <b>tercer</b> día usando su posición.",
+      "inicio": "dias = [\"lunes\", \"martes\", ___]\nprint(dias[___])",
+      "requiere": [
+        "lista",
+        "indice"
+      ],
+      "pruebas": [
+        {
+          "contiene": [
+            "miércoles"
+          ],
+          "no_contiene": [
+            "martes",
+            "jueves"
+          ]
+        }
+      ],
+      "solucion": "dias = [\"lunes\", \"martes\", \"miércoles\", \"jueves\", \"viernes\"]\nprint(dias[2])",
+      "pistas": [
+        "El tercer elemento no está en la posición 3.",
+        "Las posiciones son 0, 1, 2, 3, 4.",
+        "Completa la lista y escribe <code>print(dias[2])</code>."
+      ]
+    },
+    {
+      "id": "m11-r2",
+      "titulo": "Lista de compras",
+      "resumen": "Agregar con append.",
+      "enunciado": "Empieza con una lista vacía. Pide 3 productos y agrégalos con <code>.append()</code>. Al final muestra la lista completa.",
+      "inicio": "compras = []\nproducto = input(\"Producto 1: \")\ncompras.append(producto)\n# Pide y agrega los productos 2 y 3\nprint(compras)",
+      "requiere": [
+        "append*3"
+      ],
+      "pruebas": [
+        {
+          "nombre": "pan, leche, huevo",
+          "entradas": [
+            "pan",
+            "leche",
+            "huevo"
+          ],
+          "contiene": [
+            "['pan', 'leche', 'huevo']"
+          ]
+        },
+        {
+          "nombre": "uvas, queso, agua",
+          "entradas": [
+            "uvas",
+            "queso",
+            "agua"
+          ],
+          "contiene": [
+            "['uvas', 'queso', 'agua']"
+          ]
+        }
+      ],
+      "solucion": "compras = []\nproducto = input(\"Producto 1: \")\ncompras.append(producto)\nproducto = input(\"Producto 2: \")\ncompras.append(producto)\nproducto = input(\"Producto 3: \")\ncompras.append(producto)\nprint(compras)",
+      "pistas": [
+        "Repite el patrón de las dos líneas del producto 1.",
+        "Cada producto: <code>producto = input(...)</code> y luego <code>compras.append(producto)</code>.",
+        "Necesitas tres <code>append</code> en total."
+      ]
+    },
+    {
+      "id": "m11-r3",
+      "titulo": "Cambio de jugador",
+      "resumen": "Reemplazar por posición.",
+      "enunciado": "En el equipo <code>[\"Ana\", \"Luis\", \"Mía\"]</code>, Luis se lesionó. Pide el nombre de quien entra, ponlo en el lugar de Luis y muestra el equipo.",
+      "inicio": "equipo = [\"Ana\", \"Luis\", \"Mía\"]\nnuevo = input(\"¿Quién entra? \")\n___\nprint(equipo)",
+      "requiere": [
+        "indice"
+      ],
+      "pruebas": [
+        {
+          "nombre": "Entra Pedro",
+          "entradas": [
+            "Pedro"
+          ],
+          "contiene": [
+            "['Ana', 'Pedro', 'Mía']"
+          ]
+        },
+        {
+          "nombre": "Entra Sara",
+          "entradas": [
+            "Sara"
+          ],
+          "contiene": [
+            "['Ana', 'Sara', 'Mía']"
+          ]
+        }
+      ],
+      "solucion": "equipo = [\"Ana\", \"Luis\", \"Mía\"]\nnuevo = input(\"¿Quién entra? \")\nequipo[1] = nuevo\nprint(equipo)",
+      "pistas": [
+        "Para cambiar un elemento: <code>lista[posición] = valor</code>.",
+        "Luis está en la segunda posición, que es la 1.",
+        "La línea que falta es <code>equipo[1] = nuevo</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m11-mision",
+    "titulo": "Inventario de la mochila",
+    "historia": "Antes de salir de casa, revisas que la mochila lleve todo.",
+    "enunciado": "Empieza con <code>mochila = [\"cuaderno\", \"lápiz\"]</code>. Pide <b>3 objetos</b> más y agrégalos. Después muestra:<br><code>Tu mochila tiene 5 objetos</code><br><code>Primero: cuaderno</code><br><code>Último: tijeras</code> (el último que se agregó)<br>Usa <code>len()</code> para el número de objetos y para encontrar el último.",
+    "requiere": [
+      "lista",
+      "append",
+      "len"
+    ],
+    "pruebas": [
+      {
+        "nombre": "regla, goma, tijeras",
+        "entradas": [
+          "regla",
+          "goma",
+          "tijeras"
+        ],
+        "contiene": [
+          "Tu mochila tiene 5 objetos",
+          "Primero: cuaderno",
+          "Último: tijeras"
+        ]
+      },
+      {
+        "nombre": "lonchera, libro, colores",
+        "entradas": [
+          "lonchera",
+          "libro",
+          "colores"
+        ],
+        "contiene": [
+          "5 objetos",
+          "Primero: cuaderno",
+          "Último: colores"
+        ]
+      }
+    ],
+    "pistas": [
+      "Usa <code>append</code> tres veces, <code>len(mochila)</code> y las posiciones de la lista.",
+      "Primero agrega los 3 objetos; luego los tres <code>print</code>. El primero está en la posición 0.",
+      "El último está en <code>mochila[len(mochila) - 1]</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "Completa las partes marcadas con ___ en el código.",
+        "inicio": "mochila = [\"cuaderno\", \"lápiz\"]\nfor i in range(3):\n    objeto = input(\"¿Qué más llevas? \")\n    mochila.append(___)\nprint(\"Tu mochila tiene\", ___, \"objetos\")\nprint(\"Primero:\", mochila[___])\nprint(\"Último:\", mochila[len(mochila) - 1])",
+        "solucion": "mochila = [\"cuaderno\", \"lápiz\"]\nfor i in range(3):\n    objeto = input(\"¿Qué más llevas? \")\n    mochila.append(objeto)\nprint(\"Tu mochila tiene\", len(mochila), \"objetos\")\nprint(\"Primero:\", mochila[0])\nprint(\"Último:\", mochila[len(mochila) - 1])"
+      },
+      "programador": {
+        "inicio": "mochila = [\"cuaderno\", \"lápiz\"]\n",
+        "solucion": "mochila = [\"cuaderno\", \"lápiz\"]\nfor i in range(3):\n    objeto = input(\"¿Qué más llevas? \")\n    mochila.append(objeto)\nprint(\"Tu mochila tiene\", len(mochila), \"objetos\")\nprint(\"Primero:\", mochila[0])\nprint(\"Último:\", mochila[len(mochila) - 1])"
+      },
+      "maestro": {
+        "enunciado": "al final, pregunta qué posición quiere ver, contando desde 1 como en Scratch, y muestra ese objeto: si escriben 2 → <code>En la posición 2 está: lápiz</code>.",
+        "inicio": "mochila = [\"cuaderno\", \"lápiz\"]\n",
+        "pruebas": [
+          {
+            "nombre": "Posición 2",
+            "entradas": [
+              "regla",
+              "goma",
+              "tijeras",
+              "2"
+            ],
+            "contiene": [
+              "5 objetos",
+              "Último: tijeras",
+              "En la posición 2 está: lápiz"
+            ]
+          },
+          {
+            "nombre": "Posición 5",
+            "entradas": [
+              "regla",
+              "goma",
+              "tijeras",
+              "5"
+            ],
+            "contiene": [
+              "En la posición 5 está: tijeras"
+            ]
+          }
+        ],
+        "solucion": "mochila = [\"cuaderno\", \"lápiz\"]\nfor i in range(3):\n    objeto = input(\"¿Qué más llevas? \")\n    mochila.append(objeto)\nprint(\"Tu mochila tiene\", len(mochila), \"objetos\")\nprint(\"Primero:\", mochila[0])\nprint(\"Último:\", mochila[len(mochila) - 1])\npos = int(input(\"¿Qué posición quieres ver? \"))\nprint(\"En la posición\", pos, \"está:\", mochila[pos - 1])"
+      }
+    }
+  },
+  "extra": {
+    "id": "m11-extra",
+    "titulo": "Al revés",
+    "historia": "Un juego de palabras para el recreo.",
+    "enunciado": "Pide 3 palabras, guárdalas en una lista y muéstralas en orden inverso, una por renglón, usando sus posiciones.",
+    "inicio": "",
+    "requiere": [
+      "lista",
+      "indice"
+    ],
+    "pruebas": [
+      {
+        "nombre": "uno, dos, tres",
+        "entradas": [
+          "uno",
+          "dos",
+          "tres"
+        ],
+        "exacto": "tres\ndos\nuno"
+      },
+      {
+        "nombre": "sol, luna, mar",
+        "entradas": [
+          "sol",
+          "luna",
+          "mar"
+        ],
+        "exacto": "mar\nluna\nsol"
+      }
+    ],
+    "solucion": "palabras = []\nfor i in range(3):\n    palabras.append(input(\"Palabra: \"))\nprint(palabras[2])\nprint(palabras[1])\nprint(palabras[0])"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué índice tiene el primer elemento de una lista?",
+        "opciones": [
+          "-1",
+          "1",
+          "0",
+          "Depende"
+        ],
+        "correcta": 2
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "verde",
+          "rojo",
+          "azul",
+          "Error"
+        ],
+        "correcta": 0,
+        "codigo": "colores = [\"rojo\", \"verde\", \"azul\"]\nprint(colores[1])",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "rojo",
+          "Error",
+          "azul",
+          "verde"
+        ],
+        "correcta": 2,
+        "codigo": "colores = [\"rojo\", \"verde\", \"azul\"]\nprint(colores[-1])",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué hace <code>.append()</code>?",
+        "opciones": [
+          "Agrega un elemento al final",
+          "Borra el último",
+          "Ordena la lista",
+          "Cuenta los elementos"
+        ],
+        "correcta": 0
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "3",
+          "4",
+          "5",
+          "2"
+        ],
+        "correcta": 1,
+        "codigo": "l = [7, 2]\nl.append(9)\nl.append(1)\nprint(len(l))",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué error aparece?",
+        "opciones": [
+          "NameError",
+          "SyntaxError",
+          "IndexError",
+          "TypeError"
+        ],
+        "correcta": 2,
+        "codigo": "l = [1, 2, 3]\nprint(l[3])",
+        "tiempo": 30
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "Las listas se escriben entre corchetes <code>[ ]</code>.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 0,
+        "tiempo": 15
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "['Ana', 'Beto', 'Mía']",
+          "['Ana', 'Luis', 'Mía']",
+          "['Beto', 'Luis', 'Mía']",
+          "Error"
+        ],
+        "correcta": 0,
+        "codigo": "e = [\"Ana\", \"Luis\", \"Mía\"]\ne[1] = \"Beto\"\nprint(e)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "Una lista tiene 5 elementos. ¿Cuál es el índice del último?",
+        "opciones": [
+          "6",
+          "5",
+          "4",
+          "0"
+        ],
+        "correcta": 2
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "🎒",
+      "texto": "Una lista guarda varios datos entre corchetes.",
+      "codigo": "mochila = [\"lápiz\", \"cuaderno\"]"
+    },
+    {
+      "icono": "🔢",
+      "texto": "Los índices empiezan en 0; <code>[-1]</code> es el último.",
+      "codigo": "print(mochila[0], mochila[-1])"
+    },
+    {
+      "icono": "➕",
+      "texto": "<code>.append()</code> agrega al final y <code>len()</code> cuenta.",
+      "codigo": "mochila.append(\"regla\")"
+    }
+  ],
+  "glosario": [
+    {
+      "en": "list",
+      "es": "lista",
+      "def": "Colección ordenada de valores entre corchetes."
+    },
+    {
+      "en": "element (item)",
+      "es": "elemento",
+      "def": "Cada valor guardado en una lista."
+    },
+    {
+      "en": "index",
+      "es": "índice, posición",
+      "def": "Número que indica el lugar de un elemento; empieza en 0."
+    },
+    {
+      "en": "append",
+      "es": "agregar, añadir",
+      "def": "Agrega un elemento al final de la lista."
+    },
+    {
+      "en": "IndexError",
+      "es": "error de índice",
+      "def": "Aparece al pedir una posición que no existe."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "Si una lista tiene 6 elementos, ¿cuál es la posición del último?",
+      "respuesta": "5, porque las posiciones van de 0 a 5. En general: <code>len(lista) - 1</code>."
+    },
+    {
+      "pregunta": "¿Qué hace <code>colores[1] = \"negro\"</code>?",
+      "respuesta": "Reemplaza el segundo elemento de la lista por «negro»."
+    },
+    {
+      "pregunta": "¿Cuándo aparece un IndexError?",
+      "respuesta": "Cuando pides una posición que no existe en la lista, por ejemplo <code>lista[10]</code> en una lista de 3."
+    }
+  ],
+  "plan": {
+    "activacion": "Forma una fila de 4 voluntarios con tarjetas 0, 1, 2 y 3: «¿quién es lista[2]?», «¿quién es lista[-1]?».",
+    "ejemplo": "Ejemplo «La mochila de Robi»: predicen <code>len()</code> después de cada <code>append()</code>.",
+    "practica": "Actividades: índices, la lista crece (traza) y memorama.",
+    "reto": "Retos rápidos y la misión «Inventario de la mochila».",
+    "cierre": "Kahoot y pregunta: si una lista tiene 10 elementos, ¿cuál es el último índice?"
+  }
+}

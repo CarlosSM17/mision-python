@@ -1,0 +1,9 @@
+# Salidas temporales de las herramientas de prueba
+herramientas/salida/
+# Librerías descargadas por construir.py (se vuelven a descargar solas)
+herramientas/vendor/
+__pycache__/
+# Material solo docente: se genera en ../mision-python-privado (ver "carpetaPrivada" en configuracion.json).
+# Por si alguien quita esa opción, nunca se suben al repositorio público:
+soluciones/
+docs/instrumentos-de-evaluacion.md

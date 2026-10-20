@@ -1,0 +1,682 @@
+{
+  "numero": 14,
+  "unidad": 6,
+  "titulo": "Funciones que responden",
+  "icono": "↩️",
+  "modo": 3,
+  "python": [
+    "return",
+    "descomposición"
+  ],
+  "historiaIcono": "🧩",
+  "historia": "¿Recuerdas el quiz de la Sesión 7? Funcionaba, pero tenía el mismo código copiado cinco veces. Hoy lo vas a rehacer con funciones que <b>devuelven</b> un resultado: más corto, más claro y más fácil de cambiar.",
+  "objetivos": [
+    "Devolver un resultado con <code>return</code>.",
+    "Distinguir entre mostrar (<code>print</code>) y devolver (<code>return</code>).",
+    "Usar el valor que devuelve una función en cuentas, variables y condiciones.",
+    "Descomponer un programa en funciones pequeñas."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "↩️",
+      "titulo": "Funciones que responden",
+      "texto": "Algunas funciones no solo hacen algo: también <b>devuelven</b> un resultado, como <code>len()</code>, que te da un número. Para eso usamos <code>return</code>."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "maquina-funcion",
+      "titulo": "La máquina devuelve",
+      "texto": "Entra un dato, la función lo procesa y <code>return</code> entrega el resultado al lugar donde la llamaste.",
+      "datos": {
+        "nombre": "doble",
+        "parametro": "n",
+        "entrada": "4",
+        "codigo": "return n * 2",
+        "salida": "8"
+      },
+      "codigo": "def doble(n):\n    return n * 2\n\nresultado = doble(4)\nprint(resultado)  # 8"
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Usa el resultado",
+      "texto": "El valor devuelto se puede guardar, mostrar o usar en una cuenta.",
+      "codigo": "def area(base, altura):\n    return base * altura\n\na = area(3, 4)\nprint(\"Área:\", a)\nprint(\"Doble del área:\", area(3, 4) * 2)"
+    },
+    {
+      "tipo": "comparar",
+      "titulo": "print o return",
+      "texto": "<code>print</code> muestra en la pantalla; <code>return</code> entrega el valor para seguir usándolo.",
+      "mal": {
+        "codigo": "def doble(n):\n    print(n * 2)\n\nx = doble(4) + 1",
+        "nota": "<code>doble(4)</code> muestra 8 pero no devuelve nada (<code>None</code>): sumarle 1 da <b>TypeError</b>."
+      },
+      "bien": {
+        "codigo": "def doble(n):\n    return n * 2\n\nx = doble(4) + 1",
+        "nota": "<code>doble(4)</code> devuelve 8, así que <code>x</code> vale 9."
+      }
+    },
+    {
+      "tipo": "idea",
+      "icono": "🛑",
+      "titulo": "return termina la función",
+      "texto": "Cuando Python llega a un <code>return</code>, sale de la función de inmediato.",
+      "codigo": "def es_par(n):\n    if n % 2 == 0:\n        return True\n    return False\n\nprint(es_par(6))\nprint(es_par(7))",
+      "salida": "True\nFalse"
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "funciones",
+      "titulo": "La máquina de funciones",
+      "texto": "Prueba la máquina con distintos datos y observa lo que devuelve."
+    },
+    {
+      "tipo": "pasos",
+      "titulo": "Descomponer un problema",
+      "pasos": [
+        {
+          "icono": "🎯",
+          "texto": "Piensa qué debe hacer el programa completo."
+        },
+        {
+          "icono": "✂️",
+          "texto": "Divídelo en tareas: pedir datos, calcular, mostrar."
+        },
+        {
+          "icono": "🏗️",
+          "texto": "Escribe una función para cada tarea."
+        },
+        {
+          "icono": "🧪",
+          "texto": "Prueba cada función por separado."
+        },
+        {
+          "icono": "🧩",
+          "texto": "Únelas en el programa principal."
+        }
+      ],
+      "texto": "Los programadores dividen los problemas grandes en funciones pequeñas."
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Un programa hecho de funciones",
+      "texto": "Mira cómo cada función hace una sola cosa.",
+      "codigo": "def pedir_calificacion():\n    return float(input(\"Calificación: \"))\n\ndef promedio(a, b):\n    return (a + b) / 2\n\nc1 = pedir_calificacion()\nc2 = pedir_calificacion()\nprint(\"Promedio:\", promedio(c1, c2))"
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "¿Qué muestra?",
+      "opciones": [
+        "9",
+        "6",
+        "Error",
+        "7"
+      ],
+      "correcta": 3,
+      "explicacion": "<code>triple(2)</code> devuelve 6 y luego se suma 1.",
+      "codigo": "def triple(x):\n    return x * 3\n\nprint(triple(2) + 1)"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "Áreas de rectángulos",
+    "descripcion": "Una función que calcula y devuelve un área.",
+    "codigo": "def area_rectangulo(base, altura):\n    return base * altura\n\na1 = area_rectangulo(3, 4)\na2 = area_rectangulo(5, 2)\nprint(\"Área total:\", a1 + a2)",
+    "prediccion": {
+      "pregunta": "¿Qué número muestra el programa?",
+      "opciones": [
+        "22",
+        "12",
+        "10",
+        "14"
+      ],
+      "correcta": 0,
+      "explicacion": "area_rectangulo(3, 4) devuelve 12 y area_rectangulo(5, 2) devuelve 10: 12 + 10 = 22."
+    },
+    "investigar": [
+      "Con 👣 Paso a paso, observa qué valor recibe <code>a1</code> cuando termina la función.",
+      "¿Qué pasa si cambias <code>return</code> por <code>print</code>?",
+      "¿Puedes escribir <code>print(area_rectangulo(2, 2))</code> directamente?"
+    ],
+    "modificar": "Agrega una función <code>perimetro_rectangulo(base, altura)</code> que devuelva el perímetro y úsala."
+  },
+  "actividades": [
+    {
+      "id": "m14-a1",
+      "tipo": "completar",
+      "titulo": "El doble",
+      "instrucciones": "Completa la función para que <b>devuelva</b> el doble de <code>n</code>.",
+      "codigo": "def doble(n):\n    ⟦return⟧ n * 2\n\nprint(doble(7))",
+      "opciones": [
+        "return",
+        "print",
+        "def",
+        "n"
+      ]
+    },
+    {
+      "id": "m14-a2",
+      "tipo": "salida",
+      "titulo": "Funciones encadenadas",
+      "instrucciones": "¿Qué aparece en la pantalla? Elige la opción correcta.",
+      "codigo": "def suma(a, b):\n    return a + b\n\ndef doble(n):\n    return n * 2\n\nprint(doble(suma(2, 3)))",
+      "respuesta": "10",
+      "opciones": [
+        "Error",
+        "5",
+        "7",
+        "10"
+      ],
+      "correcta": 3,
+      "explicacion": "Primero <code>suma(2, 3)</code> devuelve 5; luego <code>doble(5)</code> devuelve 10."
+    },
+    {
+      "id": "m14-a3",
+      "tipo": "error",
+      "titulo": "Caza el error: ¿muestra o devuelve?",
+      "instrucciones": "El programa muestra «El área es None». Toca la línea equivocada.",
+      "codigo": "def area(base, altura):\n    print(base * altura)\n\na = area(5, 2)\nprint(\"El área es\", a)",
+      "tipoError": "logico",
+      "explicacion": "La función muestra el área, pero no la devuelve: <code>a</code> queda en <code>None</code>. Hay que usar <code>return</code>.",
+      "correccion": "    return base * altura",
+      "linea": 2
+    },
+    {
+      "id": "m14-a4",
+      "tipo": "relacionar",
+      "titulo": "Llamadas y resultados",
+      "instrucciones": "Con estas funciones:<br><code>def doble(n): return n * 2</code><br><code>def es_par(n): return n % 2 == 0</code><br><code>def saludo(x): return \"Hola \" + x</code><br>une cada llamada con lo que devuelve.",
+      "pares": [
+        [
+          "doble(5)",
+          "10"
+        ],
+        [
+          "doble(doble(2))",
+          "8"
+        ],
+        [
+          "es_par(7)",
+          "False"
+        ],
+        [
+          "es_par(10)",
+          "True"
+        ],
+        [
+          "saludo(\"Py\")",
+          "\"Hola Py\""
+        ]
+      ]
+    },
+    {
+      "id": "m14-a5",
+      "tipo": "ordenar",
+      "titulo": "¿Es par?",
+      "instrucciones": "Arma el programa tocando las piezas en el orden correcto.",
+      "lineas": [
+        "def es_par(n):",
+        "    return n % 2 == 0",
+        "numero = int(input(\"Número: \"))",
+        "if es_par(numero):",
+        "    print(\"Par\")",
+        "else:",
+        "    print(\"Impar\")"
+      ],
+      "sangria": true,
+      "entradas": [
+        "6"
+      ]
+    },
+    {
+      "id": "m14-a6",
+      "tipo": "vf",
+      "titulo": "return: ¿verdadero o falso?",
+      "instrucciones": "¿Verdadero o falso? ¡Contra reloj! Necesitas 70 % de aciertos.",
+      "tiempo": 12,
+      "afirmaciones": [
+        {
+          "texto": "<code>return</code> entrega un valor a quien llamó la función.",
+          "correcta": true
+        },
+        {
+          "texto": "<code>print</code> y <code>return</code> hacen exactamente lo mismo.",
+          "correcta": false,
+          "explicacion": "print muestra; return devuelve el valor para usarlo."
+        },
+        {
+          "texto": "Después de un <code>return</code>, la función termina.",
+          "correcta": true
+        },
+        {
+          "texto": "Una función sin return devuelve <code>None</code>.",
+          "correcta": true
+        },
+        {
+          "texto": "Una función solo puede tener un parámetro.",
+          "correcta": false,
+          "explicacion": "Puede tener varios, separados por comas."
+        },
+        {
+          "texto": "El valor devuelto se puede guardar en una variable.",
+          "correcta": true
+        }
+      ]
+    }
+  ],
+  "retos": [
+    {
+      "id": "m14-r1",
+      "titulo": "El doble",
+      "resumen": "Tu primer return.",
+      "enunciado": "Completa la función <code>doble(n)</code> para que <b>devuelva</b> el doble de n. El programa debe mostrar <code>14</code>.",
+      "inicio": "def doble(n):\n    ___\n\nprint(doble(7))",
+      "requiere": [
+        "return"
+      ],
+      "prohibe": [],
+      "pruebas": [
+        {
+          "exacto": "14"
+        }
+      ],
+      "solucion": "def doble(n):\n    return n * 2\n\nprint(doble(7))",
+      "pistas": [
+        "Usa <code>return</code>, no print.",
+        "Después de return va el valor que se entrega.",
+        "La línea es <code>return n * 2</code>."
+      ]
+    },
+    {
+      "id": "m14-r2",
+      "titulo": "¿Es par?",
+      "resumen": "Devolver True o False.",
+      "enunciado": "Completa <code>es_par(n)</code> para que devuelva <code>True</code> si n es par. El programa pide un número y muestra <code>Par</code> o <code>Impar</code>.",
+      "inicio": "def es_par(n):\n    return ___\n\nnumero = int(input(\"Número: \"))\nif es_par(numero):\n    print(\"Par\")\nelse:\n    print(\"Impar\")",
+      "requiere": [
+        "return",
+        "%"
+      ],
+      "pruebas": [
+        {
+          "nombre": "8",
+          "entradas": [
+            "8"
+          ],
+          "contiene": [
+            "Par"
+          ],
+          "no_contiene": [
+            "Impar"
+          ]
+        },
+        {
+          "nombre": "3",
+          "entradas": [
+            "3"
+          ],
+          "contiene": [
+            "Impar"
+          ]
+        }
+      ],
+      "solucion": "def es_par(n):\n    return n % 2 == 0\n\nnumero = int(input(\"Número: \"))\nif es_par(numero):\n    print(\"Par\")\nelse:\n    print(\"Impar\")",
+      "pistas": [
+        "Una comparación ya es True o False: se puede devolver directamente.",
+        "Un número es par si el residuo entre 2 es 0.",
+        "Escribe <code>return n % 2 == 0</code>."
+      ]
+    },
+    {
+      "id": "m14-r3",
+      "titulo": "El mayor de dos",
+      "resumen": "Varios return.",
+      "enunciado": "Escribe <code>mayor(a, b)</code> que devuelva el número más grande. Pide dos números y muestra <code>El mayor es 9</code>.",
+      "inicio": "def mayor(a, b):\n    # Si a es más grande, devuelve a; si no, devuelve b\n    ___\n\nx = int(input(\"Primer número: \"))\ny = int(input(\"Segundo número: \"))\nprint(\"El mayor es\", mayor(x, y))",
+      "requiere": [
+        "def",
+        "return*2"
+      ],
+      "prohibe": [
+        "max"
+      ],
+      "pruebas": [
+        {
+          "nombre": "4 y 9",
+          "entradas": [
+            "4",
+            "9"
+          ],
+          "contiene": [
+            "El mayor es 9"
+          ]
+        },
+        {
+          "nombre": "12 y 5",
+          "entradas": [
+            "12",
+            "5"
+          ],
+          "contiene": [
+            "El mayor es 12"
+          ]
+        }
+      ],
+      "solucion": "def mayor(a, b):\n    if a > b:\n        return a\n    return b\n\nx = int(input(\"Primer número: \"))\ny = int(input(\"Segundo número: \"))\nprint(\"El mayor es\", mayor(x, y))",
+      "pistas": [
+        "Usa un if dentro de la función, con un return en cada caso.",
+        "Si <code>a &gt; b</code>, devuelve a; después del if, devuelve b.",
+        "Son tres líneas: <code>if a &gt; b:</code>, <code>return a</code> (con sangría) y <code>return b</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m14-mision",
+    "titulo": "Rehacer el quiz con funciones",
+    "historia": "El quiz de la Sesión 7 tenía el mismo código repetido. ¡Hora de mejorarlo!",
+    "enunciado": "Escribe dos funciones:<ul><li><code>preguntar(pregunta, correcta)</code>: pide la respuesta (en minúsculas con <code>.lower()</code>), muestra <code>Correcto</code> o <code>Incorrecto</code> y <b>devuelve</b> 1 si acertó o 0 si no.</li><li><code>mensaje_final(puntaje)</code>: devuelve <code>¡Excelente!</code> si el puntaje es 3, <code>Bien</code> si es 2 y <code>Sigue practicando</code> si es menor.</li></ul>Con ellas haz estas 3 preguntas: <i>¿Cuántas patas tiene una araña?</i> (8), <i>¿De qué color es el cielo despejado?</i> (azul), <i>¿Cuánto es 9 x 7?</i> (63). Al final muestra <code>Puntaje: 2 de 3</code> y el mensaje.",
+    "requiere": [
+      "def*2",
+      "return*2"
+    ],
+    "pruebas": [
+      {
+        "nombre": "Todas bien",
+        "entradas": [
+          "8",
+          "azul",
+          "63"
+        ],
+        "contiene": [
+          "Correcto",
+          "Correcto",
+          "Correcto",
+          "Puntaje: 3 de 3",
+          "Excelente"
+        ]
+      },
+      {
+        "nombre": "Solo la primera",
+        "entradas": [
+          "8",
+          "rojo",
+          "60"
+        ],
+        "contiene": [
+          "Correcto",
+          "Incorrecto",
+          "Incorrecto",
+          "Puntaje: 1 de 3",
+          "Sigue practicando"
+        ]
+      },
+      {
+        "nombre": "Con mayúsculas",
+        "entradas": [
+          "7",
+          "AZUL",
+          "63"
+        ],
+        "contiene": [
+          "Incorrecto",
+          "Correcto",
+          "Correcto",
+          "Puntaje: 2 de 3",
+          "Bien"
+        ]
+      }
+    ],
+    "pistas": [
+      "Dos funciones con <code>return</code>; el programa principal suma lo que devuelve <code>preguntar</code>.",
+      "<code>puntaje = 0</code>, luego <code>puntaje = puntaje + preguntar(\"¿Cuántas patas…? \", \"8\")</code> para cada pregunta, y al final dos print.",
+      "Dentro de preguntar: <code>r = input(pregunta).lower()</code>; si <code>r == correcta</code> muestra «Correcto» y <code>return 1</code>; si no, «Incorrecto» y <code>return 0</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "Las funciones ya están casi listas. Completa las partes marcadas con ___.",
+        "inicio": "def preguntar(pregunta, correcta):\n    r = input(pregunta).lower()\n    if r == correcta:\n        print(\"Correcto\")\n        return ___\n    print(\"Incorrecto\")\n    return ___\n\ndef mensaje_final(puntaje):\n    if puntaje == 3:\n        return \"¡Excelente!\"\n    elif puntaje == 2:\n        return \"Bien\"\n    return \"Sigue practicando\"\n\npuntaje = 0\npuntaje = puntaje + preguntar(\"¿Cuántas patas tiene una araña? \", \"8\")\npuntaje = puntaje + preguntar(\"¿De qué color es el cielo despejado? \", \"azul\")\npuntaje = puntaje + preguntar(\"¿Cuánto es 9 x 7? \", ___)\nprint(\"Puntaje:\", puntaje, \"de 3\")\nprint(mensaje_final(___))",
+        "solucion": "def preguntar(pregunta, correcta):\n    r = input(pregunta).lower()\n    if r == correcta:\n        print(\"Correcto\")\n        return 1\n    print(\"Incorrecto\")\n    return 0\n\ndef mensaje_final(puntaje):\n    if puntaje == 3:\n        return \"¡Excelente!\"\n    elif puntaje == 2:\n        return \"Bien\"\n    return \"Sigue practicando\"\n\npuntaje = 0\npuntaje = puntaje + preguntar(\"¿Cuántas patas tiene una araña? \", \"8\")\npuntaje = puntaje + preguntar(\"¿De qué color es el cielo despejado? \", \"azul\")\npuntaje = puntaje + preguntar(\"¿Cuánto es 9 x 7? \", \"63\")\nprint(\"Puntaje:\", puntaje, \"de 3\")\nprint(mensaje_final(puntaje))"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "def preguntar(pregunta, correcta):\n    r = input(pregunta).lower()\n    if r == correcta:\n        print(\"Correcto\")\n        return 1\n    print(\"Incorrecto\")\n    return 0\n\n\ndef mensaje_final(puntaje):\n    if puntaje == 3:\n        return \"¡Excelente!\"\n    elif puntaje == 2:\n        return \"Bien\"\n    return \"Sigue practicando\"\n\n\npuntaje = 0\npuntaje += preguntar(\"¿Cuántas patas tiene una araña? \", \"8\")\npuntaje += preguntar(\"¿De qué color es el cielo despejado? \", \"azul\")\npuntaje += preguntar(\"¿Cuánto es 9 x 7? \", \"63\")\nprint(\"Puntaje:\", puntaje, \"de 3\")\nprint(mensaje_final(puntaje))"
+      },
+      "maestro": {
+        "enunciado": "guarda las preguntas en una lista y las respuestas en otra, y recórrelas con un <code>for</code> para no repetir la llamada a <code>preguntar</code>. El total (3) también debe salir de <code>len()</code>.",
+        "inicio": "",
+        "requiere": [
+          "lista*2",
+          "for",
+          "len"
+        ],
+        "solucion": "def preguntar(pregunta, correcta):\n    r = input(pregunta).lower()\n    if r == correcta:\n        print(\"Correcto\")\n        return 1\n    print(\"Incorrecto\")\n    return 0\n\ndef mensaje_final(puntaje):\n    if puntaje == 3:\n        return \"¡Excelente!\"\n    elif puntaje == 2:\n        return \"Bien\"\n    return \"Sigue practicando\"\n\npreguntas = [\"¿Cuántas patas tiene una araña? \", \"¿De qué color es el cielo despejado? \", \"¿Cuánto es 9 x 7? \"]\nrespuestas = [\"8\", \"azul\", \"63\"]\npuntaje = 0\nfor i in range(len(preguntas)):\n    puntaje += preguntar(preguntas[i], respuestas[i])\nprint(\"Puntaje:\", puntaje, \"de\", len(preguntas))\nprint(mensaje_final(puntaje))"
+      }
+    }
+  },
+  "extra": {
+    "id": "m14-extra",
+    "titulo": "Calculadora con funciones",
+    "historia": "Una calculadora donde cada operación es una función.",
+    "enunciado": "Escribe las funciones <code>sumar(a, b)</code>, <code>restar(a, b)</code>, <code>multiplicar(a, b)</code> y <code>dividir(a, b)</code>, cada una con <code>return</code>. Pide dos números y una operación (<code>+ - * /</code>) y muestra <code>Resultado: 12</code>. Si dividen entre cero, muestra <code>No se puede dividir entre cero</code>.",
+    "inicio": "",
+    "requiere": [
+      "def*4",
+      "return*4",
+      "elif"
+    ],
+    "pruebas": [
+      {
+        "nombre": "8 + 4",
+        "entradas": [
+          "8",
+          "4",
+          "+"
+        ],
+        "contiene": [
+          "Resultado: 12"
+        ]
+      },
+      {
+        "nombre": "8 * 4",
+        "entradas": [
+          "8",
+          "4",
+          "*"
+        ],
+        "contiene": [
+          "Resultado: 32"
+        ]
+      },
+      {
+        "nombre": "9 / 3",
+        "entradas": [
+          "9",
+          "3",
+          "/"
+        ],
+        "contiene": [
+          "Resultado: 3.0"
+        ]
+      },
+      {
+        "nombre": "5 / 0",
+        "entradas": [
+          "5",
+          "0",
+          "/"
+        ],
+        "contiene": [
+          "No se puede dividir entre cero"
+        ]
+      }
+    ],
+    "solucion": "def sumar(a, b):\n    return a + b\n\ndef restar(a, b):\n    return a - b\n\ndef multiplicar(a, b):\n    return a * b\n\ndef dividir(a, b):\n    return a / b\n\nx = int(input(\"Primer número: \"))\ny = int(input(\"Segundo número: \"))\nop = input(\"Operación (+ - * /): \")\nif op == \"+\":\n    print(\"Resultado:\", sumar(x, y))\nelif op == \"-\":\n    print(\"Resultado:\", restar(x, y))\nelif op == \"*\":\n    print(\"Resultado:\", multiplicar(x, y))\nelif op == \"/\":\n    if y == 0:\n        print(\"No se puede dividir entre cero\")\n    else:\n        print(\"Resultado:\", dividir(x, y))\nelse:\n    print(\"Operación desconocida\")"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué hace <code>return</code>?",
+        "opciones": [
+          "Devuelve un valor a quien llamó la función",
+          "Repite la función",
+          "Borra la función",
+          "Muestra un valor en la pantalla"
+        ],
+        "correcta": 0
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "8",
+          "4",
+          "None",
+          "doble(4)"
+        ],
+        "correcta": 0,
+        "codigo": "def doble(n):\n    return n * 2\n\nprint(doble(4))",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "6",
+          "9",
+          "7",
+          "Error"
+        ],
+        "correcta": 2,
+        "codigo": "def triple(x):\n    return x * 3\n\nprint(triple(2) + 1)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué devuelve una función que no tiene return?",
+        "opciones": [
+          "Un error",
+          "None",
+          "False",
+          "0"
+        ],
+        "correcta": 1
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "6",
+          "True",
+          "Par",
+          "False"
+        ],
+        "correcta": 1,
+        "codigo": "def es_par(n):\n    return n % 2 == 0\n\nprint(es_par(6))",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "Después de ejecutar un return, la función sigue con las líneas de abajo.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
+        "tiempo": 15,
+        "explicacion": "return termina la función de inmediato."
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "10",
+          "7",
+          "Error",
+          "3"
+        ],
+        "correcta": 0,
+        "codigo": "def suma(a, b):\n    return a + b\n\nprint(suma(3, 4) + suma(1, 2))",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "pregunta": "¿Qué significa «descomponer» un problema?",
+        "opciones": [
+          "Copiarlo",
+          "Hacerlo más difícil",
+          "Dividirlo en partes pequeñas",
+          "Borrarlo"
+        ],
+        "correcta": 2
+      },
+      {
+        "pregunta": "¿Qué muestra?",
+        "opciones": [
+          "None",
+          "12",
+          "3",
+          "9"
+        ],
+        "correcta": 3,
+        "codigo": "def mayor(a, b):\n    if a > b:\n        return a\n    return b\n\nprint(mayor(3, 9))",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "↩️",
+      "texto": "<code>return</code> devuelve un resultado que puedes guardar o usar.",
+      "codigo": "def doble(n):\n    return n * 2"
+    },
+    {
+      "icono": "🖥️",
+      "texto": "<code>print</code> muestra; <code>return</code> entrega. ¡No son lo mismo!"
+    },
+    {
+      "icono": "✂️",
+      "texto": "Descompón: una función para cada tarea."
+    }
+  ],
+  "glosario": [
+    {
+      "en": "return",
+      "es": "devolver, regresar",
+      "def": "Termina la función y entrega un valor a quien la llamó."
+    },
+    {
+      "en": "return value",
+      "es": "valor devuelto",
+      "def": "El resultado que entrega una función."
+    },
+    {
+      "en": "None",
+      "es": "nada, ninguno",
+      "def": "Valor que devuelve una función que no tiene return."
+    },
+    {
+      "en": "decomposition",
+      "es": "descomposición",
+      "def": "Dividir un problema en partes más pequeñas."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Qué diferencia hay entre <code>print</code> y <code>return</code> dentro de una función?",
+      "respuesta": "print muestra el valor en la pantalla; return lo entrega a quien llamó la función para que lo use (guardarlo, sumarlo, compararlo)."
+    },
+    {
+      "pregunta": "¿Qué pasa con las líneas que están después de un <code>return</code> que se ejecuta?",
+      "respuesta": "No se ejecutan: return termina la función en ese momento."
+    },
+    {
+      "pregunta": "¿Por qué la versión con funciones del quiz es mejor?",
+      "respuesta": "No repite código; si quieres cambiar cómo se revisa una respuesta, lo cambias en un solo lugar; y el programa principal se lee como una lista de pasos."
+    }
+  ],
+  "plan": {
+    "activacion": "Máquina humana: un alumno es la función «doble»; le dan un número en un papel y devuelve el resultado en otro papel (return), sin decirlo en voz alta (print).",
+    "ejemplo": "Ejemplo «Áreas de rectángulos»: comparan una versión con print y otra con return.",
+    "practica": "Actividades: completar el return, funciones encadenadas y caza el error print/return.",
+    "reto": "Retos rápidos y la misión «Rehacer el quiz con funciones».",
+    "cierre": "Kahoot y elección preliminar del proyecto final."
+  }
+}

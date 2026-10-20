@@ -1,0 +1,484 @@
+{
+  "numero": 0,
+  "unidad": 0,
+  "titulo": "Despegue: ¡Hola, Python!",
+  "icono": "🚀",
+  "modo": 3,
+  "python": [
+    "print()"
+  ],
+  "historiaIcono": "🚀",
+  "historia": "¡Bienvenida, bienvenido a la tripulación de <b>Misión Python</b>! La nave necesita programadoras y programadores. En cada misión aprenderás una idea nueva de Python, jugarás, programarás y ganarás XP para subir de nivel.",
+  "objetivos": [
+    "Saber qué es programar y qué es Python.",
+    "Mostrar mensajes con <code>print()</code>.",
+    "Conocer cómo funciona Misión Python: mapa, XP, retos y Kahoots."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "🚀",
+      "titulo": "¿Qué es programar?",
+      "texto": "Programar es <b>escribir instrucciones</b> para que una computadora las siga, paso a paso. Las apps, los videojuegos y las redes sociales están hechos de programas."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "computadora",
+      "titulo": "La computadora sigue instrucciones",
+      "texto": "La computadora es rapidísima, pero no adivina: hace <b>exactamente</b> lo que le dices.",
+      "datos": {
+        "a": "Tú escribes instrucciones",
+        "b": "La computadora las sigue al pie de la letra",
+        "c": "¡Un juego, una app, un robot!"
+      },
+      "py": "Si te equivocas en una letra, la computadora no lo adivina. ¡Por eso hay que ser precisos!"
+    },
+    {
+      "tipo": "idea",
+      "icono": "🐍",
+      "titulo": "¿Por qué Python?",
+      "texto": "Python es uno de los lenguajes de programación más usados del mundo: se usa para hacer páginas web, videojuegos, robots, ciencia e inteligencia artificial. Y se lee casi como inglés."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "consola",
+      "titulo": "Tu primer programa",
+      "texto": "<code>print()</code> muestra un mensaje en la pantalla (la <b>consola</b>). El texto va entre comillas.",
+      "datos": {
+        "codigo": "print(\"¡Hola, Python!\")",
+        "salida": "¡Hola, Python!"
+      }
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "print",
+      "titulo": "Pruébalo tú",
+      "texto": "Escribe un mensaje y mira cómo se ve en la consola."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "error",
+      "titulo": "Los errores son pistas",
+      "texto": "Si algo está mal escrito, Python muestra un <b>error</b>. No pasa nada: lee el mensaje, corrige y vuelve a intentar. ¡Todos los programadores lo hacen todos los días!",
+      "datos": {
+        "codigo": "print(\"Hola)",
+        "linea": 1,
+        "tipo": "SyntaxError",
+        "mensaje": "Falta cerrar las comillas del texto."
+      }
+    },
+    {
+      "tipo": "pasos",
+      "titulo": "Cómo funciona Misión Python",
+      "pasos": [
+        {
+          "icono": "🗺️",
+          "texto": "Avanza por el <b>mapa</b>: cada parada es una misión."
+        },
+        {
+          "icono": "📖",
+          "texto": "<b>Aprende</b> con tarjetas como esta."
+        },
+        {
+          "icono": "🎮",
+          "texto": "<b>Juega</b> actividades para practicar."
+        },
+        {
+          "icono": "💻",
+          "texto": "<b>Programa</b> retos en Python."
+        },
+        {
+          "icono": "⚡",
+          "texto": "Demuestra lo que sabes en el <b>Kahoot</b>."
+        },
+        {
+          "icono": "🏅",
+          "texto": "Gana <b>XP</b>, sube de nivel y desbloquea logros y avatares."
+        }
+      ]
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "¿Qué hace <code>print(\"Hola\")</code>?",
+      "opciones": [
+        "Imprime una hoja en la impresora",
+        "Muestra Hola en la pantalla",
+        "Borra la pantalla",
+        "Apaga la computadora"
+      ],
+      "correcta": 1,
+      "explicacion": "<i>print</i> significa «imprimir», pero en programación imprime en la pantalla, no en papel."
+    }
+  ],
+  "ejemplo": {
+    "nombrePaso": "Juega el proyecto final",
+    "titulo": "Piedra, papel o tijera",
+    "descripcion": "Este es un proyecto como el que podrás programar tú al final del curso. Presiona <b>▶ Ejecutar</b> y juega contra la computadora escribiendo tus jugadas en la consola. No te preocupes por entender todo el código todavía.",
+    "entradasSugeridas": "piedra, papel o tijera",
+    "codigo": "import random\nopciones = [\"piedra\", \"papel\", \"tijera\"]\npuntos_tu = 0\npuntos_compu = 0\ndef quien_gana(tu, compu):\n    if tu == compu:\n        return \"empate\"\n    if tu == \"piedra\" and compu == \"tijera\":\n        return \"tu\"\n    if tu == \"papel\" and compu == \"piedra\":\n        return \"tu\"\n    if tu == \"tijera\" and compu == \"papel\":\n        return \"tu\"\n    return \"compu\"\nprint(\"¡Piedra, papel o tijera! Jugamos 3 rondas.\")\nfor ronda in range(1, 4):\n    print(\"Ronda\", ronda)\n    tu = input(\"Elige piedra, papel o tijera: \").lower()\n    while tu not in opciones:\n        tu = input(\"No entendí. Escribe piedra, papel o tijera: \").lower()\n    compu = random.choice(opciones)\n    print(\"La computadora eligió\", compu)\n    resultado = quien_gana(tu, compu)\n    if resultado == \"tu\":\n        puntos_tu = puntos_tu + 1\n        print(\"¡Ganaste la ronda!\")\n    elif resultado == \"compu\":\n        puntos_compu = puntos_compu + 1\n        print(\"La computadora gana la ronda.\")\n    else:\n        print(\"Empate.\")\nprint(\"Marcador final:\", puntos_tu, \"a\", puntos_compu)\nif puntos_tu > puntos_compu:\n    print(\"¡Ganaste el juego!\")\nelif puntos_compu > puntos_tu:\n    print(\"Ganó la computadora. ¡Revancha!\")\nelse:\n    print(\"¡Empate!\")",
+    "entradasPrueba": [
+      "piedra",
+      "papel",
+      "tijera"
+    ],
+    "azarPrueba": [
+      "tijera",
+      "tijera",
+      "papel"
+    ],
+    "prediccion": {
+      "pregunta": "Mira el código (aunque todavía no lo entiendas todo). ¿Qué crees que hace este programa?",
+      "opciones": [
+        "Un juego de piedra, papel o tijera contra la computadora",
+        "Una calculadora",
+        "Un dibujo de una tijera",
+        "Un chat con un amigo"
+      ],
+      "correcta": 0,
+      "explicacion": "¡Exacto! Aunque es la primera vez que ves Python, muchas palabras se entienden: input (pedir), random (azar), print (mostrar)."
+    },
+    "investigar": [
+      "Busca en el código la palabra <code>random</code>: ¿para qué crees que sirve?",
+      "¿Qué pasa si escribes una jugada que no existe, como «lagarto»?",
+      "¿Cuántas rondas se juegan? ¿En qué línea se decide?"
+    ],
+    "modificar": "Cambia el número de rondas a 5. Pista: busca la instrucción <code>range(1, 4)</code>."
+  },
+  "actividades": [
+    {
+      "id": "m00-a1",
+      "tipo": "relacionar",
+      "titulo": "Palabras de programador",
+      "instrucciones": "Une cada elemento con su pareja.",
+      "pares": [
+        [
+          "Programa",
+          "Lista de instrucciones para la computadora"
+        ],
+        [
+          "<code>print()</code>",
+          "Muestra un mensaje en la pantalla"
+        ],
+        [
+          "Consola",
+          "Ventana donde aparece lo que muestra el programa"
+        ],
+        [
+          "Error",
+          "Aviso de que algo está mal escrito"
+        ],
+        [
+          "Python",
+          "Un lenguaje de programación"
+        ]
+      ],
+      "codigoIzq": false,
+      "codigoDer": false
+    },
+    {
+      "id": "m00-a2",
+      "tipo": "salida",
+      "titulo": "¿Qué muestra?",
+      "instrucciones": "¿Qué aparece en la pantalla? Elige la opción correcta.",
+      "codigo": "print(\"Hola\")\nprint(\"Soy Py\")",
+      "respuesta": "Hola\nSoy Py",
+      "opciones": [
+        "Soy Py\nHola",
+        "Hola\nSoy Py",
+        "Hola Soy Py",
+        "print(\"Hola\")\nprint(\"Soy Py\")"
+      ],
+      "correcta": 1,
+      "explicacion": "Cada <code>print()</code> muestra su mensaje en un renglón nuevo, en orden."
+    },
+    {
+      "id": "m00-a3",
+      "tipo": "vf",
+      "titulo": "Mitos de la programación",
+      "instrucciones": "¿Verdadero o falso? ¡Contra reloj! Necesitas 70 % de aciertos.",
+      "tiempo": 12,
+      "afirmaciones": [
+        {
+          "texto": "La computadora adivina lo que quisiste decir.",
+          "correcta": false,
+          "explicacion": "La computadora hace exactamente lo que escribes."
+        },
+        {
+          "texto": "Python distingue mayúsculas: <code>Print</code> no es lo mismo que <code>print</code>.",
+          "correcta": true
+        },
+        {
+          "texto": "Equivocarse es parte de programar.",
+          "correcta": true,
+          "explicacion": "Los errores te dicen qué corregir."
+        },
+        {
+          "texto": "El texto dentro de <code>print()</code> va entre comillas.",
+          "correcta": true,
+          "codigo": "print(\"Hola\")"
+        },
+        {
+          "texto": "Para programar hay que ser un genio de las matemáticas.",
+          "correcta": false,
+          "explicacion": "Se necesita lógica y práctica; las matemáticas que usarás son sencillas."
+        },
+        {
+          "texto": "Las líneas de un programa se ejecutan de arriba hacia abajo.",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "id": "m00-a4",
+      "tipo": "teclear",
+      "titulo": "Tus primeras líneas",
+      "instrucciones": "Escribe cada línea exactamente igual. ¡Entrena tus dedos de programador!",
+      "lineas": [
+        "print(\"Hola, Python\")",
+        "print(\"¡Despegue!\")"
+      ],
+      "xp": 40
+    }
+  ],
+  "retos": [
+    {
+      "titulo": "¡Hola, Python!",
+      "resumen": "Cambia el mensaje.",
+      "enunciado": "Presiona <b>▶ Ejecutar</b> para ver qué hace el programa. Después cambia el mensaje para que diga exactamente <code>¡Hola, Python!</code> y presiona <b>✔ Comprobar</b>.",
+      "inicio": "print(\"Hola\")",
+      "bloques": [
+        "py_print",
+        "py_string"
+      ],
+      "requiere": [
+        "print"
+      ],
+      "pruebas": [
+        {
+          "nombre": "Mensaje",
+          "contiene": [
+            "¡Hola, Python!"
+          ]
+        }
+      ],
+      "solucion": "print(\"¡Hola, Python!\")",
+      "pistas": [
+        "El mensaje va entre comillas dentro de <code>print( )</code>.",
+        "Debe quedar: <code>print(\"¡Hola, Python!\")</code>"
+      ],
+      "id": "m00-r1"
+    },
+    {
+      "titulo": "Preséntate",
+      "resumen": "Di tu nombre.",
+      "enunciado": "Cambia los puntos suspensivos por tu nombre para que el programa diga, por ejemplo, <code>Hola, soy Ana</code>.",
+      "inicio": "print(\"Hola, soy ...\")",
+      "bloques": [
+        "py_print",
+        "py_string"
+      ],
+      "requiere": [
+        "print"
+      ],
+      "pruebas": [
+        {
+          "nombre": "Saludo",
+          "contiene": [
+            "Hola, soy"
+          ],
+          "no_contiene": [
+            "..."
+          ]
+        }
+      ],
+      "solucion": "print(\"Hola, soy Ana\")",
+      "pistas": [
+        "Borra los tres puntos y escribe tu nombre dentro de las comillas.",
+        "Por ejemplo: <code>print(\"Hola, soy Ana\")</code>"
+      ],
+      "id": "m00-r2"
+    },
+    {
+      "titulo": "Dos renglones",
+      "resumen": "Dos print.",
+      "enunciado": "Escribe un programa de <b>dos renglones</b>: en el primero muestra tu nombre y en el segundo tu comida favorita.",
+      "inicio": "print(\"Me llamo Ana\")\n",
+      "bloques": [
+        "py_print",
+        "py_string"
+      ],
+      "requiere": [
+        "print*2"
+      ],
+      "pruebas": [
+        {
+          "nombre": "Dos renglones",
+          "lineasMin": 2
+        }
+      ],
+      "solucion": "print(\"Me llamo Ana\")\nprint(\"Me gustan los tacos\")",
+      "pistas": [
+        "Necesitas un segundo <code>print()</code> debajo del primero.",
+        "Por ejemplo: <code>print(\"Me gustan los tacos\")</code>"
+      ],
+      "id": "m00-r3"
+    }
+  ],
+  "kahoot": {
+    "titulo": "Kahoot de bienvenida",
+    "preguntas": [
+      {
+        "pregunta": "¿Qué es un programa?",
+        "opciones": [
+          "Un cable especial",
+          "Un tipo de computadora",
+          "Una lista de instrucciones para la computadora",
+          "Un teclado"
+        ],
+        "correcta": 2
+      },
+      {
+        "pregunta": "¿Qué instrucción muestra un mensaje en la pantalla?",
+        "opciones": [
+          "mostrar()",
+          "pantalla()",
+          "print()",
+          "show()"
+        ],
+        "correcta": 2,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué aparece en la pantalla?",
+        "opciones": [
+          "Hola",
+          "\"Hola\"",
+          "Nada",
+          "print(\"Hola\")"
+        ],
+        "correcta": 0,
+        "codigo": "print(\"Hola\")",
+        "tiempo": 30,
+        "salidaEsRespuesta": true
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "Python es uno de los lenguajes de programación más usados del mundo.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 0,
+        "tiempo": 15
+      },
+      {
+        "pregunta": "Tu programa muestra un error. ¿Qué conviene hacer?",
+        "opciones": [
+          "Leer el mensaje, corregir y volver a probar",
+          "Rendirse",
+          "Borrar todo",
+          "Apagar la computadora"
+        ],
+        "correcta": 0
+      },
+      {
+        "pregunta": "¿En qué orden se ejecutan las líneas de un programa?",
+        "opciones": [
+          "Al azar",
+          "De arriba hacia abajo",
+          "Primero las más cortas",
+          "De abajo hacia arriba"
+        ],
+        "correcta": 1
+      },
+      {
+        "pregunta": "¿Qué le falta a este programa?",
+        "opciones": [
+          "Nada, está bien",
+          "Un punto final",
+          "Una coma",
+          "Cerrar las comillas"
+        ],
+        "correcta": 3,
+        "codigo": "print(\"Hola)",
+        "tiempo": 30
+      },
+      {
+        "pregunta": "¿Qué ganas al completar actividades y retos?",
+        "opciones": [
+          "XP para subir de nivel",
+          "Dinero",
+          "Nada",
+          "Vidas extra"
+        ],
+        "correcta": 0
+      }
+    ]
+  },
+  "prueba": "diagnostica",
+  "resumen": [
+    {
+      "icono": "🐍",
+      "texto": "Programar es dar instrucciones precisas a la computadora."
+    },
+    {
+      "icono": "🖨️",
+      "texto": "<code>print()</code> muestra mensajes; el texto va entre comillas.",
+      "codigo": "print(\"¡Hola!\")"
+    },
+    {
+      "icono": "🐞",
+      "texto": "Los errores son pistas: léelos, corrige y vuelve a intentar."
+    }
+  ],
+  "glosario": [
+    {
+      "en": "Python",
+      "es": "Python (nombre del lenguaje)",
+      "def": "Lenguaje de programación de texto, muy usado en el mundo. Su nombre viene de un grupo de comedia, no de la serpiente."
+    },
+    {
+      "en": "code",
+      "es": "código",
+      "def": "Las instrucciones escritas de un programa."
+    },
+    {
+      "en": "run",
+      "es": "ejecutar",
+      "def": "Hacer que la computadora siga las instrucciones del programa."
+    },
+    {
+      "en": "print",
+      "es": "imprimir / mostrar",
+      "def": "Instrucción que muestra un mensaje en la consola."
+    },
+    {
+      "en": "console",
+      "es": "consola",
+      "def": "Ventana donde aparece lo que muestra el programa y donde escribes las respuestas."
+    },
+    {
+      "en": "bug",
+      "es": "error",
+      "def": "Algo que impide que el programa funcione como esperas. Los mensajes de error son pistas para corregirlo."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Qué hace el botón 👣 Paso a paso?",
+      "respuesta": "Ejecuta el programa línea por línea, resaltando la línea que se está ejecutando, y muestra cómo cambian las variables."
+    },
+    {
+      "pregunta": "¿Qué diferencia hay entre Ejecutar y Comprobar?",
+      "respuesta": "Ejecutar corre tu programa para que lo pruebes. Comprobar lo revisa con casos de prueba y te dice si cumple el reto y qué falló."
+    }
+  ],
+  "plan": {
+    "activacion": "Pregunta al grupo qué apps y videojuegos usan y cómo creen que se hacen. Presenta a Py y el mapa de misiones.",
+    "ejemplo": "Proyecta el ejemplo de piedra, papel o tijera y juega una partida con el grupo: «al final del curso podrán programar algo así».",
+    "practica": "En parejas recorren las tarjetas de teoría y las actividades.",
+    "reto": "Cada quien resuelve los tres retos rápidos y la prueba diagnóstica (individual, sin ayuda).",
+    "cierre": "Kahoot de bienvenida en modo equipos con el proyector.",
+    "notas": "La prueba diagnóstica no se califica: es el punto de partida para comparar con la prueba final de la Misión 16."
+  }
+}

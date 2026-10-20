@@ -1,0 +1,720 @@
+{
+  "numero": 3,
+  "unidad": 2,
+  "titulo": "Leer datos del usuario",
+  "icono": "⌨️",
+  "modo": 3,
+  "python": [
+    "input()",
+    "int()",
+    "float()",
+    "str()"
+  ],
+  "historiaIcono": "🌡️",
+  "historia": "En la clase de Ciencias siempre hay que convertir unidades: kilómetros a metros, grados Celsius a Fahrenheit… Hoy harás programas que <b>preguntan</b> datos a quien los usa y responden con el resultado.",
+  "objetivos": [
+    "Pedir datos con <code>input()</code>.",
+    "Recordar que <code>input()</code> siempre devuelve texto.",
+    "Convertir texto en números con <code>int()</code> y <code>float()</code>.",
+    "Convertir números en texto con <code>str()</code>."
+  ],
+  "teoria": [
+    {
+      "tipo": "portada",
+      "icono": "⌨️",
+      "titulo": "Programas que preguntan",
+      "texto": "Hasta ahora tus programas siempre hacían lo mismo. Con <code>input()</code> pueden <b>preguntar</b> y responder según lo que escribas."
+    },
+    {
+      "tipo": "ilustracion",
+      "nombre": "maquina-io",
+      "titulo": "Entrada → proceso → salida",
+      "texto": "Casi todos los programas funcionan así: reciben datos, los procesan y muestran un resultado.",
+      "datos": {
+        "entrada": "input(\"¿Nombre? \")",
+        "dato": "\"Ana\"",
+        "proceso": "lo guarda en nombre",
+        "salidaCodigo": "print(\"Hola,\", nombre)",
+        "resultado": "Hola, Ana"
+      }
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Pruébalo",
+      "texto": "Presiona <b>▶ Probar</b> y escribe tu nombre en la consola.",
+      "codigo": "nombre = input(\"¿Cómo te llamas? \")\nprint(\"Hola,\", nombre)"
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "input",
+      "titulo": "Simulador de input",
+      "texto": "Escribe una respuesta y mira qué guarda la variable y de qué tipo es."
+    },
+    {
+      "tipo": "idea",
+      "icono": "⚠️",
+      "titulo": "¡input() siempre da texto!",
+      "texto": "Aunque escribas un número, <code>input()</code> lo entrega como texto (<code>str</code>). Y al «sumar» textos, se pegan:",
+      "codigo": "a = \"5\"\nb = \"3\"\nprint(a + b)",
+      "salida": "53",
+      "py": "Por eso 5 + 3 dio 53. ¡Hay que convertir el texto en número!"
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Convertir tipos",
+      "encabezados": [
+        "Función",
+        "Convierte a",
+        "Ejemplo",
+        "Resultado"
+      ],
+      "filas": [
+        [
+          "<code>int()</code>",
+          "entero",
+          "<code>int(\"12\")</code>",
+          "<code>12</code>"
+        ],
+        [
+          "<code>float()</code>",
+          "decimal",
+          "<code>float(\"2.5\")</code>",
+          "<code>2.5</code>"
+        ],
+        [
+          "<code>str()</code>",
+          "texto",
+          "<code>str(7)</code>",
+          "<code>\"7\"</code>"
+        ]
+      ],
+      "texto": "Estas funciones cambian el tipo de un dato."
+    },
+    {
+      "tipo": "explorador",
+      "nombre": "tipos",
+      "titulo": "¿De qué tipo es?",
+      "texto": "Escribe un valor y descubre su tipo. Prueba con <code>12</code>, <code>12.5</code>, <code>\"12\"</code> y <code>True</code>."
+    },
+    {
+      "tipo": "comparar",
+      "titulo": "Pedir un número",
+      "texto": "Envuelve el <code>input()</code> con <code>int()</code> o <code>float()</code> para poder hacer cuentas.",
+      "mal": {
+        "codigo": "edad = input(\"Edad: \")\nprint(edad + 1)",
+        "nota": "<b>TypeError</b>: no se puede sumar texto con número."
+      },
+      "bien": {
+        "codigo": "edad = int(input(\"Edad: \"))\nprint(edad + 1)",
+        "nota": "Ahora <code>edad</code> es un número."
+      }
+    },
+    {
+      "tipo": "pregunta",
+      "pregunta": "Si escribes 4, ¿qué muestra?",
+      "opciones": [
+        "8",
+        "44",
+        "n * 2",
+        "Error"
+      ],
+      "correcta": 0,
+      "explicacion": "Con <code>int()</code> el 4 es número, así que 4 * 2 = 8. Sin <code>int()</code> mostraría 44.",
+      "codigo": "n = int(input(\"Número: \"))\nprint(n * 2)"
+    }
+  ],
+  "ejemplo": {
+    "titulo": "¿Cuántos años tendrás?",
+    "descripcion": "Un programa que conversa contigo.",
+    "codigo": "nombre = input(\"¿Cómo te llamas? \")\nedad = int(input(\"¿Cuántos años tienes? \"))\nprint(\"Hola,\", nombre)\nprint(\"En 10 años tendrás\", edad + 10, \"años\")",
+    "entradasSugeridas": "tu nombre y tu edad",
+    "entradasPrueba": [
+      "Ana",
+      "12"
+    ],
+    "prediccion": {
+      "pregunta": "Si escribes <b>Ana</b> y luego <b>12</b>, ¿qué muestra la última línea?",
+      "opciones": [
+        "En 10 años tendrás 22 años",
+        "En 10 años tendrás 1210 años",
+        "En 10 años tendrás edad + 10 años",
+        "Error"
+      ],
+      "correcta": 0,
+      "explicacion": "Como la edad se convirtió con <code>int()</code>, <code>edad + 10</code> es una suma: 22."
+    },
+    "investigar": [
+      "¿Qué pasa si quitas el <code>int()</code> de la edad? Pruébalo en el taller.",
+      "¿Qué pasa si en la edad escribes una palabra?",
+      "¿Por qué la pregunta termina con un espacio antes de la comilla?"
+    ],
+    "modificar": "Agrega una pregunta por tu comida favorita y muéstrala al final."
+  },
+  "actividades": [
+    {
+      "id": "m03-a1",
+      "tipo": "completar",
+      "titulo": "El doble",
+      "instrucciones": "Completa el programa para que muestre el doble del número que escribas.",
+      "codigo": "n = ⟦int⟧(input(\"Escribe un número: \"))\nprint(\"El doble es\", n ⟦*⟧ 2)",
+      "opciones": [
+        "int",
+        "str",
+        "*",
+        "+"
+      ],
+      "entradas": [
+        "7"
+      ]
+    },
+    {
+      "id": "m03-a2",
+      "tipo": "salida",
+      "titulo": "Texto que se pega",
+      "instrucciones": "¿Qué aparece en la pantalla? Elige la opción correcta.",
+      "codigo": "a = input(\"Primer número: \")\nb = input(\"Segundo número: \")\nprint(a + b)",
+      "respuesta": "46",
+      "opciones": [
+        "46",
+        "Error",
+        "4 + 6",
+        "10"
+      ],
+      "correcta": 0,
+      "entradas": [
+        "4",
+        "6"
+      ],
+      "explicacion": "Sin <code>int()</code>, los números son texto y <code>+</code> los pega: \"4\" + \"6\" = \"46\"."
+    },
+    {
+      "id": "m03-a3",
+      "tipo": "error",
+      "titulo": "Caza el error: tipos",
+      "instrucciones": "Este programa tiene <b>un error</b>. Toca la línea donde está.",
+      "codigo": "edad = input(\"¿Cuántos años tienes? \")\nprint(\"En 5 años tendrás\", edad + 5)",
+      "tipoError": "TypeError",
+      "explicacion": "Python marca el error en la línea 2, pero el problema empezó en la línea 1: <code>edad</code> es texto porque falta <code>int()</code>.",
+      "correccion": "edad = int(input(\"¿Cuántos años tienes? \"))",
+      "linea": 1,
+      "pista": "¿De qué tipo es lo que devuelve input()?",
+      "entradas": [
+        "12"
+      ],
+      "lineaError": 2
+    },
+    {
+      "id": "m03-a4",
+      "tipo": "relacionar",
+      "titulo": "¿Qué devuelve?",
+      "instrucciones": "Une cada elemento con su pareja.",
+      "pares": [
+        [
+          "input()",
+          "Siempre devuelve texto"
+        ],
+        [
+          "int(\"8\")",
+          "8 (entero)"
+        ],
+        [
+          "float(\"1.5\")",
+          "1.5 (decimal)"
+        ],
+        [
+          "str(8)",
+          "\"8\" (texto)"
+        ],
+        [
+          "int(input())",
+          "Pide un dato y lo convierte en entero"
+        ]
+      ],
+      "codigoDer": false
+    },
+    {
+      "id": "m03-a5",
+      "tipo": "ordenar",
+      "titulo": "Calculadora de edad",
+      "instrucciones": "Arma el programa tocando las piezas en el orden correcto.",
+      "lineas": [
+        "nombre = input(\"¿Cómo te llamas? \")",
+        "edad = int(input(\"¿Cuántos años tienes? \"))",
+        "futuro = edad + 10",
+        "print(nombre, \"en 10 años tendrás\", futuro)"
+      ],
+      "distractores": [
+        "futuro = edad + \"10\""
+      ],
+      "entradas": [
+        "Leo",
+        "12"
+      ]
+    },
+    {
+      "id": "m03-a6",
+      "tipo": "teclear",
+      "titulo": "Dedos veloces: input",
+      "instrucciones": "Escribe cada línea exactamente igual. ¡Entrena tus dedos de programador!",
+      "lineas": [
+        "nombre = input(\"¿Nombre? \")",
+        "edad = int(input(\"¿Edad? \"))"
+      ],
+      "xp": 40
+    }
+  ],
+  "retos": [
+    {
+      "id": "m03-r1",
+      "titulo": "Saludo personalizado",
+      "resumen": "Pide un nombre.",
+      "enunciado": "Pide el nombre de la persona y salúdala: si escribe Leo, el programa muestra <code>Hola, Leo</code>.",
+      "inicio": "nombre = ___\nprint(\"Hola,\", nombre)",
+      "bloques": [
+        "py_assign",
+        "py_var",
+        "py_input",
+        "py_print",
+        "py_string"
+      ],
+      "requiere": [
+        "input"
+      ],
+      "pruebas": [
+        {
+          "nombre": "Leo",
+          "entradas": [
+            "Leo"
+          ],
+          "contiene": [
+            "Hola, Leo"
+          ]
+        },
+        {
+          "nombre": "Sofía",
+          "entradas": [
+            "Sofía"
+          ],
+          "contiene": [
+            "Hola, Sofía"
+          ]
+        }
+      ],
+      "solucion": "nombre = input(\"¿Cómo te llamas? \")\nprint(\"Hola,\", nombre)",
+      "pistas": [
+        "Necesitas la instrucción <code>input()</code>.",
+        "la instrucción <code>input(\"...\")</code> va en el hueco de <code>nombre = </code>.",
+        "Debe quedar <code>nombre = input(\"¿Cómo te llamas? \")</code>."
+      ]
+    },
+    {
+      "id": "m03-r2",
+      "titulo": "El doble",
+      "resumen": "Convierte con int().",
+      "enunciado": "Pide un número entero y muestra su doble: si escribes 7, muestra <code>El doble es 14</code>.",
+      "inicio": "numero = int(___)\nprint(\"El doble es\", numero * 2)",
+      "bloques": [
+        "py_assign",
+        "py_var",
+        "py_input",
+        "py_convert",
+        "py_print",
+        "py_string",
+        "py_arith",
+        "py_number"
+      ],
+      "requiere": [
+        "input",
+        "int"
+      ],
+      "pruebas": [
+        {
+          "nombre": "7",
+          "entradas": [
+            "7"
+          ],
+          "contiene": [
+            "El doble es 14"
+          ]
+        },
+        {
+          "nombre": "25",
+          "entradas": [
+            "25"
+          ],
+          "contiene": [
+            "El doble es 50"
+          ]
+        }
+      ],
+      "solucion": "numero = int(input(\"Escribe un número: \"))\nprint(\"El doble es\", numero * 2)",
+      "pistas": [
+        "<code>int()</code> convierte, pero primero hay que pedir el dato.",
+        "Mete una instrucción <code>input()</code> dentro del hueco de <code>int( )</code>.",
+        "Debe quedar <code>int(input(\"Escribe un número: \"))</code>."
+      ]
+    },
+    {
+      "id": "m03-r3",
+      "titulo": "Dividir la cuenta",
+      "resumen": "Decimales con float().",
+      "enunciado": "Pide cuánto costó la comida (puede tener decimales) y entre cuántas personas se divide. Muestra cuánto le toca a cada quien: <code>A cada quien le toca 83.5</code>.",
+      "inicio": "cuenta = float(input(\"¿Cuánto costó la comida? \"))\npersonas = ___\nprint(\"A cada quien le toca\", ___)",
+      "requiere": [
+        "float",
+        "int",
+        "/"
+      ],
+      "pruebas": [
+        {
+          "nombre": "250.5 entre 3",
+          "entradas": [
+            "250.5",
+            "3"
+          ],
+          "contiene": [
+            "A cada quien le toca 83.5"
+          ]
+        },
+        {
+          "nombre": "300 entre 4",
+          "entradas": [
+            "300",
+            "4"
+          ],
+          "contiene": [
+            "A cada quien le toca 75.0"
+          ]
+        }
+      ],
+      "solucion": "cuenta = float(input(\"¿Cuánto costó la comida? \"))\npersonas = int(input(\"¿Entre cuántas personas? \"))\nprint(\"A cada quien le toca\", cuenta / personas)",
+      "pistas": [
+        "Las personas son un número entero; la cuenta puede tener decimales.",
+        "Pide las personas con <code>int(input(...))</code> y divide con <code>/</code>.",
+        "El segundo hueco es <code>cuenta / personas</code>."
+      ]
+    }
+  ],
+  "mision": {
+    "id": "m03-mision",
+    "titulo": "Conversor de unidades",
+    "historia": "El laboratorio de Ciencias necesita una herramienta para convertir unidades.",
+    "enunciado": "Haz un conversor que:<ol><li>pida una distancia en <b>kilómetros</b> y la muestre en metros: <code>2.5 km son 2500.0 metros</code>;</li><li>pida una temperatura en <b>°C</b> y la muestre en °F con la fórmula <code>F = C * 9 / 5 + 32</code>: <code>30 °C son 86.0 °F</code>.</li></ol>Usa <code>float()</code> para aceptar decimales.",
+    "requiere": [
+      "input*2",
+      "float"
+    ],
+    "pruebas": [
+      {
+        "nombre": "2.5 km y 30 °C",
+        "entradas": [
+          "2.5",
+          "30"
+        ],
+        "contiene": [
+          "2500.0",
+          "86.0"
+        ]
+      },
+      {
+        "nombre": "1 km y 100 °C",
+        "entradas": [
+          "1",
+          "100"
+        ],
+        "contiene": [
+          "1000.0",
+          "212.0"
+        ]
+      },
+      {
+        "nombre": "4 km y -40 °C",
+        "entradas": [
+          "4",
+          "-40"
+        ],
+        "contiene": [
+          "4000.0",
+          "-40.0"
+        ]
+      }
+    ],
+    "pistas": [
+      "Necesitas dos <code>input()</code> convertidos con <code>float()</code> y dos fórmulas.",
+      "Para metros multiplica por 1000. Para °F usa <code>c * 9 / 5 + 32</code>.",
+      "Ejemplo de una línea: <code>metros = km * 1000</code>; luego <code>print(km, \"km son\", metros, \"metros\")</code>."
+    ],
+    "niveles": {
+      "explorador": {
+        "descripcion": "Las preguntas ya están. Completa las dos fórmulas.",
+        "inicio": "km = float(input(\"Distancia en kilómetros: \"))\nmetros = ___\nprint(km, \"km son\", metros, \"metros\")\nc = float(input(\"Temperatura en °C: \"))\nf = ___\nprint(c, \"°C son\", f, \"°F\")",
+        "solucion": "km = float(input(\"Distancia en kilómetros: \"))\nmetros = km * 1000\nprint(km, \"km son\", metros, \"metros\")\nc = float(input(\"Temperatura en °C: \"))\nf = c * 9 / 5 + 32\nprint(c, \"°C son\", f, \"°F\")"
+      },
+      "programador": {
+        "inicio": "",
+        "solucion": "# Distancia\nkm = float(input(\"Distancia en kilómetros: \"))\nmetros = km * 1000\nprint(km, \"km son\", metros, \"metros\")\n# Temperatura\nc = float(input(\"Temperatura en °C: \"))\nf = c * 9 / 5 + 32\nprint(c, \"°C son\", f, \"°F\")"
+      },
+      "maestro": {
+        "enunciado": "además, pide tu estatura en metros y muéstrala en centímetros, redondeada con <code>round()</code> a número entero: <code>1.52 m son 152 cm</code>.",
+        "inicio": "",
+        "requiere": [
+          "round"
+        ],
+        "pruebas": [
+          {
+            "nombre": "Con estatura 1.52",
+            "entradas": [
+              "2.5",
+              "30",
+              "1.52"
+            ],
+            "contiene": [
+              "2500.0",
+              "86.0",
+              "152 cm"
+            ]
+          },
+          {
+            "nombre": "Con estatura 1.6",
+            "entradas": [
+              "1",
+              "100",
+              "1.6"
+            ],
+            "contiene": [
+              "1000.0",
+              "212.0",
+              "160 cm"
+            ]
+          }
+        ],
+        "solucion": "km = float(input(\"Distancia en kilómetros: \"))\nmetros = km * 1000\nprint(km, \"km son\", metros, \"metros\")\nc = float(input(\"Temperatura en °C: \"))\nf = c * 9 / 5 + 32\nprint(c, \"°C son\", f, \"°F\")\nestatura = float(input(\"Estatura en metros: \"))\ncm = round(estatura * 100)\nprint(estatura, \"m son\", cm, \"cm\")"
+      }
+    }
+  },
+  "extra": {
+    "id": "m03-extra",
+    "titulo": "Días vividos",
+    "historia": "¿Cuántos días has vivido?",
+    "enunciado": "Pide la edad en años y muestra aproximadamente cuántos días has vivido (años × 365) y cuántas horas son: <code>Has vivido unos 4380 días</code> y <code>Son unas 105120 horas</code>.",
+    "inicio": "",
+    "requiere": [
+      "input",
+      "int"
+    ],
+    "pruebas": [
+      {
+        "nombre": "12 años",
+        "entradas": [
+          "12"
+        ],
+        "contiene": [
+          "4380 días",
+          "105120 horas"
+        ]
+      },
+      {
+        "nombre": "13 años",
+        "entradas": [
+          "13"
+        ],
+        "contiene": [
+          "4745 días",
+          "113880 horas"
+        ]
+      }
+    ],
+    "solucion": "edad = int(input(\"¿Cuántos años tienes? \"))\ndias = edad * 365\nprint(\"Has vivido unos\", dias, \"días\")\nprint(\"Son unas\", dias * 24, \"horas\")"
+  },
+  "kahoot": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué tipo de dato devuelve siempre <code>input()</code>?",
+        "opciones": [
+          "Texto (str)",
+          "Entero (int)",
+          "Decimal (float)",
+          "Depende de lo que escribas"
+        ],
+        "correcta": 0
+      },
+      {
+        "pregunta": "Si escribes 5 y luego 3, ¿qué muestra?",
+        "opciones": [
+          "5 + 3",
+          "8",
+          "53",
+          "Error"
+        ],
+        "correcta": 2,
+        "codigo": "a = input()\nb = input()\nprint(a + b)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "entradas": [
+          "5",
+          "3"
+        ]
+      },
+      {
+        "pregunta": "Si escribes 5 y luego 3, ¿qué muestra?",
+        "opciones": [
+          "Error",
+          "5 + 3",
+          "53",
+          "8"
+        ],
+        "correcta": 3,
+        "codigo": "a = int(input())\nb = int(input())\nprint(a + b)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "entradas": [
+          "5",
+          "3"
+        ]
+      },
+      {
+        "pregunta": "¿Qué función convierte \"2.5\" en número decimal?",
+        "opciones": [
+          "decimal()",
+          "str()",
+          "int()",
+          "float()"
+        ],
+        "correcta": 3,
+        "codigoOpciones": true
+      },
+      {
+        "pregunta": "¿Qué hace <code>int(\"12\")</code>?",
+        "opciones": [
+          "Muestra 12",
+          "Suma 12",
+          "Pide un número",
+          "Convierte el texto \"12\" en el número 12"
+        ],
+        "correcta": 3
+      },
+      {
+        "tipo": "vf",
+        "pregunta": "<code>print(\"Edad: \" + 12)</code> funciona sin errores.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
+        "tiempo": 15,
+        "explicacion": "No se puede pegar texto con número: TypeError. Usa una coma o <code>str(12)</code>."
+      },
+      {
+        "pregunta": "Si escribes 4, ¿qué muestra?",
+        "opciones": [
+          "4 * 3",
+          "Error",
+          "444",
+          "12"
+        ],
+        "correcta": 3,
+        "codigo": "n = int(input(\"Número: \"))\nprint(n * 3)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "entradas": [
+          "4"
+        ]
+      },
+      {
+        "pregunta": "Si escribes 4, ¿qué muestra?",
+        "opciones": [
+          "4 * 3",
+          "12",
+          "Error",
+          "444"
+        ],
+        "correcta": 3,
+        "codigo": "n = input(\"Número: \")\nprint(n * 3)",
+        "tiempo": 30,
+        "salidaEsRespuesta": true,
+        "entradas": [
+          "4"
+        ]
+      },
+      {
+        "pregunta": "¿Para qué sirve el texto dentro de <code>input(\"...\")</code>?",
+        "opciones": [
+          "Es la respuesta correcta",
+          "No sirve para nada",
+          "Es la pregunta que ve la persona",
+          "Es el nombre de la variable"
+        ],
+        "correcta": 2
+      }
+    ]
+  },
+  "resumen": [
+    {
+      "icono": "⌨️",
+      "texto": "<code>input()</code> pide un dato y siempre lo devuelve como texto.",
+      "codigo": "nombre = input(\"¿Nombre? \")"
+    },
+    {
+      "icono": "🔄",
+      "texto": "Convierte con <code>int()</code> o <code>float()</code> para hacer cuentas.",
+      "codigo": "edad = int(input(\"Edad: \"))"
+    },
+    {
+      "icono": "➡️",
+      "texto": "Entrada → proceso → salida: así funcionan casi todos los programas."
+    }
+  ],
+  "glosario": [
+    {
+      "en": "input",
+      "es": "entrada",
+      "def": "Pide un dato a quien usa el programa. Siempre devuelve texto."
+    },
+    {
+      "en": "int()",
+      "es": "convertir a entero",
+      "def": "Convierte un texto como \"12\" en el número 12."
+    },
+    {
+      "en": "float()",
+      "es": "convertir a decimal",
+      "def": "Convierte un texto como \"2.5\" en el número 2.5."
+    },
+    {
+      "en": "str()",
+      "es": "convertir a texto",
+      "def": "Convierte un número en texto."
+    },
+    {
+      "en": "type",
+      "es": "tipo",
+      "def": "La clase de dato: texto (str), entero (int), decimal (float)…"
+    },
+    {
+      "en": "ValueError",
+      "es": "error de valor",
+      "def": "Aparece cuando un dato no tiene la forma esperada, por ejemplo <code>int(\"hola\")</code>."
+    }
+  ],
+  "autoevaluacion": [
+    {
+      "pregunta": "¿Por qué <code>input()</code> + <code>input()</code> puede dar «1212» en lugar de 24?",
+      "respuesta": "Porque input() devuelve texto y + une textos. Hay que convertir con int() antes de sumar."
+    },
+    {
+      "pregunta": "¿Cuándo usas <code>float()</code> en lugar de <code>int()</code>?",
+      "respuesta": "Cuando el número puede tener decimales, como un precio (12.50) o una estatura (1.52)."
+    },
+    {
+      "pregunta": "¿Qué error aparece si escribes «hola» en <code>int(input())</code>?",
+      "respuesta": "ValueError: int() no puede convertir «hola» en número."
+    }
+  ],
+  "plan": {
+    "activacion": "Juego del «programa humano»: un alumno pregunta el nombre a otro y responde con un saludo. ¿Qué datos entraron y qué salió?",
+    "ejemplo": "Ejemplo «¿Cuántos años tendrás?»: prueban quitar el <code>int()</code> y comentan el error.",
+    "practica": "Actividades: completar el doble, texto que se pega y caza el error de tipos.",
+    "reto": "Retos rápidos y la misión «Conversor de unidades».",
+    "cierre": "Kahoot y ticket oral: ¿por qué \"5\" + \"3\" da \"53\"?"
+  }
+}
